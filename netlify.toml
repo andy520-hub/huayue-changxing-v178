@@ -1,6 +1,0 @@
-# 华越畅行 V1.7.8 · Netlify 部署配置
-# 静态 PWA 站点 + Serverless Functions（asr / translate / whisper / ocr）
-# 拖拽上传不支持函数，本仓库用 Git 连接部署；publish 为仓库根，functions 为 netlify/functions
-[build]
-  publish = "."
-  functions = "netlify/functions"

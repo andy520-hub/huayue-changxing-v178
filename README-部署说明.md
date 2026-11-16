@@ -649,3 +649,25 @@ V1.7.7 用 Tesseract.js 纯前端，对**屏幕翻拍（摩尔纹）、手写、
 - 无密钥时回退本地识别，精度与 V1.7.7 相同（本版并未改善无密钥场景的识别率，只改善了流程）。
 - 越南语/泰语识别需在图片语种 chip 里明确选择对应语种（腾讯标准版非中英语言需显式 LanguageType）。
 - V1.6.0 遗留的泰文列语义脏数据、机翻跨外语偶发偏离，本版未处理（与本次反馈无关）。
+
+## 二十一、V1.7.8 切换 Cloudflare Pages（2026-11-16）
+
+**原因**：Netlify 免费账号本月额度用尽（operational credits），生产部署被暂停，V1.7.8 无法经 Netlify 上线；换 Cloudflare Pages（免费、不受该额度限制）继续部署。
+
+**与 Netlify 版差异（本仓库已改好）**：
+- OCR 代理：前端 `PT_OCR_PROXY = '/api/ocr'`；函数为 `functions/api/ocr.js`（Cloudflare Pages Function，路由 `/api/ocr`）。
+- 签名：腾讯云 TC3-HMAC-SHA256 改用 **Web Crypto API**（Cloudflare 原生支持，无需 Node crypto / nodejs_compat）。
+- 无 Netlify 徽标：底部 46px 徽标避让取消（`--nbres:0px`）。
+- 百度翻译 / 百度 ASR / Whisper 三个代理**未启用**（前端常量为空），Cloudflare 版仅提供 OCR 代理；如需启用再补 `functions/api/*.js`。
+
+### 部署步骤
+1. 注册/登录 Cloudflare → 控制台 → **Workers & Pages → Create → Pages → Connect to Git** → 授权 GitHub → 选 `huayue-changxing-v178` 仓库。
+2. **Build command 留空、Build output directory 留空**（纯静态 + Pages Function，无需构建）；Production branch = `main`。
+3. 点 **Save and Deploy** → 约 1 分钟得到 `https://<项目名>.pages.dev`。
+4. **启用云端 OCR（可选）**：项目 → **Settings → Environment variables** → 添加 `TENCENT_OCR_SECRET_ID`、`TENCENT_OCR_SECRET_KEY`（腾讯云 CAM → API 密钥）→ 重新部署。未配置时 OCR 自动回退本地识别。
+5. 手机打开 `.pages.dev` 地址 → 添加到主屏幕 → 拍照翻译：未配密钥时状态行出现「未配置云识别密钥，改用本地识别」即函数链路已通。
+
+### 验证
+- `node --check`（ESM 方式）`functions/api/ocr.js` 语法通过。
+- 功能回归 `test_v178.js`（指向本 Cloudflare 部署版）覆盖云 OCR 成功/未配置/失败回退、自动识别翻译、四语种翻译、XSS。
+- 腾讯云真实接口需用户密钥，本环境未实测（不编造）；签名严格按官方 TC3 流程实现。

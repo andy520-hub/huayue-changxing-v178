@@ -37,8 +37,8 @@ self.addEventListener('fetch', function (e) {
   if (url.hostname === 'open.er-api.com' ||
       url.hostname === 'cdn.jsdelivr.net' ||
       url.hostname === 'tessdata.projectnaptha.com') return;
-  // V1.7.8：腾讯云 OCR 代理走网络，不缓存（同源 .netlify/functions/ocr）
-  if (url.pathname.indexOf('/.netlify/functions/ocr') >= 0) return;
+  // V1.7.8：腾讯云 OCR 代理走网络，不缓存（同源 /api/ocr）
+  if (url.pathname.indexOf('/api/ocr') >= 0) return;
   if (e.request.method !== 'GET') return;
 
   // 页面导航：网络优先（保证一上线就拿到最新版），断网再回退缓存

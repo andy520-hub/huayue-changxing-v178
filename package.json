@@ -2,5 +2,5 @@
   "name": "huayue-changxing",
   "version": "1.7.8",
   "private": true,
-  "description": "华越畅行 PWA (V1.7.8) · Netlify Functions 运行时声明（asr/translate/whisper/ocr，均仅用 Node 内置模块，无第三方依赖）"
+  "description": "华越畅行 PWA (V1.7.8) · Cloudflare Pages 部署版：静态站点 + Pages Function（/api/ocr 腾讯云 OCR 代理，Web Crypto 签名，无第三方依赖）。百度翻译/ASR/Whisper 代理未启用，如需启用请补充对应 functions/api/*.js。"
 }

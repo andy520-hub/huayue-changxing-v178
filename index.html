@@ -21,7 +21,7 @@
   --btnbg:#F3F8F9;--tabon:#E3EFF1;--tipbg:#E9F1F2;--errbg:#FCEBE9;--errink:#A63A2B;
   --starbg:#FDF3DE;--starink:#8A6414;
   --sd:0 1px 2px rgba(14,59,69,.05),0 10px 26px -18px rgba(14,59,69,.35);
-  --nbres:46px; /* 底部徽标安全带：Netlify 免费站点的浮标固定在此区域 */
+  --nbres:0px; /* Cloudflare Pages 无徽标，底部不留白（Netlify 徽标避让不再需要） */
 }
 @media(prefers-color-scheme:dark){
   :root{
@@ -1642,22 +1642,22 @@ function doTranslate(resBox, quiet) {
 const BAIDU_APPID = '';        // 留空 → 自动用 MyMemory；填了 → 优先用百度
 const BAIDU_KEY   = '';
 // 安全模式（可选）：把密钥放服务器端代理，前端只填代理地址，密钥不出服务器。
-// 用法见包内 netlify/functions/translate.js；留空则忽略。
+// Cloudflare 版未启用百度翻译代理（需补 functions/api/translate.js 并填 BAIDU_PROXY_URL）；留空则忽略。
 const BAIDU_PROXY_URL = '';
 
 // 语音识别（百度 ASR）：让国内 Chrome / 安卓也能「点按钮直接说中文出字」，绕过被墙的浏览器引擎。
 // 注意：百度「语音识别」与上面「翻译」是两套独立产品、密钥不同，需到 https://console.bce.baidu.com/ai
 //   → 语音技术 → 创建应用，拿到 API Key / Secret Key（不是翻译的 APPID/KEY）。
 // 浏览器无法跨域直连百度且 Secret 需保密，所以【必须走服务端代理】。把代理地址填到下面：
-//   例：Netlify 部署后填 '/.netlify/functions/asr'，自建服务填 'https://你的域名/asr'。
+//   例：Cloudflare Pages 部署后填 '/api/asr'（需补 functions/api/asr.js），自建服务填 'https://你的域名/asr'。
 // 留空 → 中文方向自动回退为浏览器内置语音识别（国内 Chrome 可能连不上服务器），越南语始终靠输入法/浏览器。
 const BAIDU_ASR_PROXY = '';
 
 // 语音识别（可选·高精度云端）：OpenAI Whisper / 兼容端点，越南语、中文都支持，准确度远高于浏览器内置。
 // 百度 ASR 只支持中文，越南语想高精度就靠这个。把服务端代理地址填到下面：
-//   例：Netlify 部署后填 '/.netlify/functions/whisper'，自建服务填 'https://你的域名/whisper'。
+//   例：Cloudflare Pages 部署后填 '/api/whisper'（需补 functions/api/whisper.js），自建服务填 'https://你的域名/whisper'。
 // 留空 → 越南语走浏览器内置识别（已加本应用词库纠错），中文仍优先百度（若已配）。
-// 服务端密钥 OPENAI_APIKEY（及可选 WHISPER_MODEL）的配置见包内 netlify/functions/whisper.js。
+// 服务端密钥 OPENAI_APIKEY（及可选 WHISPER_MODEL）需在 Cloudflare Pages 环境变量配置。
 const WHISPER_PROXY = '';
 
 /* ---------- MD5（百度签名用，UTF-8 安全；取自 blueimp-md5 2.19.0，MIT License） ---------- */
@@ -2312,7 +2312,7 @@ async function transcribeBaidu(blob) {
 }
 
 /* ---------- OpenAI Whisper 云端识别（可选·高精度）：越南语/中文都支持 ---------- */
-// 浏览器无法跨域直连 OpenAI，且密钥绝不能放前端，故走服务端代理（见 netlify/functions/whisper.js）。
+// 浏览器无法跨域直连 OpenAI，且密钥绝不能放前端，故走服务端代理（Cloudflare 需补 functions/api/whisper.js）。
 // 仅在 WHISPER_PROXY 已配置时启用；留空则本函数不会被调用。
 function whisperASRAvailable() {
   return !!(WHISPER_PROXY && WHISPER_PROXY.trim());
@@ -2621,9 +2621,9 @@ function renderNumView(host) {
    V1.7.7 的纯前端 Tesseract 对屏幕翻拍/小字/摩尔纹识别率有限（实测截图出「人/9呈」乱码）。
    本版：识别优先走腾讯云通用印刷体 OCR（支持中/越/英/泰，官方 21 语种），无密钥或失败时
    自动回退本地 Tesseract；选图后自动识别、识别完自动翻译四语种（可关），对齐同类软件交互。
-   照片只在本机压缩后发给自家 Netlify Function（密钥在服务器端），翻译仍只发识别出的文字。 */
+   照片只在本机压缩后发给自家 Cloudflare Pages Function（密钥在服务器端），翻译仍只发识别出的文字。 */
 var PT_CDN = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
-var PT_OCR_PROXY = '/.netlify/functions/ocr';
+var PT_OCR_PROXY = '/api/ocr';
 var PT_LANGS = [
   { k:'zh',  ocr:'chi_sim',      name:'中文' },
   { k:'en',  ocr:'eng',          name:'English' },
@@ -2800,7 +2800,7 @@ function openPhotoTrans() {
     '<p><b>识别走腾讯云 OCR（中/越/英/泰，官方 21 语种），没配密钥或失败时自动回退本地识别。</b>' +
     '语种要与照片里的文字一致：拍英文却选中文会出乱码。识别完务必人工改字再对外沟通。</p>' +
     '<p>「自动识别翻译」默认开：选图即自动识别、识别完自动翻成其余三语种，和微信扫一扫翻译一致；关掉则手动点两次。</p>' +
-    '<p>腾讯云开通后（每月 1000 次免费）在 Netlify 后台设置环境变量 <code>TENCENT_OCR_SECRET_ID</code> 与 <code>TENCENT_OCR_SECRET_KEY</code>，下次自动启用云端，无需改代码。</p></details>' +
+    '<p>腾讯云开通后（每月 1000 次免费）在 Cloudflare Pages 的 Settings 里设环境变量 <code>TENCENT_OCR_SECRET_ID</code> 与 <code>TENCENT_OCR_SECRET_KEY</code>，下次自动启用云端，无需改代码。</p></details>' +
     '<div class="pt-pick">' +
     '<button type="button" id="ptCamBtn">拍照</button>' +
     '<button type="button" id="ptLibBtn">从相册选</button>' +
