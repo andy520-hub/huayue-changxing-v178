@@ -1,0 +1,10 @@
+# Cloudflare 新版（Pages 并入 Workers 静态资产模型）部署配置
+# 静态目录 = 仓库根（index.html/sw.js/图标等），functions/ 目录自动作为 Pages Function（路由 /api/ocr）
+# 部署命令：npx wrangler deploy（Cloudflare 构建环境预装 wrangler + build token，无需登录）
+# 腾讯云 OCR 密钥在 Cloudflare Pages → Settings → Environment variables 配置，读取于 context.env
+name = "huayue-changxing-v178"
+compatibility_date = "2025-01-01"
+
+[assets]
+directory = "."
+binding = "ASSETS"
