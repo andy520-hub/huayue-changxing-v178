@@ -1,0 +1,3131 @@
+<!DOCTYPE html>
+<html data-page-node-id="tNrRfrKtAddKOZjYhdNit6" lang="zh-CN">
+<head data-page-node-id="IWyyrmxxwT9aZpbs9pv5II">
+<script data-page-node-id="Qe9yzLiAfOoDl2WNTPfW9h" src="/page/page_comm/inject.js"></script>
+<meta data-page-node-id="M5cW7CcUgOxYtQ4oh0NVYM" charset="utf-8">
+<meta data-page-node-id="WQwMtg49Mo3VnxtKBg3Oz8" content="width=device-width,initial-scale=1,viewport-fit=cover" name="viewport">
+<meta data-page-node-id="5YEuQS4dlogKWATEzs7SrN" content="#0E3B45" name="theme-color">
+<meta data-page-node-id="KSUsBkdMLpJbGUbemLNwzc" content="#081A1F" media="(prefers-color-scheme: dark)" name="theme-color">
+<title data-page-node-id="cyZEYapEswuTWSndA72LMm" data-pnid-children="6tMqUVlUxd3ymwRoYCzq6n">华越畅行 V1.7.8</title>
+<link data-page-node-id="Mu2evieHJ5CyNzwvvN3wp6" href="manifest.webmanifest" rel="manifest">
+<meta data-page-node-id="DvKiQVuv93GcFWg8hrNtJ5" content="yes" name="apple-mobile-web-app-capable">
+<meta data-page-node-id="37iaSudbiu2fVhQfnMNvV5" content="yes" name="mobile-web-app-capable">
+<meta data-page-node-id="EUzVU5BTfpeouWdnDicv3m" content="black-translucent" name="apple-mobile-web-app-status-bar-style">
+<meta data-page-node-id="ifbQHEHwv223oUFjriv4b5" content="华越畅行" name="apple-mobile-web-app-title">
+<link data-page-node-id="RpL3pqVf7dK0mdrO9qaQQ5" href="apple-touch-icon.png" rel="apple-touch-icon">
+<style data-page-node-id="P5mYfxNTgIGmMaY03zVMp4" data-pnid-children="voJtn5yBGemcQ7ir8NOGCZ">
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --brand:#0E3B45;--brand2:#12616F;--accent:#E3A72F;--ink:#12232A;--sub:#5F7880;
+  --bg:#F1F5F6;--card:#fff;--line:#DCE6E8;--vi:#0F6A5F;--en:#2A6E9E;--th:#8A4E8F;--star:#C8922A;--me:#E7F1F2;--them:#EAF4EE;
+  --btnbg:#F3F8F9;--tabon:#E3EFF1;--tipbg:#E9F1F2;--errbg:#FCEBE9;--errink:#A63A2B;
+  --starbg:#FDF3DE;--starink:#8A6414;
+  --sd:0 1px 2px rgba(14,59,69,.05),0 10px 26px -18px rgba(14,59,69,.35);
+  --nbres:46px; /* 底部徽标安全带：Netlify 免费站点的浮标固定在此区域 */
+}
+@media(prefers-color-scheme:dark){
+  :root{
+    --brand:#2A8B99;--brand2:#3AA5B4;--accent:#F0B94A;--ink:#E6EFF1;--sub:#8EA6AD;
+    --bg:#081A1F;--card:#0F262C;--line:#1E3A42;--vi:#6FD3C0;--en:#7CC0E8;--th:#CFA0D8;--me:#153540;--them:#12332B;
+    --btnbg:#122E35;--tabon:#14343C;--tipbg:#123037;--errbg:#3A1F1C;--errink:#F3A79B;
+    --starbg:#3A2F1C;--starink:#EBC777;
+    --sd:0 1px 2px rgba(0,0,0,.5),0 10px 26px -18px rgba(0,0,0,.9);
+  }
+}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,"Segoe UI","Microsoft YaHei",sans-serif;overscroll-behavior:none;
+  background-image:radial-gradient(circle at 8% -8%,rgba(18,97,111,.10),transparent 44%),radial-gradient(circle at 99% 1%,rgba(227,167,47,.12),transparent 34%);
+  background-attachment:fixed}
+#app{max-width:640px;margin:0 auto;height:100%;height:100dvh;display:flex;flex-direction:column;padding-bottom:var(--nbres,0px)}
+header{position:relative;padding:calc(11px + env(safe-area-inset-top,0px)) 14px 10px;color:#fff;overflow:hidden;
+  background:linear-gradient(132deg,#0A2C33 0%,#0E3B45 48%,#155C69 100%)}
+header::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.13;
+  background-image:repeating-linear-gradient(135deg,rgba(255,255,255,.75) 0 1px,transparent 1px 10px)}
+.brand{display:flex;align-items:center;gap:11px;position:relative;z-index:1}
+.mark{width:36px;height:36px;flex:0 0 auto;border-radius:11px;display:grid;place-items:center;
+  background:rgba(227,167,47,.16);border:1px solid rgba(227,167,47,.55);
+  font-family:"Songti SC",SimSun,serif;font-size:19px;font-weight:700;color:#F4CE7B}
+.bt{flex:1;min-width:0}
+header .t1{font-size:17.5px;font-weight:800;letter-spacing:1.2px;line-height:1.2}
+header .t2{font-size:10.5px;color:rgba(255,255,255,.62);letter-spacing:.4px;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.hact{display:flex;flex-direction:column;align-items:flex-end;gap:4px}
+.ghost{border:1px solid rgba(255,255,255,.3);background:rgba(255,255,255,.1);color:#fff;border-radius:9px;padding:5px 10px;font-size:12px;line-height:1.2;font-family:inherit}
+.ver{font-size:9.5px;color:rgba(255,255,255,.5);letter-spacing:.5px}
+
+/* 顶部常驻搜索 */
+.searchbar{padding:9px 12px 3px;position:relative;z-index:15}
+.searchbar .wrap{position:relative}
+.searchbar input{width:100%;padding:11px 34px 11px 36px;border:1px solid var(--line);border-radius:13px;
+  background:var(--card);color:var(--ink);font-size:14px;font-family:inherit;box-shadow:var(--sd);-webkit-appearance:none}
+.searchbar input::placeholder{color:var(--sub);opacity:.8}
+.searchbar input:focus{outline:none;border-color:var(--brand2);box-shadow:0 0 0 3px rgba(18,97,111,.13)}
+.searchbar .ico{position:absolute;left:12px;top:50%;transform:translateY(-50%);width:16px;height:16px;
+  fill:none;stroke:var(--sub);stroke-width:1.9;stroke-linecap:round;pointer-events:none}
+.searchbar .clr{position:absolute;right:7px;top:50%;transform:translateY(-50%);width:24px;height:24px;border:0;border-radius:50%;
+  background:var(--tipbg);color:var(--sub);font-size:15px;line-height:1;display:none;place-items:center}
+.searchbar .clr.on{display:grid}
+#main{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;padding:8px 12px 22px;font-size:16px}
+#main.fs1{font-size:18px}
+#main.fs2{font-size:21px}
+.tabbar{display:flex;background:var(--card);border-top:1px solid var(--line);padding:5px 3px calc(5px + env(safe-area-inset-bottom));gap:2px}
+.tabbar button{flex:1;border:0;background:none;padding:5px 2px 4px;color:var(--sub);border-radius:11px;
+  display:flex;flex-direction:column;align-items:center;gap:2px;font-family:inherit}
+.tabbar button svg{width:21px;height:21px;fill:none;stroke:currentColor;stroke-width:1.75;stroke-linecap:round;stroke-linejoin:round}
+.tabbar button span{font-size:10.5px;letter-spacing:.3px}
+.tabbar button.on{color:var(--brand);background:var(--tabon)}
+.tabbar button.on svg{stroke-width:2.1}
+.tabbar button.on span{font-weight:700}
+.chips{display:flex;flex-wrap:wrap;gap:6px;padding:2px 0 10px}
+.chip{border:1px solid var(--line);background:var(--card);color:var(--sub);padding:4px 11px;border-radius:999px;font-size:12.5px}
+.chip.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+.sec-title{font-size:13px;color:var(--sub);font-weight:700;margin:4px 2px 7px;letter-spacing:.3px}
+.pcard{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:11px 12px;margin-bottom:9px;box-shadow:var(--sd)}
+.pcard.starred{border-color:var(--star);box-shadow:0 0 0 1px var(--star) inset}
+.pcard .zh{font-size:1.06em;font-weight:700}
+.pcard .vi{font-family:-apple-system,"Segoe UI","Noto Sans",Arial,sans-serif;font-size:1.17em;color:var(--vi);font-weight:700;margin-top:4px;word-break:break-word;line-height:1.32}
+.pcard .py{font-size:.75em;color:var(--sub);margin-top:4px;padding-top:4px;border-top:1px dashed var(--line)}
+.pcard .acts{display:flex;gap:5px;margin-top:9px;flex-wrap:nowrap}
+.pcard .acts button{flex:1 1 0;min-width:0;border:1px solid var(--line);background:var(--btnbg);color:var(--ink);
+  padding:7px 2px;border-radius:9px;font-size:13px;min-height:36px;font-family:inherit;white-space:nowrap}
+.pcard .acts .btn-play{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+.pcard.starred .acts .btn-fav{background:var(--starbg);border-color:var(--star);color:var(--starink);font-weight:600}
+.pcard .en{font-size:.8em;color:var(--en);margin-top:4px;word-break:break-word;line-height:1.4}
+.pcard .acts .btn-en{background:var(--en);border-color:var(--en);color:#fff;font-weight:600}
+
+/* V1.6.0 泰文排版：泰文无词间空格、元音与声调符号最多上下四层堆叠，须单独放行高与字体栈 */
+.thtxt{font-family:'Noto Sans Thai','Sarabun','Leelawadee UI','Tahoma',sans-serif;line-height:1.75;font-size:1.08em;letter-spacing:normal;word-break:normal;overflow-wrap:break-word}
+.pcard .th{font-size:.84em;color:var(--th);margin-top:3px;word-break:break-word;line-height:1.6}
+.pcard .acts .btn-th{background:var(--th);border-color:var(--th);color:#fff;font-weight:600}
+.wcard em.th{display:block;font-size:.76em;color:var(--th);font-style:normal;margin-top:4px;word-break:break-word;line-height:1.7}
+.r-out.th{color:var(--th)}
+.r-out.en{color:var(--en)}
+.r-out.thtxt,.pcard .vi.thtxt,.wcard b.thtxt{line-height:1.75}
+/* V1.6.0 源/目标语言双选择器 */
+.langbar{display:flex;align-items:center;gap:8px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:8px}
+.langbar select{flex:1;min-width:0;padding:9px 8px;border:1px solid var(--line);border-radius:9px;background:var(--btnbg);color:var(--ink);font-size:15px;font-family:inherit}
+.langbar .swapnow{flex:0 0 auto;border:1px solid var(--line);background:var(--btnbg);color:var(--brand);border-radius:9px;padding:8px 12px;font-size:17px;min-height:40px}
+.lang-note{font-size:12px;color:var(--sub);margin:6px 2px 0}
+.sc-tag{display:inline-block;font-size:11px;color:var(--brand);background:var(--tabon);border-radius:6px;padding:1px 7px;margin-left:8px;vertical-align:2px;font-weight:600}
+.wgrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
+.wcard{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:left;min-height:64px}
+.wcard b{display:block;font-size:1.12em;color:var(--vi);font-weight:700;word-break:break-word;line-height:1.3}
+.wcard span{display:block;font-size:.88em;color:var(--ink);margin-top:3px}
+.wcard i{display:block;font-size:.72em;color:var(--sub);font-style:normal;margin-top:3px}
+.wcard em.en{display:block;font-size:.74em;color:var(--en);font-style:normal;margin-top:4px;word-break:break-word;line-height:1.4}
+.wfull{width:100%}
+.search{width:100%;padding:12px 14px;border:1px solid var(--line);border-radius:12px;font-size:16px;background:var(--card);margin-bottom:10px}
+.listbox,.view{min-height:40vh}
+.tip{font-size:13px;color:var(--sub);background:var(--tipbg);border-radius:10px;padding:10px 12px;line-height:1.6}
+.tip.err{background:var(--errbg);color:var(--errink)}
+.tip.note{margin-bottom:10px}
+.warnline{margin-top:10px}
+.lbl{display:block;font-size:13px;color:var(--sub);margin:14px 2px 6px;font-weight:600}
+textarea{width:100%;padding:12px;border:1px solid var(--line);border-radius:12px;font-size:1.06em;background:var(--card);resize:none;font-family:inherit}
+.trow{display:flex;gap:8px;margin-top:10px;flex-wrap:wrap}
+.mini,.primary,.swap{border:1px solid var(--line);background:var(--card);padding:10px 16px;border-radius:11px;font-size:15px;color:var(--ink);min-height:42px}
+.mini.tog.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+@keyframes micPulse{0%,100%{box-shadow:0 0 0 0 rgba(198,40,40,.55)}50%{box-shadow:0 0 0 9px rgba(198,40,40,0)}}
+.mic-live{background:#c62828!important;border-color:#c62828!important;color:#fff!important;font-weight:700;animation:micPulse 1.2s infinite}
+.mic-live::before{content:"● ";}
+#micMeter{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);width:min(72vw,320px);z-index:70;
+  background:rgba(38,32,28,.9);border-radius:12px;padding:8px 12px 10px;color:#fff;font-size:12px;display:flex;flex-direction:column;gap:5px}
+#micMeter .track{height:8px;border-radius:6px;background:rgba(255,255,255,.18);overflow:hidden}
+#micBar{height:100%;width:0;border-radius:6px;background:#4caf50;transition:width .06s linear}
+#micBar.hot{background:#ff5252}
+#micMeter .lbl{opacity:.85;letter-spacing:.5px}
+.primary{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:700;flex:1}
+.seg{display:flex;flex-wrap:wrap;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--card)}
+.seg-btn{border:0;background:none;padding:10px 20px;font-size:15px;color:var(--sub)}
+.seg-btn.on{background:var(--brand);color:#fff;font-weight:700}
+.swrap{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.tres{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px;min-height:74px}
+.r-src{font-size:13px;color:var(--sub)}
+.r-out{font-size:1.3em;font-weight:700;color:var(--vi);margin:8px 0;word-break:break-word;line-height:1.35}
+.r-acts{display:flex;gap:8px;flex-wrap:wrap}
+.r-acts button{border:1px solid var(--line);background:var(--btnbg);padding:9px 15px;border-radius:10px;font-size:14px;min-height:40px}
+.r-acts .btn-play{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+.calc{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:12px;margin:14px 0}
+.crow{display:flex;align-items:center;gap:6px;font-size:14px;margin-bottom:8px;flex-wrap:wrap}
+.crow input{flex:1;min-width:70px;padding:10px;border:1px solid var(--line);border-radius:10px;font-size:17px;background:var(--btnbg)}
+.fsbtn{border:1px solid var(--line);background:var(--btnbg);border-radius:9px;padding:4px 9px;font-size:12px;color:var(--sub);margin-left:auto}
+#mask{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;padding:18px;z-index:50}
+#mask.show{display:flex}
+#mask.convmode{padding:0;align-items:stretch;background:var(--bg)}
+.modal{background:var(--card);border-radius:16px;padding:18px;max-width:520px;max-height:80vh;overflow:auto}
+.modal h3{font-size:17px;margin-bottom:10px;color:var(--brand)}
+.modal p{font-size:14px;line-height:1.7;margin-bottom:10px}
+.modal .primary{width:100%;margin-top:4px}
+.conv{background:var(--bg);width:100%;max-width:560px;height:100%;max-height:100%;display:flex;flex-direction:column;border-radius:0}
+.conv-top,.conv-bot{flex:1;display:flex;flex-direction:column;justify-content:center;padding:12px 16px;min-height:0;overflow:auto}
+.conv-top{background:var(--card);border-top:2px dashed var(--brand);transform:rotate(180deg)}
+.conv-lbl{font-size:11px;color:var(--sub);margin-bottom:6px}
+.conv-top .conv-lbl{transform:rotate(180deg)}
+.conv-txt{font-size:26px;font-weight:700;line-height:1.35;word-break:break-word}
+.conv-top .conv-txt{color:var(--vi)}
+.conv-btns{display:flex;gap:8px;margin-top:12px}
+.conv-in{background:var(--card);border-top:1px solid var(--line);padding:10px 12px calc(10px + env(safe-area-inset-bottom))}
+.conv-row.btns{display:flex;gap:8px;margin-top:8px;flex-wrap:wrap}
+.conv-tip{font-size:12px;color:var(--sub);margin:0 0 8px;line-height:1.5;min-height:18px}
+/* V1.7.0 对话模式：双模 + 气泡流。说话方用中性双色，语种色只做竖条 */
+.conv-head{display:flex;align-items:center;gap:8px;padding:calc(8px + env(safe-area-inset-top, 0px)) 12px 8px;background:var(--card);border-bottom:1px solid var(--line);flex-wrap:wrap}
+.conv-head-t{flex:1;text-align:center;font-size:13px;font-weight:600;color:var(--brand)}
+.conv-modes{display:flex;gap:4px;background:var(--btnbg);border-radius:9px;padding:3px}
+.conv-modes button{border:0;background:transparent;color:var(--sub);font-size:12px;padding:5px 10px;border-radius:7px;cursor:pointer}
+.conv-modes button.on{background:var(--brand);color:#fff}
+.conv-body{flex:1;min-height:0;display:flex;flex-direction:column}
+.conv-log{flex:1;min-height:0;overflow:auto;padding:12px;display:flex;flex-direction:column;gap:10px}
+.conv-log[hidden]{display:none}
+.cv-empty{margin:auto;text-align:center;color:var(--sub);font-size:13px;line-height:1.9}
+.cbub{position:relative;max-width:88%;border-radius:12px;padding:9px 12px 8px;font-size:14px}
+.cbub.me{align-self:flex-start;background:var(--me);border-bottom-left-radius:3px}
+.cbub.them{align-self:flex-end;background:var(--them);border-bottom-right-radius:3px}
+.cbub-bar{position:absolute;top:10px;bottom:10px;width:3px;border-radius:2px}
+.cbub.me .cbub-bar{left:0}
+.cbub.them .cbub-bar{right:0}
+.cbub-who{font-size:11px;color:var(--sub)}
+.cbub-src{font-size:13px;color:var(--ink);opacity:.72;margin-top:4px;word-break:break-word}
+.cbub-out{font-size:18px;font-weight:700;line-height:1.45;margin-top:4px;word-break:break-word;color:var(--ink)}
+.cbub-out.thtxt{font-size:19px;line-height:1.75}
+.cbub-src.thtxt{line-height:1.75}
+.cbub-foot{display:flex;align-items:center;justify-content:space-between;gap:8px;margin-top:7px}
+.cbub-tag{font-size:11px;line-height:1.4}
+.cbub-tag.mt{color:var(--errink)}
+.cbub-tag.fixed,.cbub-tag.phrase{color:var(--vi)}
+.cbub-tag.lib{color:var(--brand)}
+.cbub-play{border:1px solid var(--line);background:var(--card);color:var(--sub);border-radius:7px;padding:2px 8px;font-size:11px;white-space:nowrap}
+.conv-face{flex:1;min-height:0;display:flex;flex-direction:column}
+.conv-face[hidden]{display:none}
+.conv-top{background:var(--them)}
+.conv-bot{background:var(--me)}
+.cv-who{display:flex;align-items:center;gap:6px;flex-wrap:wrap;margin-bottom:8px}
+.cv-who button{border:1px solid var(--line);background:var(--btnbg);color:var(--sub);border-radius:8px;padding:5px 10px;font-size:12px}
+.cv-who button.on{background:var(--brand);border-color:var(--brand);color:#fff}
+.cv-micstate{font-size:11px;color:var(--sub);margin-left:auto}
+.cv-micstate.mic-live{color:var(--errink)}
+.cv-micwrap{display:flex;justify-content:center;padding:6px 0 28px} /* 底部留白：补回提示行移走的高度，麦克风位置不变且不被右下角 Netlify 浮标压住 */
+.cvmic{width:62px;height:62px;border-radius:50%;border:0;background:#e24b4a;color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;cursor:pointer}
+.cvmic .cvmic-ico{width:11px;height:17px;border-radius:6px;background:#fff;position:relative}
+.cvmic .cvmic-ico:after{content:"";position:absolute;left:-5px;top:8px;width:21px;height:11px;border:2px solid #fff;border-top:0;border-radius:0 0 11px 11px}
+.cvmic .cvmic-txt{font-size:11px}
+.cvmic:active{opacity:.85}
+.cvmic.on{background:#9c3332;box-shadow:0 0 0 6px rgba(226,75,74,.18)}
+.cv-guide{position:absolute;inset:0;background:rgba(0,0,0,.5);display:flex;align-items:center;justify-content:center;padding:18px;z-index:9}
+.cv-guide .modal{max-height:76vh}
+
+#toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%) translateY(12px);background:rgba(38,32,28,.92);color:#fff;padding:10px 16px;border-radius:12px;font-size:14px;opacity:0;pointer-events:none;transition:.25s;max-width:88vw;z-index:60}
+#toast.show{opacity:1;transform:translateX(-50%)}
+@media(min-width:560px){.wgrid{grid-template-columns:repeat(3,1fr)}}
+
+/* ===== V1.7.2 场景宫格首页 ===== */
+.ggrid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;padding:2px 0 8px}
+.gcard{position:relative;display:flex;flex-direction:column;text-align:left;font-family:inherit;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;padding:10px 11px 9px;
+  box-shadow:var(--sd);overflow:hidden;overflow-wrap:anywhere}
+.gcard::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--brand2);opacity:.55}
+.gcard.big::before{background:var(--accent);opacity:1}
+.gcard.big{border-color:rgba(227,167,47,.5)}
+.gcard:active{transform:scale(.985)}
+.gcard .no{font-size:10.5px;font-weight:800;letter-spacing:1.1px;color:var(--accent)}
+.gcard .nm{font-size:14.5px;font-weight:800;margin-top:2px;letter-spacing:.3px;color:var(--ink);line-height:1.22}
+.gcard .st{font-size:10.5px;color:var(--vi);margin-top:2px;opacity:.9;line-height:1.3}
+.gcard .ct{font-size:11px;color:var(--sub);margin-top:5px}
+
+/* 场景详情头 */
+.schead{display:flex;align-items:center;gap:9px;margin:2px 0 10px}
+.back{flex:0 0 auto;width:34px;height:34px;border:1px solid var(--line);border-radius:11px;background:var(--card);
+  color:var(--brand);display:grid;place-items:center;box-shadow:var(--sd)}
+.back svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:2.1;stroke-linecap:round;stroke-linejoin:round}
+.schead .sct{flex:1;min-width:0}
+.schead .sch1{font-size:16px;font-weight:800;letter-spacing:.4px;line-height:1.2}
+.schead .sch2{font-size:11px;color:var(--sub);margin-top:1px}
+
+/* 隐藏原生 search 清除按钮，避免与自定义清除按钮重复 */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button{-webkit-appearance:none;display:none}
+/* 朗读按钮在结果区同样用主色 */
+.r-acts .btn-play{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:600}
+
+/* ===== V1.7.6 汇率换算 ===== */
+.rate-src{font-size:12px;color:var(--sub);line-height:1.6;margin:2px 2px 10px}
+.rate-src.live{color:var(--vi)}
+.rate-src.manual{color:var(--starink)}
+.rate-amt{width:100%;box-sizing:border-box;font-size:22px;font-weight:800;padding:10px 12px;
+  border:1px solid var(--line);border-radius:12px;background:var(--card);color:var(--ink);font-family:inherit}
+.rate-chips{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 2px}
+.rate-chips button{border:1px solid var(--line);background:var(--btnbg);color:var(--sub);
+  border-radius:999px;padding:7px 13px;font-size:12.5px;min-height:42px}
+.rate-chips button.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:700}
+.rate-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:8px;margin-top:8px}
+.rate-cell{position:relative;background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:10px 11px 9px;box-shadow:var(--sd);overflow:hidden;overflow-wrap:anywhere}
+.rate-cell::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--rc,var(--brand))}
+.rate-cell.me{border-color:var(--brand);background:var(--tabon)}
+.rate-cell .rn{font-size:11.5px;color:var(--sub)}
+.rate-cell .rv{font-size:17px;font-weight:800;color:var(--ink);margin-top:4px;line-height:1.35;word-break:break-all}
+.rate-copy{border:1px solid var(--line);background:var(--btnbg);color:var(--sub);border-radius:7px;
+  padding:3px 9px;font-size:11px;margin-top:7px;min-height:30px}
+.rate-manual{margin-top:12px;border-top:1px dashed var(--line);padding-top:8px}
+.rate-manual[hidden]{display:none}
+.rate-manual .crow{margin:6px 0}
+.rate-manual input{width:42%;box-sizing:border-box;border:1px solid var(--line);border-radius:9px;
+  padding:8px 9px;font-size:15px;background:var(--card);color:var(--ink);font-family:inherit}
+.rate-tip{font-size:11.5px;color:var(--sub);line-height:1.6;margin-top:12px}
+
+/* ===== V1.7.7 拍照翻译：近全屏 / 大识别区 / 语种联动 / 底部避让 =====
+   V1.7.6 的 .pt-sheet 只有 92vh、图片被 190px 高度上限限成窄条、文字框 78px，
+   底部主按钮还压在 Netlify 徽标下。本版整块重排，不动其它组件样式。 */
+.pt-modal{position:fixed;inset:0;background:rgba(0,0,0,.55);z-index:90;display:flex;align-items:stretch;justify-content:center}
+.pt-sheet{background:var(--card);width:100%;max-width:720px;height:100%;height:100dvh;box-sizing:border-box;
+  overflow-y:auto;-webkit-overflow-scrolling:touch;
+  padding:0 14px calc(84px + env(safe-area-inset-bottom,0px))}
+/* 头部 sticky，自带 iPhone 顶部安全区，滚动时不会被状态栏压住 */
+.pt-head{position:sticky;top:0;z-index:4;display:flex;align-items:center;gap:8px;
+  margin:0 -14px 10px;padding:calc(10px + env(safe-area-inset-top,0px)) 14px 10px;
+  background:var(--card);border-bottom:1px solid var(--line)}
+.pt-head b{font-size:17px;flex:0 0 auto}
+.pt-head .pt-step{font-size:11.5px;color:var(--sub);flex:1;text-align:right;line-height:1.4}
+.pt-close{border:1px solid var(--line);background:var(--btnbg);color:var(--sub);border-radius:9px;
+  min-width:44px;min-height:42px;font-size:20px;flex:0 0 auto}
+.pt-help{font-size:12px;color:var(--sub);line-height:1.65;margin:0 0 10px}
+.pt-help summary{cursor:pointer;font-weight:700;color:var(--brand);font-size:12.5px;padding:5px 0}
+.pt-help p{margin:6px 0}
+.pt-pick,.pt-act,.pt-text-acts{display:flex;gap:8px;flex-wrap:wrap}
+.pt-pick button,.pt-act button,.pt-text-acts button{border:1px solid var(--line);background:var(--btnbg);
+  color:var(--ink);border-radius:10px;padding:9px 13px;font-size:14px;min-height:46px;font-family:inherit}
+.pt-pick button.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:700}
+.pt-act{margin-top:10px}
+.pt-act .primary{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:700;flex:1 1 190px;font-size:15px}
+.pt-act button:disabled{opacity:.55}
+.pt-pick input[type=file]{display:none}
+/* 图片：全宽大区域，点击全屏放大 */
+.pt-shot{position:relative;margin-top:10px;width:100%;height:32vh;min-height:210px;max-height:360px;
+  border:1px solid var(--line);border-radius:12px;background:#0b1a20;overflow:hidden;
+  display:flex;align-items:center;justify-content:center}
+.pt-img{width:100%;height:100%;object-fit:contain;display:block}
+.pt-shot[hidden]{display:none}
+.pt-badge{position:absolute;bottom:8px;background:rgba(0,0,0,.66);color:#fff;
+  font-size:11px;padding:4px 9px;border-radius:8px;pointer-events:none}
+.pt-meta{left:8px}.pt-zoom{right:8px}
+.pt-viewer{position:fixed;inset:0;background:#000;z-index:120;display:flex;align-items:center;justify-content:center}
+.pt-viewer img{max-width:100%;max-height:100%;object-fit:contain}
+/* 语种 chip：OCR 语种与翻译原文语种共用同一个值，杜绝 V1.7.6 两个下拉互相打架 */
+.pt-lbl{display:flex;align-items:baseline;justify-content:space-between;gap:8px;margin:14px 0 7px}
+.pt-lbl b{font-size:13.5px;color:var(--ink)}
+.pt-lbl span{font-size:11.5px;color:var(--sub)}
+.pt-langs{display:flex;gap:7px;flex-wrap:wrap}
+.pt-langs button{flex:1 1 auto;min-width:64px;min-height:44px;border:1px solid var(--line);
+  background:var(--btnbg);color:var(--ink);border-radius:10px;font-size:14px;font-family:inherit;padding:8px 7px}
+.pt-langs button.on{background:var(--brand);border-color:var(--brand);color:#fff;font-weight:700}
+.pt-prog{height:6px;background:var(--line);border-radius:6px;overflow:hidden;margin:10px 0 5px}
+.pt-prog i{display:block;height:100%;width:0;background:var(--brand);transition:width .2s}
+.pt-status{font-size:12px;color:var(--sub);line-height:1.55;margin:5px 0}
+.pt-warn{display:none;margin:8px 0 2px;padding:10px 11px;border-radius:10px;font-size:12.5px;
+  line-height:1.65;color:var(--errink);background:var(--errbg);border:1px solid var(--line)}
+.pt-warn.on{display:block}
+/* 识别文字：16px 防 iOS 自动缩放，最小 156px，比旧版 78px 大一倍 */
+.pt-text{width:100%;box-sizing:border-box;min-height:156px;border:1px solid var(--line);border-radius:12px;
+  padding:10px;font-size:16px;line-height:1.65;background:var(--card);color:var(--ink);font-family:inherit}
+.pt-text-acts{margin-top:7px}
+.pt-text-acts button{min-height:38px;padding:5px 12px;font-size:12.5px;color:var(--sub)}
+.pt-card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 11px;
+  margin-bottom:8px;position:relative;overflow:hidden}
+.pt-card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--rc,var(--brand))}
+.pt-card h4{margin:0 0 5px;font-size:12px;color:var(--sub);font-weight:700}
+.pt-card p{margin:0;font-size:15px;line-height:1.65;white-space:pre-wrap;word-break:break-word;color:var(--ink)}
+.pt-acts{display:flex;gap:8px;margin-top:8px;align-items:center;flex-wrap:wrap}
+.pt-acts button{border:1px solid var(--line);background:var(--btnbg);color:var(--sub);
+  border-radius:8px;padding:4px 10px;font-size:12px;min-height:34px;font-family:inherit}
+.pt-tag{display:inline-block;font-size:10.5px;color:var(--errink);background:var(--errbg);
+  border-radius:6px;padding:2px 7px}
+</style>
+</head>
+<body data-page-node-id="VimcWZc1b8XoBroz5QJYNY">
+<div data-page-node-id="wcuJvcB9zexUx90bGukZmu" id="app">
+<header data-page-node-id="4nCquHOsyrM4A11NFv56or">
+  <div data-page-node-id="eizK6PfQRU1Lc5bn69FA37" class="brand">
+    <div data-page-node-id="KNnFGORVw24UhDjzeXMWfb" class="mark"><!--pnid:Vd0B7A64aTw7AobvPyt11y-->越</div>
+    <div data-page-node-id="GQB4dfOot5LNSUKUgK8xav" class="bt">
+      <div data-page-node-id="5qh9yn4ciEYZjxetwK31YQ" class="t1"><!--pnid:7pEQYPwYtAglM7phaptiNz-->华越畅行</div>
+      <div data-page-node-id="1R9PSfToIm8PeTOf11xLbz" class="t2"><!--pnid:Q6qEgFHyySCTdH1qOrrQU9-->中文 ⇄ 越南 / 英文 / 泰文</div>
+    </div>
+    <div data-page-node-id="2ccW3ELKBB2NXmQnfEDwQ2" class="hact">
+      <button data-page-node-id="jaY68MMY3nWTYvW8IMWIic" class="ghost" id="fsBtn" type="button"><!--pnid:bG1ertuNuoF9Y3lyKLQDew-->字号 标准</button>
+      <span data-page-node-id="YBkAV4fSYJgA3HZqiEJqr9" class="ver" id="verTag"><!--pnid:minunWEoN0smKJnxCOidnT-->V1.7.8</span>
+    </div>
+  </div>
+</header>
+<div data-page-node-id="xhL7GDroQ4PpsSIjW3rPk1" class="searchbar">
+  <div data-page-node-id="2JrOyYoBOrtWxVZ1lVFyms" class="wrap">
+    <svg data-page-node-id="VbC8Ajio2GmIVbyGLDd1vX" aria-hidden="true" class="ico" viewBox="0 0 24 24"><circle data-page-node-id="9HRkFYnkRYg17EpZ94muaC" cx="11" cy="11" r="6.5"/><path data-page-node-id="1QCOaSVOBxBDyecr7a02HA" d="M15.8 15.8 21 21"/></svg>
+    <input data-page-node-id="Oltz4Hy682ID1JwI0eUqS3" autocomplete="off" enterkeyhint="search" id="qGlobal" placeholder="搜中文 / 越南文 / 英文 / 泰文，如：返工" type="search">
+    <button data-page-node-id="W13f5Y18GxwDJrL4qqR4Xj" aria-label="清空" class="clr" id="qClr" type="button"><!--pnid:OBEZUVaIQP4N2oBefO5TaR-->×</button>
+  </div>
+</div>
+<div data-page-node-id="eMfManqIvcEzPWpt9sldsx" id="main"></div>
+<nav data-page-node-id="nSo96ixfeCg9gOUSPcH6iz" class="tabbar">
+  <button data-page-node-id="q3V31B9Aq1ZUvz5otq17ST" class="on" data-tab="scene" type="button"><svg data-page-node-id="61o8eSRzFP2ur7bEzZ1oiN" aria-hidden="true" viewBox="0 0 24 24"><rect data-page-node-id="Y49bU9M89NlWqG4nCWkQFy" height="7.4" rx="1.6" width="7.4" x="3.2" y="3.2"/><rect data-page-node-id="umTd7vSJfiZ234PANsLPYX" height="7.4" rx="1.6" width="7.4" x="13.4" y="3.2"/><rect data-page-node-id="D8e9xokMrQbIt7F5ta4i7K" height="7.4" rx="1.6" width="7.4" x="3.2" y="13.4"/><rect data-page-node-id="eQIowUGhhOwjAImf8Su2IY" height="7.4" rx="1.6" width="7.4" x="13.4" y="13.4"/></svg><span data-page-node-id="iz2GKobmfSdf9B0z1MNn23"><!--pnid:SqKyaN5eo0pJSdzrhRslZ4-->场景</span></button>
+  <button data-page-node-id="D3TaMLaYPBq2o40Pec2LZc" data-tab="vocab" type="button"><svg data-page-node-id="Bjhamqf6vN7FxX4N22rAVa" aria-hidden="true" viewBox="0 0 24 24"><path data-page-node-id="elDXF8m3CzjlRH8SQIFK1V" d="M4.2 4.6A1.6 1.6 0 0 1 5.8 3h12.4a1.6 1.6 0 0 1 1.6 1.6v15.2a1 1 0 0 1-1.4.9L12 18.2l-6.4 2.5a1 1 0 0 1-1.4-.9z"/><path data-page-node-id="4sM4TOTPRm5egr1Bi5huF9" d="M8 7.6h8M8 11h5"/></svg><span data-page-node-id="LyyliwcQUhv3qdaw5JWE1R"><!--pnid:O2Uh5vXV2E6ufXpSQbL9qU-->词库</span></button>
+  <button data-page-node-id="BvMSWk50lvkZJd9YmG9tLw" data-tab="search" type="button"><svg data-page-node-id="22Vr0vsqkNRkj3GBHYd1Up" aria-hidden="true" viewBox="0 0 24 24"><circle data-page-node-id="dS2BBeroruO6K3DDCqjcJr" cx="10.8" cy="10.8" r="6.6"/><path data-page-node-id="WSei4nADEjlDlJsuweu5VX" d="M15.6 15.6 21 21"/></svg><span data-page-node-id="e9jq3mhFtyMk7Q9MDZ8pqu"><!--pnid:YdeVdVL9jR1B62IWFp7B1z-->搜索</span></button>
+  <button data-page-node-id="eHqmMBsknmsxsIwLlPZ9oN" data-tab="trans" type="button"><svg data-page-node-id="yfP41UOE5NOrPs04lDOkSK" aria-hidden="true" viewBox="0 0 24 24"><path data-page-node-id="LvaNkvyzufdxcxZnyMBYke" d="M4 8h11.5M11 4.4 15.5 8 11 11.6"/><path data-page-node-id="9yY17z3P2DuuagaDQAMkYH" d="M20 16H8.5M13 12.4 8.5 16 13 19.6"/></svg><span data-page-node-id="A16W7rmU6uotWnsGFdlz9g"><!--pnid:64ZePrsGSqetVmk57P7XVU-->互译</span></button>
+  <button data-page-node-id="cigfv7XHEojncCpd3A37VE" data-tab="num" type="button"><svg data-page-node-id="JTWS6r2YYqMOupESiBTqEy" aria-hidden="true" viewBox="0 0 24 24"><rect data-page-node-id="fzfMTMlPuPMO01dK9Mp2tO" height="18.4" rx="2.4" width="14" x="5" y="2.8"/><path data-page-node-id="1mSsqBrSCPjOhcujNSG0he" d="M8.6 7.4h6.8M8.6 12h2.2M12.4 12h3M8.6 16.4h2.2M12.4 16.4h3"/></svg><span data-page-node-id="SXJ84HDXO8BSb3JTEIrTLJ"><!--pnid:FpdAi3QMSaxhyCtL3LaqnM-->汇率</span></button>
+  <button data-page-node-id="5XAPK1GJyuFgxHIhofnH0E" data-tab="fav" type="button"><svg data-page-node-id="rtebReXaZ8WVVzKgUD4dZN" aria-hidden="true" viewBox="0 0 24 24"><path data-page-node-id="RrIDrsG8haiCb7QB4HjaNq" d="M12 3.4l2.7 5.6 6.1.86-4.45 4.3 1.06 6.1L12 17.4l-5.4 2.86 1.06-6.1L3.2 9.86l6.1-.86z"/></svg><span data-page-node-id="pVgWcUiLXmZpKawE2xiv2K"><!--pnid:gpeaOl90jvWoZ4KR1cpRdM-->收藏</span></button>
+</nav>
+</div>
+<div data-page-node-id="WRVGeiLPTKDqFhZjVi9M1V" id="mask"></div>
+<div data-page-node-id="NX13W5No0oH5ZzluJbibkO" id="toast"></div>
+<script data-page-node-id="6znjyey29vx7maNnqL86zD" data-pnid-children="WGZYUwFpQiU4uIaHgHOA2y">
+var APP_VER="1.7.8",APP_DATE="2026-11-11";
+// 场景数据 A：日常寒暄、生产作业
+// 每条：[中文, 越南文, 中文谐音(仅近似参考，声调以朗读为准)]
+var SC_A = [
+  {
+    id: 'greet', name: '日常寒暄',
+    items: [
+      ['你好', 'Xin chào', '新 早', '‘Hello!’', 'สวัสดีค่ะ'],
+      ['早上好', 'Chào buổi sáng', '早 布伊 桑', 'GOOD MORNING', 'สวัสดีตอนเช้า'],
+      ['下午好', 'Chào buổi chiều', '早 布伊 秋', 'Afternoon.', 'กระหม่อมเชื่อว่าพระองค์จะต้องทำได้เยี่ยม ไม่ต้องรีบนะพะยะค่ะ'],
+      ['晚上好', 'Chào buổi tối', '早 布伊 多伊', 'Good evening', '-... ฉันจะเข้าไปช่วยเม็กกี้กับเรซ่า'],
+      ['很高兴认识你', 'Rất vui được gặp bạn', '拉特 维 得 嘎 班', 'nice to meet you', '- ยินดีเช่นกันครับ คุณนาย'],
+      ['请问您贵姓？', 'Xin hỏi bạn tên gì?', '新 问 班 登 意', 'Can I have your last name ?', 'นามสกุลของคุณคืออะไร?'],
+      ['谢谢', 'Cảm ơn', '甘 恩', 'Thanks', 'ขอบคุณครับ'],
+      ['非常感谢', 'Cảm ơn rất nhiều', '甘 恩 拉 特 妞', 'Q: thank you so much.', '- ขอบคุณมาก'],
+      ['不客气', 'Không có gì', '空 果 吉', 'You\'re welcome', 'ไม่เป็นไร'],
+      ['对不起 / 不好意思', 'Xin lỗi', '新 罗伊', 'Sorry/Excuse me', 'ขอโทษ/ขอโทษ'],
+      ['没关系', 'Không sao', '空 骚', 'It doesn’t matter', '( "คู")'],
+      ['再见', 'Hẹn gặp lại', '亨 嘎 来', 'Bye', 'ลาก่อน'],
+      ['明天见', 'Hẹn gặp lại ngày mai', '亨 嘎 来 尼 麦', 'See u tomorrow', '- บาย - บาย เจอกันพรุ่งนี้'],
+      ['你吃了吗？', 'Bạn ăn cơm chưa?', '班 安 根 朱阿', 'Have you eaten yet? " she asks me, a typical greeting among the Chinese, who have long been focused on making sure everyone is fed.', 'นี่คุณ?'],
+      ['我吃饱了', 'Tôi ăn no rồi', '多伊 安 诺 罗伊', 'I\'m Full', 'ฉันอิ่มแล้ว เราควรจะไปได้'],
+      ['我来自中国', 'Tôi đến từ Trung Quốc', '多伊 登 德 中 郭', 'I come from China.', 'ฉันมาจากประเทศจีน'],
+      ['我是来出差的', 'Tôi đến đây công tác', '多伊 登 叠 贡 杂', 'I\'m here on business', 'ฉันมาทำธุรกิจที่นี่'],
+      ['我在工厂工作', 'Tôi làm việc ở nhà máy', '多伊 拉姆 维耶 欧 尼亚 梅', 'I work in a factory', 'ฉันทำงานในโรงงาน'],
+      ['你在哪里工作？', 'Bạn làm việc ở đâu?', '班 拉姆 维耶 欧 兜', 'Where do you work?', 'ทำงานที่ไหน ?'],
+      ['辛苦了', 'Bạn vất vả rồi', '班 瓦斯 瓦 罗伊', 'Good effort', 'ขยันจังเลยนะครับ'],
+      ['好的 / 可以', 'Được', '得', 'Ok/OK', 'โอเค เจ๋งเลย'],
+      ['好的，没问题', 'Được, không vấn đề', '得 空 万德', 'Absolutely! It\'s a deal.', 'ค่ะ ตกลงค่ะ'],
+      ['现在几点了？', 'Bây giờ là mấy giờ?', '巴 遮 拉 米 遮', 'What time was it?', 'กี่โมงแล้ว'],
+      ['请多关照', 'Xin giúp đỡ tôi', '新 朱普 佐 多伊', 'please treat me kindly', 'ยินดีที่ได้รู้จักนะ']
+    ]
+  },
+  {
+    id: 'prod', name: '生产作业',
+    items: [
+      ['生产线', 'Dây chuyền sản xuất', '戴 川 三 苏特', 'lines', 'สายพานการผลิต'],
+      ['开始生产', 'Bắt đầu sản xuất', '巴 兜 三 苏特', 'Start', 'เริ่มการผลิต'],
+      ['停机 / 停止生产', 'Dừng sản xuất', '敦 三 苏特', 'Shutdown/stop production', 'การปิดเครื่อง/การหยุดการผลิต'],
+      ['今天产量多少？', 'Sản lượng hôm nay bao nhiêu?', '三 鲁昂 哄 奈 包妞', 'How much are you producing today?', 'วันนี้คุณผลิตได้เท่าไหร่?'],
+      ['这个工序怎么做？', 'Công đoạn này làm thế nào?', '贡 当 内 拉姆 特 诺', 'How does this process work?', 'กระบวนการนี้ทำงานอย่างไร?'],
+      ['请按SOP作业', 'Hãy thao tác theo SOP', '海 操 杂 贴 SOP', 'Please press SOP job', 'กรุณากดงาน SOP'],
+      ['这是标准流程', 'Đây là quy trình chuẩn', '叠 拉 归 金 准', 'This is a standard process', 'นี่เป็นกระบวนการมาตรฐาน'],
+      ['这一步有问题', 'Bước này có vấn đề', '布 内 果 万德', 'There was a problem with this step', 'ขั้นตอนนี้มีปัญหา'],
+      ['要加班吗？', 'Có tăng ca không?', '果 唐 加 空', 'Want to work overtime?', 'ต้องการทำงานล่วงเวลาใช่ไหม?'],
+      ['今天计划完成了', 'Hôm nay hoàn thành rồi', '痕 奈 完 成 罗伊', 'Today the plan is done', 'วันนี้แผนเสร็จสิ้นแล้ว'],
+      ['什么时候交货？', 'Khi nào giao hàng?', '克 诺 加奥 杭', 'When will it be delivered?', 'จะจัดส่งเมื่อไร?'],
+      ['进度怎么样？', 'Tiến độ thế nào?', '田 多 特 诺', 'How\'s it going?', 'เป็นยังไงบ้าง?'],
+      ['进度落后了', 'Bị chậm trễ', '比 占 德', 'We\'re lagging behind', 'เราล้าหลัง'],
+      ['提前完成了', 'Xong sớm', '松 索姆', 'Completed early', 'เสร็จก่อนกำหนด'],
+      ['需要多少人？', 'Cần bao nhiêu người?', '甘 包妞 内古', 'How many people do you need?', 'คุณต้องการคนกี่คน?'],
+      ['做一个要多长时间？', 'Làm một cái mất bao lâu?', '拉姆 莫 该 马特 包 楼', 'How long does it take to make one?', 'ใช้เวลานานแค่ไหนในการผลิต?'],
+      ['换线', 'Đổi dây chuyền', '多伊 戴 川', 'Switch Lines', 'สลับสายการผลิต'],
+      ['物料不够', 'Thiếu vật tư', '修 瓦 图', 'Not enough materials', 'วัสดุไม่เพียงพอ'],
+      ['请补充物料', 'Hãy bổ sung vật tư', '海 波 松 瓦 图', 'Please refill the materials', 'โปรดเติมวัสดุ'],
+      ['请戴好劳保用品', 'Hãy đeo đồ bảo hộ', '海 德欧 多 包霍', 'Please wear labor protection supplies', 'โปรดสวมอุปกรณ์คุ้มครองแรงงาน'],
+      ['注意安全', 'Chú ý an toàn', '主 意 安 团', 'Keep safe', 'ขอให้นายปลอดภัยนะ'],
+      ['禁止触摸', 'Cấm chạm vào', '敢 扎 沃', 'Do not touch', 'อย่าแตะต้อง'],
+      ['紧急停止按钮', 'Nút dừng khẩn cấp', '努 敦 根加普', 'Emergency Stop button.', 'ปุ่มหยุดฉุกเฉิน'],
+      ['交接班', 'Chuyển ca', '川 加', 'Shifting of duty', 'การเปลี่ยนกะ'],
+      ['这批订单', 'Đơn hàng này', '敦 杭 内', 'This batch of orders', 'ชุดคำสั่งซื้อนี้']
+    ]
+  }
+];
+
+// 场景数据 B：品质检查、设备工具
+// 每条：[中文, 越南文, 中文谐音(仅近似参考，声调以朗读为准)]
+var SC_B = [
+  {
+    id: 'qual', name: '品质检查',
+    items: [
+      ['检查一下', 'Kiểm tra một chút', '金扎 莫 朱特', 'Check.', 'โปรดตรวจสอบ'],
+      ['合格', 'Đạt', '达', 'Qualified', 'ผ่าน'],
+      ['不合格', 'Không đạt', '空达', 'Unqualified', 'ไม่เป็นไปตามข้อกำหนด'],
+      ['有不良', 'Có lỗi', '果 罗伊', 'Defective', 'มีข้อบกพร่อง'],
+      ['外观不良', 'Lỗi ngoại quan', '罗伊 捏 关', 'Poor appearance', 'รูปลักษณ์ไม่ดี'],
+      ['尺寸不对', 'Kích thước không đúng', '克修克 空 东', 'Wrong size', 'ขนาดไม่ถูกต้อง'],
+      ['功能不良', 'Lỗi chức năng', '罗伊 寸 能', 'Dysfunctional', 'การทำงานผิดปกติ'],
+      ['需要返工', 'Phải làm lại', '法伊 拉姆 来', 'Needs Rework', 'ต้องทำงานใหม่'],
+      ['报废', 'Loại bỏ', '洛 波', 'scraping', 'เศษวัสดุ'],
+      ['不良率是多少？', 'Tỷ lệ lỗi bao nhiêu?', '地 累 罗伊 包妞', 'What is the bad rate?', 'อัตราที่ไม่ดีคืออะไร?'],
+      ['做首件检查', 'Kiểm tra lần đầu', '金扎 兰 兜', 'Do your first inspection', 'ทำการตรวจสอบครั้งแรกของคุณ'],
+      ['抽检', 'Kiểm tra lấy mẫu', '金扎 雷 毛', 'Sampling inspection', 'การตรวจสอบการสุ่มตัวอย่าง'],
+      ['全检', 'Kiểm tra toàn bộ', '金扎 团 波', 'Total inspection', 'การตรวจสอบเต็มรูปแบบ'],
+      ['退给供应商', 'Trả về nhà cung cấp', '扎 维 尼亚 供 加普', 'Return to Supplier', 'กลับไปที่ซัพพลายเออร์'],
+      ['这是限度样品', 'Đây là mẫu giới hạn', '叠 拉 毛 佐 限', 'This is the limit sample', 'นี่คือตัวอย่างขีดจำกัด'],
+      ['请记录数据', 'Hãy ghi lại số liệu', '海 给 来 索 留', 'Please record data', 'โปรดบันทึกข้อมูล'],
+      ['测量值是多少？', 'Giá trị đo là bao nhiêu?', '加 稚 多 拉 包妞', 'What are the measurements?', 'การวัดคืออะไร?'],
+      ['在公差内', 'Trong dung sai', '庄 容 赛', 'Within tolerance', 'ภายในความคลาดเคลื่อนที่ยอมรับได้'],
+      ['超出公差', 'Ngoài dung sai', '外 容 赛', 'Exceeds the tolerance', 'เกินความคลาดเคลื่อนที่ยอมรับได้'],
+      ['请确认一下', 'Hãy xác nhận', '海 萨 嫩', 'Please confirm', 'โปรดยืนยัน'],
+      ['再测一次', 'Đo lại một lần', '多 来 莫 兰', 'Test again', 'ทดสอบอีกครั้ง'],
+      ['需要客户确认', 'Cần khách hàng xác nhận', '根 克 杭 萨 嫩', 'Customer confirmation required', 'ต้องมีการยืนยันจากลูกค้า'],
+      ['品质报告', 'Báo cáo chất lượng', '包 高 贾鲁昂', 'Quality Report', 'รายงานคุณภาพ'],
+      ['这个没问题', 'Cái này không sao', '该 内 空 骚', 'No problem!', 'อันนี้ไม่มีปัญหา'],
+      ['请拍照留证', 'Hãy chụp ảnh làm bằng chứng', '海 朱普 安 拉姆 帮 证', 'Please take a photo to leave a permit', 'โปรดถ่ายรูปเพื่อออกใบอนุญาต']
+    ]
+  },
+  {
+    id: 'equip', name: '设备工具',
+    items: [
+      ['设备坏了', 'Thiết bị hỏng', '给 比 轰', 'The device is broken', 'อุปกรณ์เสีย'],
+      ['请维修', 'Hãy sửa chữa', '海 苏阿贾', 'Please repair it', 'โปรดซ่อมแซม'],
+      ['已经修好了', 'Đã sửa xong', '达 苏阿 松', 'It\'s fixed', 'แก้ไขแล้ว'],
+      ['需要换零件', 'Cần thay linh kiện', '甘 泰 林健', 'Parts need to be replaced', 'ต้องเปลี่ยนอะไหล่'],
+      ['这个工具叫什么？', 'Dụng cụ này gọi là gì?', '冬古 内 戈伊 拉 吉', 'What is the name of this tool?', 'เครื่องมือนี้มีชื่อว่าอะไร?'],
+      ['扳手', 'Cờ lê', '格来', 'wrench', 'คันโยก'],
+      ['螺丝刀', 'Tua vít', '图 维特', 'Screw Driver', 'เอาไขควงไหม?'],
+      ['钳子', 'Kìm', '金', 'Pliers', 'แล้วก็คีม'],
+      ['电烙铁', 'Mỏ hàn thiếc', '莫 含 锡', 'Electric soldering iron', 'เหล็กบัดกรีไฟฟ้า'],
+      ['万用表', 'Đồng hồ đo', '东 霍 多', 'multimetrasb', 'มัลติมิเตอร์'],
+      ['开机', 'Bật máy', '拔 梅', 'Turn on', 'แอ๊คชั่น.'],
+      ['关机', 'Tắt máy', '塔 梅', 'Shutdown', 'ปิดระบบ'],
+      ['校准设备', 'Hiệu chuẩn thiết bị', '要 准 给 比', 'Calibration equipment', 'อุปกรณ์สอบเทียบ'],
+      ['设备保养', 'Bảo dưỡng thiết bị', '宝 养 给 比', 'Equipment maintenance', 'การบำรุงรักษาอุปกรณ์'],
+      ['请清洁设备', 'Hãy vệ sinh máy', '海 维辛 梅', 'Please clean the device', 'โปรดทำความสะอาดอุปกรณ์'],
+      ['备件不够', 'Phụ tùng không đủ', '富 同 空 杜', 'Not enough spare parts', 'อะไหล่ไม่พอ'],
+      ['联系设备厂家', 'Liên hệ nhà sản xuất', '连 赫 尼亚 三 苏特', 'Contact the device manufacturer', 'ติดต่อผู้ผลิตอุปกรณ์'],
+      ['参数是多少？', 'Thông số là bao nhiêu?', '通 索 拉 包妞', 'What are the parameters?', 'พารามิเตอร์มีอะไรบ้าง?'],
+      ['气压不足', 'Áp suất thấp', '阿 速 塔普', 'Air pressure insufficient', 'ความดันอากาศไม่เพียงพอ'],
+      ['电压不稳', 'Điện áp không ổn định', '甸 阿 空 稳 定', 'Voltage unstable', 'แรงดันไฟฟ้าไม่เสถียร'],
+      ['检查电路', 'Kiểm tra mạch điện', '金扎 麦 甸', 'Check circuitry.', 'ตรวจสอบวงจร'],
+      ['这个按钮有什么用？', 'Nút này để làm gì?', '努特 内 呆 拉姆 吉', 'What does this button do?', 'ปุ่มนี้ทำหน้าที่อะไร?'],
+      ['请把那个递给我', 'Hãy đưa cho tôi cái kia', '海 杜阿 卓 多伊 该 基亚', 'Pass me that, please.', 'ส่งมาให้ฉันที'],
+      ['哪台设备在用？', 'Máy nào đang chạy?', '梅 诺 挡 扎伊', 'Which device is in use?', 'อุปกรณ์ใดที่ใช้งานอยู่'],
+      ['先停机检查', 'Dừng máy kiểm tra trước', '敦 梅 金扎 卓', 'Shutdown inspection first', 'การตรวจสอบการปิดเครื่องก่อน']
+    ]
+  }
+];
+
+// 场景数据 C：会议沟通、餐饮生活
+// 每条：[中文, 越南文, 中文谐音(仅近似参考，声调以朗读为准)]
+var SC_C = [
+  {
+    id: 'meet', name: '会议沟通',
+    items: [
+      ['开会', 'Họp', '霍普', 'meet in.', 'การประชุม'],
+      ['请来开会', 'Mời đi họp', '枚 迪 霍普', 'Please come to the meeting', 'กรุณามาเข้าร่วมการประชุม'],
+      ['什么时候开会？', 'Khi nào họp?', '克 诺 霍普', 'What time is the meeting?', 'จะมีการประชุมเมื่อไร?'],
+      ['在哪里开会？', 'Họp ở đâu?', '霍普 欧 兜', 'Where are the meetings?', 'การประชุมอยู่ที่ไหน?'],
+      ['今天讨论什么？', 'Hôm nay thảo luận gì?', '痕 奈 陶 伦 吉', 'What are we discussing today?', 'วันนี้เรากำลังคุยเรื่องอะไรกันอยู่?'],
+      ['请解释一下', 'Hãy giải thích', '海 牙 提克', 'Please explain...', 'โปรดอธิบาย'],
+      ['我同意', 'Tôi đồng ý', '多伊 东 意', 'I agree', '/N แกก็ไม่รู้หรอกว่า'],
+      ['我不同意', 'Tôi không đồng ý', '多伊 空 东 意', 'I disagree', '- ฉันไม่ได้จะพูดนะ'],
+      ['这个问题要讨论', 'Vấn đề này cần thảo luận', '万德 内 甘 陶 伦', 'This is an issue to discuss', 'นี่เป็นปัญหาที่ต้องคุยกัน'],
+      ['请稍等', 'Xin chờ một chút', '新 朝 莫 朱特', 'Wait for a moment', 'จดเบอร์ไว้นะค่ะ'],
+      ['请再说一遍', 'Hãy nói lại', '海 诺伊 来', 'please say it again', 'ว่าไงนะคะ'],
+      ['我没听懂', 'Tôi không hiểu', '多伊 空 休', 'I didn\'t understand', 'ฉันไม่เข้าใจ'],
+      ['请说慢一点', 'Hãy nói chậm hơn', '海 诺伊 占 亨', 'Slow down, please.', 'ช้าลงหน่อยได้โปรด'],
+      ['可以说中文吗？', 'Nói tiếng Trung được không?', '诺伊 田 中 得 空', 'No im check in google also about your message to me', 'คุณสามารถพูดภาษาจีนได้หรือไม่?'],
+      ['可以说英文吗？', 'Nói tiếng Anh được không?', '诺伊 田 安 得 空', 'Can you speak English?', 'คุณสามารถพูดภาษาอังกฤษได้หรือไม่?'],
+      ['请写在白板上', 'Hãy viết lên bảng', '海 维 特 伦 帮', 'Please write on the board', 'โปรดเขียนบนกระดาน'],
+      ['下一步做什么？', 'Bước tiếp theo làm gì?', '布 贴普 贴 拉姆 吉', 'What will you do next?', 'ขั้นตอนต่อไปคืออะไร?'],
+      ['谁负责这件事？', 'Ai phụ trách việc này?', '爱 富 扎 维耶 内', 'Who\'s in charge?', 'ใครเป็นผู้รับผิดชอบ?'],
+      ['截止日期是什么时候？', 'Hạn chót là khi nào?', '汉 捉 拉 克 诺', 'WHEN IS THE DEADLINE?', 'เมื่อไหร่จะถึงกำหนด?'],
+      ['工作汇报', 'Báo cáo công việc', '包 高 贡 维耶', 'Work Debrief', 'การสรุปการทำงาน'],
+      ['需要配合', 'Cần phối hợp', '甘 配 霍普', 'Needs cooperation', 'ต้องการความร่วมมือ'],
+      ['预算是多少？', 'Ngân sách bao nhiêu?', '恩 索 包妞', 'What is the budget?', 'มีงบประมาณเท่าไหร่?'],
+      ['这个方案可行吗？', 'Phương án này khả thi không?', '方 安 内 卡 衣 空', 'Is this workable?', 'สิ่งนี้ใช้งานได้หรือไม่?'],
+      ['散会', 'Họp xong rồi', '霍普 松 罗伊', 'meeting adjourned', 'สุภาพสตรี และสุภาพบุรุษ ทำได้ดีมาก เราอาจจะได้ผลอะไรก็ได้'],
+      ['会后单独沟通', 'Trao đổi riêng sau buổi họp', '招 多伊 然 扫 布伊 霍普', 'Communicate separately after the meeting', 'สื่อสารแยกกันหลังการประชุม']
+    ]
+  },
+  {
+    id: 'life', name: '餐饮生活',
+    items: [
+      ['我饿了', 'Tôi đói rồi', '多伊 多伊 罗伊', 'I am hungry', 'ฉันหิวจัง'],
+      ['去哪里吃饭？', 'Đi ăn ở đâu?', '迪 安 欧 兜', 'Where to eat?', 'กินที่ไหนดี?'],
+      ['好吃', 'Ngon quá', '恩果 瓜', 'It\'s delicious.', 'ดี'],
+      ['多少钱？', 'Bao nhiêu tiền?', '包妞 田', 'How much?', '- เท่าไร?'],
+      ['太贵了', 'Đắt quá', '达特 瓜', 'too expensive', 'เเพงไป'],
+      ['能便宜点吗？', 'Giảm giá được không?', '减 加 德 空', 'Could it be cheaper?', 'ราคาถูกกว่านี้ได้ไหม?'],
+      ['我要这个', 'Tôi lấy cái này', '多伊 雷 该 内', '(OS) I want this one.', 'ฉันต้องการสิ่งนี้'],
+      ['不要辣', 'Không cay', '空 盖', 'Don\'t be spicy', 'อย่าเผ็ดร้อน'],
+      ['少放点盐', 'Bớt muối', '波 莫', 'Add less salt', 'เติมเกลือน้อยลง'],
+      ['请给我筷子', 'Hãy đưa cho tôi đôi đũa', '海 杜阿 卓 多伊 堆 朱阿', 'Please give me chopsticks', 'โปรดมอบตะเกียบให้ฉัน'],
+      ['买单', 'Tính tiền', '挺 田', 'Buy Orders', 'ขอบิลด้วย'],
+      ['洗手间在哪里？', 'Nhà vệ sinh ở đâu?', '尼亚 维辛 欧 兜', 'Where is the restroom?', 'ห้องน้ำไปทางไหนคะ ?'],
+      ['请给我一瓶水', 'Cho tôi một chai nước', '卓 多伊 莫 该 努克', 'Please give me a bottle of water', 'โปรดให้น้ำฉันหนึ่งขวด'],
+      ['咖啡', 'Cà phê', '卡菲', 'C O F F E E', 'กาแฟ'],
+      ['茶', 'Trà', '扎', 'tea', 'ชา'],
+      ['我住哪个酒店？', 'Tôi ở khách sạn nào?', '多伊 欧 克 桑 诺', 'Which hotel am I staying at?', 'ฉันพักที่โรงแรมไหน?'],
+      ['几点退房？', 'Mấy giờ trả phòng?', '米 遮 扎 丰', 'What time do you check out?', 'คุณเช็คเอาท์กี่โมง?'],
+      ['几点开饭？', 'Mấy giờ ăn cơm?', '米 遮 安 根', 'What time does the meal start?', 'มื้ออาหารเริ่มกี่โมง?'],
+      ['早餐在哪里吃？', 'Ăn sáng ở đâu?', '安 桑 欧 兜', 'Where to eat breakfast?', 'กินอาหารเช้าที่ไหนดี?'],
+      ['有啤酒吗？', 'Có bia không?', '果 比亚 空', 'Got a beer?', 'มีเบียร์ไหม?'],
+      ['请推荐当地特色菜', 'Hãy giới thiệu món đặc sản', '海 佐 扫 蒙 呆 三', 'Please recommend local specialties', 'โปรดแนะนำเมนูพิเศษในท้องถิ่น'],
+      ['我不能吃这个', 'Tôi không ăn cái này được', '多伊 空 安 该 内 得', 'I can\'t eat this.', 'ฉันกินสิ่งนี้ไม่ได้'],
+      ['很好喝', 'Uống ngon', '翁 恩果', 'It’s very good.”', '-มันดีมาก'],
+      ['请打包', 'Gói lại giúp tôi', '果 来 朱普 多伊', 'Please pack', 'โปรดจัดกระเป๋า'],
+      ['我住XX酒店', 'Tôi ở khách sạn XX', '多伊 欧 克 桑 XX', 'I\'m staying at Hotel XX.', 'ฉันพักที่โรงแรม XX']
+    ]
+  }
+];
+
+// 场景数据 D：交通住宿、紧急求助
+// 每条：[中文, 越南文, 中文谐音(仅近似参考，声调以朗读为准)]
+var SC_D = [
+  {
+    id: 'traffic', name: '交通住宿',
+    items: [
+      ['去机场', 'Ra sân bay', '拉 森 拜', 'Going to the airport?', 'ไม่ พวกเราต้องการให้นายไปด้วย พี่ชาย'],
+      ['去工厂', 'Về nhà máy', '维 尼亚 梅', 'Go to the factory', 'ไปที่โรงงาน'],
+      ['我赶飞机', 'Tôi đang kịp máy bay', '多伊 挡 克 梅 拜', 'I\'ll catch the plane.', 'ฉันจะไปขึ้นเครื่องบิน'],
+      ['从这里到工厂多远？', 'Từ đây đến nhà máy bao xa?', '德 叠 登 尼亚 梅 包 沙', 'How far is the factory from here?', 'โรงงานอยู่ไกลจากที่นี่แค่ไหน?'],
+      ['我要打车', 'Tôi bắt taxi', '多伊 巴 的克西', 'I need a taxi', 'ฉันต้องการแท็กซี่'],
+      ['请在这里停车', 'Dừng ở đây', '敦 欧 叠', 'Please park here', 'โปรดจอดที่นี่'],
+      ['左转', 'Rẽ trái', '热 柴', 'took left', 'ซ้าย'],
+      ['右转', 'Rẽ phải', '热 法伊', 'Turn right.}', 'ขวาหรอ ? -ขวา'],
+      ['一直往前走', 'Cứ đi thẳng', '居 迪 唐', 'Straight ahead', 'ตรงไปข้างหน้า'],
+      ['到了叫我', 'Đến nơi gọi tôi', '登 挪 戈伊 多伊', 'Call me when you get there.', 'โทรหาฉันเมื่อคุณไปถึงที่นั่น'],
+      ['请开慢一点', 'Hãy chạy chậm hơn', '海 扎伊 占 亨', 'Please drive slower', 'โปรดขับรถให้ช้าลง'],
+      ['几点出发？', 'Mấy giờ khởi hành?', '米 遮 起 航', 'What time do we leave?', 'เราจะออกเดินทางกี่โมง?'],
+      ['车票', 'Vé xe', '维 塞', 'Ticket', 'ตั๋ว'],
+      ['我住几楼？', 'Tôi ở tầng mấy?', '多伊 欧 曾 米', 'What floor do I live on?', 'ฉันอาศัยอยู่ชั้นไหน?'],
+      ['电梯在哪里？', 'Thang máy ở đâu?', '唐 梅 欧 兜', 'Where is the elevator?', 'ลิฟต์อยู่ที่ไหน?'],
+      ['WiFi密码是多少？', 'Mật khẩu WiFi là gì?', '马特 考 WiFi 拉 吉', 'What is the wifi password?', 'รหัสผ่าน Wi-Fi คืออะไร?'],
+      ['我迷路了', 'Tôi bị lạc đường', '多伊 比 拉克 当', 'I lost my way.', 'ฉันเสียทางเดินของฉัน'],
+      ['请看地图', 'Hãy xem bản đồ', '海 赛 班 多', 'Please look at the map', 'โปรดดูแผนที่'],
+      ['请帮我叫车', 'Hãy gọi xe giúp tôi', '海 戈伊 塞 朱普 多伊', 'Request a ride for me', 'เรียกรถให้ฉัน'],
+      ['我在这里下车', 'Tôi xuống đây', '多伊 修 叠', 'I\'ll get off here', 'ฉันจะลงจากที่นี่'],
+      ['几点来接我？', 'Mấy giờ đón tôi?', '米 遮 东 多伊', 'What time will you pick me up?', 'คุณจะมารับฉันกี่โมง?'],
+      ['开快一点', 'Chạy nhanh lên', '扎伊 宁 伦', 'Drive faster', 'ไป เร็ว ๆ'],
+      ['到工厂要多久？', 'Đến nhà máy mất bao lâu?', '登 尼亚 梅 马特 包 楼', 'How long does it take to get to the factory?', 'ใช้เวลานานแค่ไหนกว่าจะถึงโรงงาน?'],
+      ['请开发票', 'Hãy xuất hóa đơn', '海 苏特 华敦', 'Please invoice', 'โปรดออกใบแจ้งหนี้'],
+      ['这是去机场的路吗？', 'Đây có phải đường ra sân bay không?', '叠 果 法伊 当 拉 森 拜 空', 'Is this the way to the airport?', 'นี่คือทางไปสนามบินใช่ไหม?']
+    ]
+  },
+  {
+    id: 'sos', name: '紧急求助',
+    items: [
+      ['救命！', 'Cứu với!', '古 维', 'HELP!', '- ช่วยด้วย'],
+      ['着火了！', 'Cháy rồi!', '拆 罗伊', 'Fire plume!!!', 'ยิง'],
+      ['快跑！', 'Chạy!', '扎伊(重读)', 'Run! Quickly!', '- พระเจ้า! - ไป!'],
+      ['请打急救电话115', 'Gọi cấp cứu 115', '戈伊 加普 古 115', 'Please call emergency services 115', 'โปรดโทรติดต่อหน่วยบริการฉุกเฉิน 115'],
+      ['请打报警电话113', 'Gọi cảnh sát 113', '戈伊 金 萨特 113', 'Please call the police 113', 'โปรดโทรหาตำรวจ 113'],
+      ['有人受伤了', 'Có người bị thương', '果 内古 比 汤', 'Someone was injured', 'บางคนได้รับบาดเจ็บ'],
+      ['我要去医院', 'Tôi cần đi bệnh viện', '多伊 甘 迪 本 温', 'I\'m going to the hospital.', 'ฉันจะไปโรงพยาบาล'],
+      ['请联系中国大使馆', 'Hãy liên hệ Đại sứ quán Trung Quốc', '海 连 赫 大 苏 贯 中 郭', 'Please contact the Chinese Embassy', 'โปรดติดต่อสถานทูตจีน'],
+      ['我的护照丢了', 'Tôi mất hộ chiếu', '多伊 马特 霍普 秋', 'I lost my passport.', 'หนังสือเดินทางของฉันหาย'],
+      ['我过敏了', 'Tôi bị dị ứng', '多伊 比 迪 温', 'I\'m allergic', 'ฉันแพ้'],
+      ['请叫保安', 'Hãy gọi bảo vệ', '海 戈伊 包 维', 'Call security, please.', 'โปรดโทรหาเจ้าหน้าที่รักษาความปลอดภัย'],
+      ['请叫负责人', 'Hãy gọi người phụ trách', '海 戈伊 内古 富 扎', 'Please call the person in charge', 'โปรดโทรหาผู้รับผิดชอบ'],
+      ['需要医生', 'Cần bác sĩ', '甘 巴克 西', 'Doctor Needed', 'แพทย์ที่จำเป็น'],
+      ['我的手机没电了', 'Điện thoại tôi hết pin', '甸 托 多伊 黑 宾', '“My cellphone battery died.”', 'โทรศัพท์ของฉันใช้งานไม่ได้'],
+      ['请借我充电器', 'Cho tôi mượn sạc', '卓 多伊 面 萨', 'Please lend me a charger', 'โปรดให้ฉันยืมที่ชาร์จ'],
+      ['药店在哪里？', 'Nhà thuốc ở đâu?', '尼亚 图克 欧 兜', 'Where is the pharmacy?', 'ร้านขายยาอยู่ที่ไหน?'],
+      ['停电了', 'Mất điện', '马特 甸', 'The power is out.', 'พอดีไฟมันดับน่ะ'],
+      ['这里不安全', 'Ở đây không an toàn', '欧 叠 空 安 团', 'It\'s not safe here.', 'มันไม่ปลอดภัย!'],
+      ['请撤离', 'Sơ tán', '索 摊', 'Please evacuate', 'โปรดอพยพ'],
+      ['化学品泄漏', 'Hóa chất rò rỉ', '华 贾 罗 衣', 'chemical spills', 'การรั่วไหลของสารเคมี'],
+      ['请给我防护用品', 'Hãy đưa đồ bảo hộ', '海 杜阿 多 包霍', 'Please give me protective gear', 'โปรดมอบอุปกรณ์ป้องกันให้ฉันด้วย'],
+      ['我需要翻译', 'Tôi cần phiên dịch', '多伊 甘 菲恩 迪', 'I need a translation', 'ฉันต้องการคำแปล'],
+      ['别紧张', 'Bình tĩnh', '兵 静', 'Take it easy', '- อย่าห่วงเลยน่า'],
+      ['请帮帮我', 'Giúp tôi với', '朱普 多伊 维', 'please help me', 'ช่วยด้วย! ช่วยด้วย! ช่วยด้วย!'],
+      ['请带我去派出所', 'Đưa tôi đến công an', '杜阿 多伊 登 贡 安', 'Please take me to the police station', 'โปรดพาฉันไปที่สถานีตำรวจ']
+    ]
+  }
+];
+
+// 越南盾金额速查数据（谐音口径与用户提供的《高频单词简表》一致：một=莫 mười=木伊 trăm=查姆 nghìn=宁 triệu=丢）
+// 每条：[阿拉伯数字, 中文含义（含人民币估算）, 越南文, 中文谐音(仅近似参考)]
+var MONEY = [
+  ['5.000', '五千盾 ≈ 1.4元', 'năm nghìn đồng', '南 宁 东', '5,000 guilders ≈ 1.4 yuan', '5,000 กิลเดอร์ ≈ 1.4 หยวน'],
+  ['10.000', '一万盾 ≈ 2.8元', 'mười nghìn đồng', '木伊 宁 东', '10,000 guilders ≈ 2.8 yuan', '10,000 กิลเดอร์ ≈ 2.8 หยวน'],
+  ['20.000', '两万盾 ≈ 5.6元', 'hai mươi nghìn đồng', '海 木伊 宁 东', '20,000 guilders ≈ 5.6 yuan', '20,000 กิลเดอร์ ≈ 5.6 หยวน'],
+  ['50.000', '五万盾 ≈ 14元', 'năm mươi nghìn đồng', '南 木伊 宁 东', '50,000 guilders ≈ 14 yuan', '50,000 กิลเดอร์ ≈ 14 หยวน'],
+  ['100.000', '十万盾 ≈ 28元', 'một trăm nghìn đồng', '莫 查姆 宁 东', '100,000 guilders ≈ 28 yuan', '100,000 กิลเดอร์ ≈ 28 หยวน'],
+  ['200.000', '二十万盾 ≈ 56元', 'hai trăm nghìn đồng', '海 查姆 宁 东', '200,000 guilders ≈ 56 yuan', '200,000 กิลเดอร์ ≈ 56 หยวน'],
+  ['500.000', '五十万盾 ≈ 139元', 'năm trăm nghìn đồng', '南 查姆 宁 东', '500,000 guilders ≈ 139 yuan', '500,000 กิลเดอร์ ≈ 139 หยวน'],
+  ['1.000.000', '一百万盾 ≈ 278元', 'một triệu đồng', '莫 丢 东', '1 million guilders ≈ 278 yuan', '1 ล้านกิลเดอร์ ≈ 278 หยวน']
+];
+
+// 高频词库数据（来源：用户 2026-11-02 提供的《高频单词简表》，谐音/释义一字未改）
+// 每条：[越南文, 中文谐音(仅近似参考), 中文意思]
+var VOCAB = [
+  {
+    id: 'addr', name: '称呼',
+    items: [
+      ['anh', '安', '哥（男性，平级/年长男员工、供应商男）', 'Elder Brother (Male, Senior/Senior Male Employee, Supplier Male)', 'พี่ชาย (ชาย, พนักงานชายอาวุโส/อาวุโส, ซัพพลายเออร์ชาย)'],
+      ['chị', '芝', '姐（对方女性）', 'Sister (the other woman)', 'น้องสาว (ผู้หญิงอีกคน)'],
+      ['cô', '果', '阿姨、小姑娘（年轻女、年纪大女性）', 'Auntie, little girl (young woman, older woman)', 'ป้าเด็กหญิงตัวน้อย (หญิงสาวหญิงชรา)'],
+      ['chú', '朱', '叔叔（中年男性）', 'Uncle (middle-aged male)', 'ลุง (ชายวัยกลางคน)'],
+      ['bác', '巴克', '大伯、前辈（年长很多）', 'Uncle, Senior (much older)', 'ลุง, ผู้อาวุโส (แก่กว่ามาก)'],
+      ['em', '恩', '弟、妹（对方比自己小）', 'Brother and sister (the other party is younger than himself)', 'พี่ชายและน้องสาว (อีกฝ่ายอายุน้อยกว่าตัวเอง)'],
+      ['sếp', '塞普', '领导、老板、主管', 'Leader, Boss, Supervisor', 'หัวหน้า, หัวหน้างาน, หัวหน้างาน']
+    ]
+  },
+  {
+    id: 'vnum', name: '数字',
+    items: [
+      ['không', '空', '0', '0', 'ศูนย์'],
+      ['một', '莫', '1', 'One', 'หนึ่ง'],
+      ['hai', '海', '2', '2', 'สอง'],
+      ['ba', '巴', '3', '3', 'สาม'],
+      ['bốn', '本', '4', '4', 'สี่'],
+      ['năm', '南', '5', '5', 'ห้า'],
+      ['sáu', '扫', '6', '6', 'หก'],
+      ['bảy', '贝', '7', '7', 'เจ็ด'],
+      ['tám', '当', '8', '8', 'แปด'],
+      ['chín', '金', '9', '9', 'เก้า'],
+      ['mười', '木伊', '10', '10', 'สิบ'],
+      ['mười một', '木伊莫', '11', '11', 'สิบเอ็ด'],
+      ['hai mươi', '海木伊', '20', '20', 'ยี่สิบ'],
+      ['ba mươi', '巴木伊', '30', '30', 'สามสิบ'],
+      ['bốn mươi', '本木伊', '40', '40', 'สี่สิบ'],
+      ['năm mươi', '南木伊', '50', '50', 'ห้าสิบ'],
+      ['sáu mươi', '扫木伊', '60', '60', 'หกสิบ'],
+      ['bảy mươi', '贝木伊', '70', '70', 'เจ็ดสิบ'],
+      ['tám mươi', '当木伊', '80', '80', 'แปดสิบ'],
+      ['chín mươi', '金木伊', '90', '90', 'เก้าสิบ'],
+      ['một trăm', '莫 查姆', '100', '100', 'หนึ่งร้อย'],
+      ['một nghìn', '莫 宁', '1000', '1000', 'หนึ่งพัน'],
+      ['một triệu', '莫 丢', '100万', '300 thousand dollars', 'เงิน 1 ล้าน'],
+      ['một tỷ', '莫 滴', '10亿', '30 million dollars', '1 พันล้าน']
+    ]
+  },
+  {
+    id: 'time', name: '时间',
+    items: [
+      ['ngày', '尼', '天、日', 'Days', 'วัน'],
+      ['tuần', '屯', '周', 'WEEKS', 'สัปดาห์'],
+      ['tháng', '唐', '月', 'months', 'จันทรา'],
+      ['năm', '南', '年', 'Year', 'วัน'],
+      ['giờ', '遮', '小时、点钟', 'Hours, o\'clock', 'ชั่วโมง, นาฬิกา'],
+      ['phút', '普特', '分钟', 'Minute', 'นาที'],
+      ['giây', '扎伊', '秒', 'Second', 'วิ'],
+      ['sáng', '桑', '早上、白班', 'Morning, day shift', 'เช้ากะกลางวัน'],
+      ['chiều', '秋', '下午', 'afternoon', 'บ่าย'],
+      ['tối', '多伊', '晚上、夜班', 'Evening, night shift', 'ตอนเย็นกะกลางคืน'],
+      ['hôm nay', '哄奈', '今天', 'today', 'วันนี้'],
+      ['hôm qua', '哄瓜', '昨天', 'yesterday', 'เมื่อวาน'],
+      ['ngày mai', '尼麦', '明天', 'tomorrow', 'พรุ่งนี้ (phròòng nēē)'],
+      ['tuần này', '屯内', '本周', 'This Week', 'สัปดาห์นี้'],
+      ['tuần sau', '屯扫', '下周', 'Next Week', 'สัปดาห์หน้า'],
+      ['trước', '卓', '之前', 'before', 'ก่อน'],
+      ['sau', '扫', '之后', 'After', 'แล้ว...'],
+      ['đúng giờ', '敦遮', '准时', 'Punctual', 'ตรงเวลา'],
+      ['trễ', '德', '迟到、延期', 'Late arrivals, delays', 'การมาถึงล่าช้าเกิดความล่าช้า']
+    ]
+  },
+  {
+    id: 'pos', name: '方位',
+    items: [
+      ['trên', '腾', '上面', '(a', '-ข้างบน'],
+      ['dưới', '杜伊', '下面', 'Now', 'ตรงนั้น'],
+      ['trái', '柴', '左边', 'LTR', 'ด้านซ้าย'],
+      ['phải', '法伊', '右边', 'Right indent', 'ด้านขวา'],
+      ['trong', '庄', '里面', 'This is a', 'ข้างใน'],
+      ['ngoài', '外', '外面', 'Outside', 'ข้างนอก'],
+      ['gần', '根', '靠近', 'Lean in', 'ใกล้เข้ามา'],
+      ['xa', '沙', '很远', 'very far', 'ไกลออกไป']
+    ]
+  },
+  {
+    id: 'size', name: '尺寸',
+    items: [
+      ['lớn', '隆', '大', 'Large', 'ขุน (khóón)'],
+      ['nhỏ', '诺', '小', 'Small', 'ทำไมนายนี่...'],
+      ['dài', '代', '长', 'Length', 'ยาว'],
+      ['ngắn', '甘', '短', 'Short', 'สั้น'],
+      ['rộng', '隆', '宽', 'Width', 'กว้าง'],
+      ['hẹp', '黑普', '窄', 'Narrow', 'แคบ'],
+      ['cao', '高', '高', 'HIGH', 'สูง'],
+      ['thấp', '塔普', '低、矮', 'Low, Short', 'ต่ำ, สั้น'],
+      ['dày', '戴', '厚', 'Thick', 'หนา'],
+      ['mỏng', '蒙', '薄', 'Thin', 'บาง']
+    ]
+  },
+  {
+    id: 'color', name: '颜色',
+    items: [
+      ['đỏ', '多', '红色', 'Red', 'แดง'],
+      ['xanh dương', '桑 江', '蓝色', 'Blue', 'ฟ้า'],
+      ['xanh lá', '桑 拉', '绿色', 'Green', 'เขียว'],
+      ['vàng', '万', '黄色', 'Yellow', 'เหลือง'],
+      ['đen', '登', '黑色', 'black', 'สีดำ'],
+      ['trắng', '藏', '白色', 'Whites', 'สีขาว'],
+      ['xám', '萨姆', '灰色', 'Gray', 'สีเทา'],
+      ['nâu', '诺', '棕色', 'brown', 'ดินสอสี'],
+      ['trong suốt', '庄 索特', '透明', 'Transparent', 'โปร่งใส']
+    ]
+  },
+  {
+    id: 'tool', name: '工具量具',
+    items: [
+      ['cờ lê', '格来', '扳手', 'wrench', 'คันโยก'],
+      ['tuýp', '图伊普', '套筒', 'Sleeve', 'ปลอก'],
+      ['kìm', '金', '钳子', 'Pliers', 'แล้วก็คีม'],
+      ['kìm cắt', '金 嘎', '斜口钳', 'Diagonal pliers', 'คีมเฉียง'],
+      ['kìm mũi nhọn', '金 木伊 宁', '尖嘴钳', 'Long-nose pliers', 'คีมจมูกแหลม'],
+      ['thước cặp', '图克', '卡尺', 'Caliper', 'คาลิเปอร์'],
+      ['thước dây', '图克 戴', '卷尺', 'Tape measure', 'การวัดเทป'],
+      ['tuốc nơ vít', '托诺维特', '螺丝刀', 'Screw Driver', 'เอาไขควงไหม?'],
+      ['búa', '布阿', '锤子', 'Hammer', 'ค้อน'],
+      ['mũi khoan', '木伊 宽', '钻头', 'Drill', 'เจาะ'],
+      ['máy khoan', '梅 宽', '电钻', 'electrical drill', 'สว่านไฟฟ้า'],
+      ['máy mài', '梅 麦', '打磨机', 'polishing machine', 'แซนเดอร์'],
+      ['dao', '扎奥', '刀', 'Blade', 'มีด'],
+      ['cân', '甘', '秤', 'Steelyard balance', 'สเกล'],
+      ['đồng hồ đo', '东霍 多', '万用表', 'multimetrasb', 'มัลติมิเตอร์'],
+      ['bút thử điện', '布特 图 甸', '测电笔', 'non-electroscope', 'ทดสอบดินสอ'],
+      ['súng hơi', '宋 霍伊', '气枪', 'air-gun for discharging pellets', 'ปืนลม'],
+      ['bôi mỡ', '波伊莫', '润滑脂、黄油', 'Grease, butter', 'จาระบีเนย'],
+      ['dầu nhớt', '邹 涅特', '机油', 'engine oil', 'นํ้ามันเครื่อง'],
+      ['keo', '盖', '胶水', 'Glue', 'กาวลม']
+    ]
+  },
+  {
+    id: 'em', name: '电气机械',
+    items: [
+      ['máy', '梅', '机器、设备', 'MACHINE / EQUIPMENT', 'เครื่องจักรอุปกรณ์'],
+      ['động cơ', '东 戈', '电机', 'motor', 'มอเตอร์'],
+      ['mạch điện', '麦 甸', '电路', 'circuit', 'วงจร'],
+      ['dây điện', '戴 甸', '电线', 'Electric cables', 'ดึงเชือก'],
+      ['công tắc', '贡 塔克', '开关', 'Switch', 'สวิตช์'],
+      ['relay', '里莱', '继电器', 'Relay', 'รีเลย์'],
+      ['cảm biến', '甘 边', '传感器', 'Sensor', 'เซ็นเซอร์'],
+      ['xi lanh', '西 兰', '气缸', 'Cylinder', 'กระบอกสูบ'],
+      ['van', '万', '阀门', 'Valve', 'วาล์ว'],
+      ['bơm', '波姆', '泵', 'Pump', 'เครื่องสูบน้ำ?'],
+      ['tủ điện', '杜 甸', '电箱、控制柜', 'Electric box, control cabinet', 'กล่องไฟฟ้าตู้ควบคุม'],
+      ['màn hình', '曼 亨', '显示屏', 'Display screen', 'จอแสดงผล'],
+      ['nút bấm', '努特 班', '按钮', 'Button', 'ปุ่มนั่น'],
+      ['khẩn cấp', '根加普', '紧急', 'Urgent', 'อันตราย'],
+      ['hỏng', '红', '坏、故障', 'Bad, faulty', 'ไม่ดีมีข้อผิดพลาด'],
+      ['kẹt', '克特', '卡滞、卡住', 'Stuck, stuck', 'ติดขัดติดขัด'],
+      ['lỏng', '隆', '松动', 'Loose', 'หลวม'],
+      ['chặt', '扎特', '拧紧、紧', 'Tighten, tighten', 'ขันให้แน่นขันให้แน่น'],
+      ['áp lực', '阿普 卢克', '压力', 'Pressure', 'แรงดัน'],
+      ['tốc độ', '多克 多', '速度', 'Speed', 'ความเร็ว']
+    ]
+  },
+  {
+    id: 'mat', name: '物料品质',
+    items: [
+      ['vật liệu', '瓦留', '材料', 'Materials', 'วัสดุ'],
+      ['linh kiện', '林健', '零件', 'part', 'ชิ้นส่วน'],
+      ['sản phẩm', '三芳', '产品', 'Products', 'ผลิตภัณฑ์'],
+      ['hàng', '杭', '货物、货品', 'Goods, goods', 'สินค้าสินค้า'],
+      ['mẫu', '毛', '样品', '样品', 'ตัวอย่าง'],
+      ['lỗi', '罗伊', '不良、缺陷', 'Defects, defects', 'ข้อบกพร่องข้อบกพร่อง'],
+      ['tốt', '托', '良品、好', 'Good product, good', 'สินค้าดีดี'],
+      ['đạt', '达', '合格', 'Qualified', 'ผ่าน'],
+      ['không đạt', '空达', '不合格', 'Unqualified', 'ไม่เป็นไปตามข้อกำหนด'],
+      ['lô', '洛', '批次', 'Batch', 'แบทช์'],
+      ['kho', '阔', '仓库', 'Warehouses', 'คลัง'],
+      ['nhập kho', '捏普阔', '入库', 'Inbound', 'นำเข้าคลัง'],
+      ['xuất kho', '苏特阔', '出库', 'Outbound', 'ขาออก'],
+      ['bao bì', '包比', '包装', 'Packing', 'บรรจุภัณฑ์'],
+      ['thùng', '通', '箱子', 'Boxes', 'กระเป๋า'],
+      ['túi', '图伊', '袋子', 'Bag', 'กระเป๋า'],
+      ['tem', '登', '标签、条码', 'Labels, barcodes', 'ฉลากบาร์โค้ด'],
+      ['giấy', '扎伊', '纸', 'Paper', 'กระดาษ'],
+      ['pallet', '帕雷特', '托盘', 'T R AY', 'ถาด'],
+      ['gỗ', '果', '木', 'Which is "mu', 'พฤ.']
+    ]
+  },
+  {
+    id: 'food', name: '餐饮购物',
+    items: [
+      ['cơm', '根', '米饭', 'Rice', 'ข้าว'],
+      ['phở', '佛', '河粉', 'Pho An', 'โพธิ์หวา'],
+      ['bún', '本', '米粉', 'Rice vermicelli', 'เมล็ดผสม'],
+      ['thịt', '提特', '肉', 'Meat', 'เนื้อไงครับ'],
+      ['cá', '嘎', '鱼', 'Fish', 'ปลา'],
+      ['trứng', '贞', '鸡蛋', 'Egg', 'ไข่ไก่'],
+      ['rau', '绕', '蔬菜', 'vegetables', 'ผัก'],
+      ['trái cây', '拆盖', '水果', 'fruit', 'ผลไม้'],
+      ['nước', '努克', '水', 'Water.', 'น้ำ'],
+      ['cà phê', '卡菲', '咖啡', 'C O F F E E', 'กาแฟ'],
+      ['trà', '扎', '茶', 'tea', 'ชา'],
+      ['đá', '达', '冰', 'crystallized methamphetamine', 'น้ำแข็ง'],
+      ['cay', '盖', '辣', 'Pungency', 'เผ็ด'],
+      ['ngọt', '诺特', '甜', 'sweet', 'หวาน'],
+      ['mặn', '曼', '咸', 'Taste', 'เค็ม'],
+      ['chua', '朱阿', '酸', '% acid', 'เปรี้ยว'],
+      ['tiền', '田', '钱', 'money', 'ตังค์'],
+      ['hóa đơn', '华敦', '账单、发票', 'Billing, invoices', 'การเรียกเก็บเงินใบแจ้งหนี้'],
+      ['giảm giá', '减加', '打折', 'Diskon', 'ลดราคา'],
+      ['đắt', '达特', '贵', 'expensive', 'ค่าใช้จ่ายแพง?']
+    ]
+  },
+  {
+    id: 'verb', name: '高频动词',
+    items: [
+      ['kiểm tra', '金扎', '检查', 'examined', 'ตรวจสอบ'],
+      ['sửa chữa', '苏阿贾', '维修', 'maintenance', 'ซ่อมบำรุง'],
+      ['thay', '泰', '更换', 'Replace', 'เปลี่ยน'],
+      ['lắp ráp', '拉普扎普', '装配、组装', 'Assembly, assembly', 'การประกอบการประกอบ'],
+      ['tháo ra', '套拉', '拆开、拆卸', 'Dismantling, disassembling', 'การรื้อถอนการถอดประกอบ'],
+      ['dừng', '敦', '停止', 'Stop', 'หยุด'],
+      ['chạy', '扎伊', '运行、开动', 'Run, start', 'วิ่งเริ่ม'],
+      ['điều chỉnh', '迪乌真', '调整', 'adjust', 'ปรับตัว'],
+      ['ghi', '给', '记录、写', 'Record, Write', 'บันทึกเขียน'],
+      ['gửi', '古伊', '发送', 'Send', 'ส่ง'],
+      ['nhận', '嫩', '接收', 'Receive', 'รับ'],
+      ['đưa', '杜阿', '拿、递给', 'Take it, hand it to', 'เอาไปยื่นให้'],
+      ['lấy', '雷', '拿取', 'Handling', 'เรียกข้อมูล'],
+      ['xếp', '色普', '摆放、堆叠', 'Placement, stacking', 'การวางการซ้อน'],
+      ['dọn', '尊', '整理、清扫', 'Organize and clean', 'จัดระเบียบและทำความสะอาด']
+    ]
+  },
+  {
+    id: 'adj', name: '形容副词',
+    items: [
+      ['đúng', '敦', '正确', 'Cards Correct', 'ถูกต้อง'],
+      ['sai', '赛', '错', 'False', 'ผิดพลาด'],
+      ['đủ', '杜', '足够', 'sufficient', 'เพียงพอ'],
+      ['thiếu', '修', '缺少', 'missing?', 'สูญหายหรอครับ ?'],
+      ['nhiều', '妞', '多', 'Multiple', 'โหมด:'],
+      ['ít', '伊特', '少', 'Few', 'น้อย'],
+      ['nhanh', '宁', '快', 'Quick!', 'ปี'],
+      ['chậm', '占', '慢', 'Slow', 'ช้า'],
+      ['cẩn thận', '根吞', '小心、仔细', 'Careful, careful', 'ระวังระวัง'],
+      ['an toàn', '安团', '安全', 'security', 'ความปลอดภัย']
+    ]
+  }
+];
+
+
+var SCENES=[].concat(SC_A,SC_B,SC_C,SC_D);
+var SENT4=[{"id":"s4_1","name":"工厂百句","title":"工厂生产现场","expect":100,"items":[["哥你好","Xin chào anh.","新早 安","Hello, brother.","สวัสดีพี่ชาย"],["姐你好","Xin chào chị.","新早 芝","Hello, sister.","สวัสดีน้องสาว"],["今天好好干活","Hôm nay làm việc tốt nhé.","哄 奈 拉姆 维耶 托 捏","Work hard today","ทำงานหนักวันนี้"],["开始作业","Bắt đầu làm việc.","巴兜 拉姆 维耶","START ASSIGNMENT","เริ่มการมอบหมาย"],["休息10分钟","Nghỉ giải lao 10 phút.","尼 加劳 木伊 普特","Take a 10-minute break","พัก 10 นาที"],["休息结束，回来干活","Hết giờ nghỉ, quay lại làm.","黑 遮 尼，归 来 拉姆","End of break, come back to work","หยุดพักแล้วกลับมาทำงานต่อ"],["检查机器","Kiểm tra máy.","金扎 梅","Check the machine","ตรวจสอบเครื่อง"],["机器故障","Máy có lỗi.","梅 果 罗伊","Machine Failure","เครื่องจักรล้มเหลว"],["停机","Dừng máy lại.","敦 梅 来","Stopping the shear","คัท!"],["紧急停机！","Dừng khẩn cấp!","敦 根 加普","Commence emergency shutdown!","ปิดเครื่องฉุกเฉิน!"],["禁止触碰旋转部件","Không được chạm tay vào bộ phận quay.","空 德 扎 戴 沃 波凡 瓜伊","Do not touch the rotating part","อย่าสัมผัสส่วนที่หมุน"],["戴好防护眼镜","Đeo kính bảo hộ.","德欧 金 包霍","Wear protective glasses","สวมแว่นตาป้องกัน"],["戴好手套","Đeo găng tay.","德欧 甘戴","Wear gloves","สวมถุงมือ"],["穿劳保鞋","Đeo giày bảo hộ.","德欧 加伊 包霍","Wear safety shoes","สวมรองเท้านิรภัย"],["安全第一","An toàn là trên hết.","安团 拉 腾 黑特","Safety First","ความปลอดภัยต้องมาก่อน"],["小心，危险","Cẩn thận, nguy hiểm.","根吞，归贤","Caution, Danger","ข้อควรระวังอันตราย"],["维修时禁止开机","Không được chạy máy khi sửa chữa.","空 德 扎伊 梅 克 苏阿 贾","Do not power on during maintenance","อย่าเปิดเครื่องในระหว่างการบำรุงรักษา"],["更换配件","Thay linh kiện.","泰 林健","Replacement accessories","อุปกรณ์เสริมสำหรับการเปลี่ยน"],["这个零件坏了","Bộ phận này hỏng.","波凡 内 红","This part is broken","ส่วนนี้เสีย"],["材料在哪里？","Vật liệu ở đâu?","瓦留 欧 兜","Where are the materials?","วัสดุอยู่ที่ไหน?"],["材料回仓库了吗？","Vật liệu đã về kho chưa?","瓦留 达 维 阔 朱阿","Did the materials go back to the warehouse?","วัสดุกลับไปที่คลังสินค้าหรือไม่?"],["帮我拿材料","Lấy vật liệu cho tôi.","雷 瓦留 卓 多伊","Fetch me the materials","นำวัสดุมาให้ฉัน"],["检查尺寸","Kiểm tra kích thước.","金扎 克修克","Check dimensions","ตรวจสอบขนาด"],["检查品质","Kiểm tra chất lượng.","金扎 贾鲁昂","Inspection quality","คุณภาพการตรวจสอบ"],["这个产品不良","Sản phẩm này lỗi.","三芳 内 罗伊","This product is defective","ผลิตภัณฑ์นี้มีข้อบกพร่อง"],["不良在哪里？","Lỗi ở đâu?","罗伊 欧 兜","Where are the defects?","ข้อบกพร่องอยู่ตรงไหน?"],["区分良品和不良品","Phân loại hàng tốt và hàng lỗi.","凡 洛 杭 托 瓦 杭 罗伊","Distinguish between good and bad products","แยกแยะระหว่างผลิตภัณฑ์ที่ดีและไม่ดี"],["不良品放单独箱子","Để hàng lỗi vào thùng riêng.","德 杭 罗伊 沃 通 里翁","Defective products should be placed in a separate box.","ผลิตภัณฑ์ที่มีข้อบกพร่องจะอยู่ในกล่องแยกต่างหาก"],["数量多少？","Số lượng bao nhiêu?","索 鲁昂 包妞","How many?","มีกี่คน?"],["什么时候做完？","Bao giờ xong?","包 左 松","When will it be done?","จะเสร็จสิ้นเมื่อไร?"],["下班前做完","Xong trước giờ tan ca.","松 卓 遮 丹 加","Finish before work","เสร็จก่อนทำงาน"],["进度怎么样？","Tiến độ thế nào?","田多 特 诺","How's it going?","เป็นยังไงบ้าง?"],["放慢一点","Chậm lại một chút.","占 来 莫 朱特","Slow down a bit","ชะลอความเร็วลงเล็กน้อย"],["加快一点","Nhanh lên một chút.","宁 伦 莫 朱特","A little bit faster.","เร็วขึ้น"],["这个重做","Làm lại cái này.","拉姆 来 该 内","This redo","การทำซ้ำนี้"],["不能这样做","Không làm được như vậy.","空 拉姆 德 纽 维","Can't do this","นี่มันไม่ถูกต้อง"],["按照图纸作业","Làm theo bản vẽ.","拉姆 贴 班 维","Work As Drawings","ทำงานเป็นภาพวาด"],["图纸在哪里？","Bản vẽ ở đâu?","班 维 欧 兜","Where are the drawings?","ภาพวาดอยู่ที่ไหน?"],["把图纸给我","Đưa bản vẽ cho tôi.","杜阿 班 维 卓 多伊","Give me the blueprints","ส่งพิมพ์เขียวให้ฉัน"],["核对参数","Kiểm tra thông số.","金扎 通索","Check Parameters","ตรวจสอบพารามิเตอร์"],["参数不对","Thông số chưa đúng.","通索 朱阿 敦","Argument error","พารามิเตอร์ไม่ถูกต้อง"],["调整参数","Điều chỉnh thông số.","迪乌 真 通索","adjusted parameters","พารามิเตอร์การปรับ"],["接线小心","Cắm điện cẩn thận.","甘 甸 根吞","Wiring Caution","ข้อควรระวังในการเดินสายไฟ"],["有电危险","Điện nguy hiểm.","甸 归贤","Danger of voltage ON","มีอันตรายจากไฟฟ้า"],["维修前断电","Cắt điện trước khi sửa.","嘎 甸 卓 克 苏阿","Power off before repairs","ปิดเครื่องก่อนซ่อม"],["检查电路","Kiểm tra mạch điện.","金扎 麦 甸","Check circuitry.","ตรวจสอบวงจร"],["测电压","Đo điện áp.","多 甸 阿普","Measurement voltage","การวัดแรงดันไฟฟ้า"],["测电阻","Đo điện trở.","多 甸 泽","Resistance Measurement","การวัดความต้านทาน"],["电线断了","Dây điện đứt.","戴 甸 杜特","Wire is broken","สายไฟขาด"],["控制箱有问题","Hộp điều khiển có vấn đề.","霍普 迪乌 根 果 万德","Problem with control box","ปัญหาเกี่ยวกับกล่องควบคุม"],["机械卡滞","Cơ khí bị kẹt.","格奇 比 克特","Mechanical stagnation","ความเมื่อยล้าทางกล"],["加油润滑","Bôi dầu bôi mỡ.","波伊 邹 波伊 莫","Fuel and lubricate","เชื้อเพลิงและสารหล่อลื่น"],["螺丝松动","Vít lỏng.","维特 隆","Loose screws","สกรูหลวม"],["拧紧螺丝","Siết chặt vít.","西特 扎特 维特","Tighten the screws.","ขันสกรูให้แน่น"],["扳手在哪里？","Cờ lê ở đâu?","格来 欧 兜","Where is the wrench?","ประแจอยู่ที่ไหน?"],["套筒在哪里？","Tuýp ở đâu?","图伊普 欧 兜","Where is the sleeve?","ปลอกอยู่ที่ไหน?"],["钳子在哪里？","Kìm ở đâu?","金 欧 兜","Where are the pliers?","คีมอยู่ที่ไหน?"],["卡尺在哪里？","Thước kẹp ở đâu?","图克 欧 兜","Where is the caliper?","คาลิปเปอร์อยู่ที่ไหน?"],["清理作业区域","Dọn dẹp khu vực làm việc.","尊 叠 库维克 拉姆 维耶","Tidy Works area","ทำความสะอาดพื้นที่ทำงาน"],["做好5S，保持干净","5S, giữ sạch sẽ.","5S，固 塞 塞","Do the 5S and keep it clean","ทำความสะอาด 5S และรักษาความสะอาด"],["不要乱堆东西","Không để đồ bừa bãi.","空 德 多 布阿 拜","Don't pile things up haphazardly.","อย่ากองของไว้เป็นกอง"],["货物摆放整齐","Hàng hóa xếp gọn gàng.","杭 华 色普 贡 刚","Arrange your cargo neatly","จัดเรียงสินค้าของคุณอย่างเป็นระเบียบ"],["白班","Ca làm việc sáng.","加 拉姆 维耶 桑","Day Shift","กะกลางวัน"],["夜班","Ca làm việc tối.","加 拉姆 维耶 多伊","OPS Night Shift","กะกลางคืน"],["换班","Đổi ca.","多伊 加","change shifts","ซื้อขาย"],["我申请请假","Tôi xin nghỉ phép.","多伊 新 尼 佩普","I'm requesting time off","ฉันกำลังขอเวลานอก"],["病假","Nghỉ ốm.","尼 翁","Sickness absence","ลาป่วย"],["年假","Nghỉ phép năm.","尼 佩普 南","ANNUAL LEAVE","วันหยุดพักผ่อนประจำปี"],["谁负责这条产线？","Ai phụ trách chuyền này?","埃 富 扎 川 内","Who is in charge of this line?","ใครเป็นผู้รับผิดชอบสายนี้?"],["你是组长吗？","Anh là tổ trưởng?","安 拉 多 张","Are you the Team Leader?","คุณเป็นหัวหน้าทีมหรือไม่?"],["叫主管过来","Gọi quản lý đến.","戈伊 宽里 登","Get the supervisor over here","ให้หัวหน้างานมาที่นี่"],["上报异常","Báo cáo sự cố.","包高 瑟 古","Reporting Errors","เพิ่มข้อยกเว้น"],["做好记录","Ghi chép biên bản.","给 杰 边班","Complete the recording.","เก็บบันทึก"],["在这里签字","Ký tên ở đây.","基 登 欧 叠","Sign here","กรุณาลงชื่อตรงนี้"],["听不懂，说慢一点","Chưa hiểu, nói chậm lại.","朱阿 休，诺伊 占 来","I don't understand. Slow down.","ฉันไม่เข้าใจช้าลงหน่อย"],["再说一遍","Nói lại một lần nữa.","诺伊 来 莫 兰 纳","Say it again.","- แกไอ้งั่ง"],["写在纸上","Viết ra giấy.","维特 拉 扎伊","Write on paper","เขียนลงบนกระดาษ"],["听懂了吗？","Có hiểu không?","果 休 空","Understand?","เข้าใจข้าไหม"],["好了，可以","Được rồi.","德 罗伊","All right, all right.","เอาล่ะเอาล่ะ"],["不行","Không được.","空 德","No","ไม่ได้"],["需要加人手","Cần thêm người.","甘 泰 内古","Extra manpower needed","ต้องใช้กำลังคนเพิ่ม"],["这个人做得不好","Người này làm không tốt.","内古 内 拉姆 空 托","This person is not doing a good job","คนนี้ทำงานได้ไม่ดี"],["做得好继续保持","Khuyến khích làm tốt.","宽 克 拉姆 托","Well done. Keep it up.","ทำได้ดีมากทำต่อไป"],["上班不要闲聊","Không được nói chuyện trong giờ làm.","空 德 诺伊 川 庄 遮 拉姆","Don't gossip at work","อย่านินทาในที่ทำงาน"],["作业不要玩手机","Không dùng điện thoại khi làm việc.","空 用 甸 托 克 拉姆 维耶","Do not play with your mobile phone for homework","อย่าเล่นโทรศัพท์มือถือของคุณเพื่อทำการบ้าน"],["工具丢失","Mất dụng cụ.","马特 冬古","Tool is missing","เครื่องมือหายไป"],["工具归还仓库","Trả dụng cụ về kho.","扎 冬古 维 阔","Tool return to repository","เครื่องมือกลับไปยังที่เก็บ"],["盘点工具","Kiểm kê dụng cụ.","金 给 冬古","Inventory tool","เครื่องมือสินค้าคงคลัง"],["入库","Hàng nhập kho.","杭 捏普 阔","Inbound","นำเข้าคลัง"],["出库","Hàng xuất kho.","杭 苏特 阔","Outbound","ขาออก"],["条码标签在哪里？","Tem mã vạch ở đâu?","登 马 瓦奇 欧 兜","Where are the barcode labels?","ฉลากบาร์โค้ดอยู่ที่ไหน?"],["贴标签","Dán tem.","赞 登","Labelling","การติดฉลาก"],["检查包装","Kiểm tra bao bì.","金扎 包比","Check that the packaging is:","ตรวจสอบบรรจุภัณฑ์"],["仔细打包","Đóng gói cẩn thận.","东 戈伊 根吞","Carefully packed","บรรจุอย่างระมัดระวัง"],["叉车在哪里？","Xe nâng ở đâu?","塞 南 欧 兜","Where are the forklifts?","รถยกอยู่ที่ไหน?"],["叉车慢行","Xe nâng đi chậm.","塞 南 迪 占","Slow forklift","รถยกช้า"],["不要站在叉车下方","Không đứng dưới xe nâng.","空 敦 杜伊 塞 南","Do not stand under the forklift","อย่ายืนอยู่ใต้รถยก"],["今天有工厂稽核","Hôm nay có kiểm tra nhà máy.","哄 奈 果 金扎 尼亚 梅","There is a factory audit today","มีการตรวจสอบโรงงานในวันนี้"],["请准备妥当","Hãy chuẩn bị tốt.","哈伊 尊比 托","Please prepare properly","โปรดเตรียมตัวอย่างถูกต้อง"],["谢谢哥/姐","Cảm ơn anh/chị.","甘恩 安/芝","Thank you brother/sister","ขอบคุณพี่ชาย/น้องสาว"]]},{"id":"s4_2","name":"商务百句","title":"商务、采购、品质对接","expect":100,"items":[["您好，我是负责人","Xin chào, tôi là người phụ trách.","新早，多伊 拉 内古 富扎","Hello, I'm the person in charge","สวัสดีฉันเป็นผู้รับผิดชอบ"],["我们公司来自中国","Công ty chúng tôi từ Trung Quốc.","贡迪 冲 多伊 德 中郭","Our company is from China","บริษัทของเรามาจากประเทศจีน"],["很高兴认识您","Rất vui được gặp anh/chị.","拉特 维 德 嘎 安/芝","It's been a pleasure meeting you.","เช่นกัน"],["这是我的名片","Đây là danh thiếp của tôi.","叠 拉 詹 帖 库阿 多伊","This is my business card.","นี่นามบัตรผมครับ"],["您有名片吗？","Anh/Chị có danh thiếp không?","安/芝 果 詹 帖 空","-“Do you have a business card?”","คุณมีนามบัตรหรือไม่?"],["我们想要下单","Chúng tôi muốn đặt hàng.","冲 多伊 梦 达 杭","We want to place an order","เราต้องการสั่งซื้อ"],["订单号是多少？","Số đơn hàng là bao nhiêu?","索 敦 杭 拉 包妞","What is the order number?","หมายเลขคำสั่งซื้อคืออะไร?"],["订单号……","Đơn hàng số …","敦 杭 索 …","Order No.:","หมายเลขคำสั่งซื้อ..."],["订购数量是……","Số lượng đặt là …","索 鲁昂 达 拉 …","Quantity ordered is...","จำนวนที่สั่งซื้อคือ..."],["单价多少钱？","Giá bao nhiêu một cái?","加 包妞 莫 该","How much is the unit price?","ราคาต่อหน่วยเท่าไหร่?"],["价格可以便宜一点吗？","Giá có thể giảm được không?","加 果 泰 减 德 空","Can the price be cheaper?","ราคาถูกกว่านี้ได้ไหม?"],["能不能给更好价格？","Giá tốt hơn được không?","加 托 亨 德 空","Can you give me a better price?","คุณให้ราคาที่ดีกว่านี้ได้ไหม?"],["这是最低价了","Đây là giá tốt nhất.","叠 拉 加 托 纳特","That could've gone better.","นี่คือราคาที่ต่ำที่สุด"],["什么时候付款？","Thanh toán khi nào?","汤 托安 克 诺","When do I pay?","ฉันจะชำระเงินเมื่อใด?"],["对公转账","Thanh toán chuyển khoản.","汤 托安 专 宽","Transfer to public","ถ่ายโอนไปยังสาธารณะ"],["交货周期多久？","Thời gian giao hàng là bao lâu?","托伊 赞 加奥 杭 拉 包 楼","How long is the lead time?","ระยะเวลารอคอยสินค้านานแค่ไหน?"],["在……号前交货","Giao hàng trước ngày …","加奥 杭 卓 尼 …","Deliver before…","จัดส่งก่อน..."],["可以提前交货吗？","Có thể giao sớm hơn không?","果 泰 加奥 索姆 亨 空","Can I make early deliveries?","ฉันจะจัดส่งก่อนกำหนดได้ไหม?"],["不要延期交货","Không giao trễ hạn.","空 加奥 德 汉","Do not delay delivery","อย่ารอช้าในการจัดส่ง"],["延期我们会追责","Nếu giao trễ, chúng tôi sẽ phạt.","内 加奥 德，冲 多伊 塞 法","Extension will be held accountable","การขยายเวลาจะต้องรับผิดชอบ"],["预计交货日期……","Ngày giao dự kiến là …","尼 加奥 玉 坚 拉 …","Estimated Delivery Date","วันที่จัดส่งโดยประมาณ..."],["原料材质是否正确？","Vật liệu nguyên chất có đúng không?","瓦留 恩 查特 果 敦 空","Is the raw material correct?","วัตถุดิบถูกต้องหรือไม่?"],["需要品质证书","Cần chứng nhận chất lượng.","甘 尊 嫩 贾鲁昂","Require Certificate of Quality","ต้องมีใบรับรองคุณภาพ"],["需要COA检测报告","Cần COA.","甘 COA","COA test report required","ต้องมีรายงานการทดสอบห/ป"],["寄样品给我","Mẫu hàng gửi cho tôi.","毛 杭 古伊 卓 多伊","Send me samples","ส่งตัวอย่างให้ฉัน"],["样品不满足要求","Mẫu này chưa đạt yêu cầu.","毛 内 朱阿 达 优 勾","Sample does not meet requirements","ตัวอย่างไม่เป็นไปตามข้อกำหนด"],["重新打样","Làm lại mẫu.","拉姆 来 毛","Resampling","การสุ่มตัวอย่างใหม่"],["新版样品合格","Mới đạt yêu cầu.","莫伊 达 优 勾","New Sample Qualified","ตัวอย่างใหม่ผ่านเกณฑ์แล้ว"],["检验标准是……","Tiêu chuẩn kiểm tra là …","丢 尊 金扎 拉 …","The test criteria are...","เกณฑ์การทดสอบคือ..."],["AQL标准是多少？","AQL là bao nhiêu?","AQL 拉 包妞","What is the AQL standard?","มาตรฐาน AQL คืออะไร?"],["我过来验货","Tôi đến kiểm tra hàng.","多伊 登 金扎 杭","I came to inspect the goods","ฉันมาตรวจสอบสินค้า"],["出货前验货","Kiểm tra trước khi xuất hàng.","金扎 卓 克 苏特 杭","Inspection before shipment","การตรวจสอบก่อนจัดส่ง"],["这批货合格","Hàng này đạt.","杭 内 达","This batch is qualified","ชุดนี้มีคุณสมบัติ"],["这批货不合格","Hàng này không đạt.","杭 内 空 达","This shipment is substandard","การจัดส่งนี้ต่ำกว่ามาตรฐาน"],["不合格必须返工","Hàng không đạt phải làm lại.","杭 空 达 法伊 拉姆 来","Unqualified must be reworked","ไม่มีคุณสมบัติจะต้องทำงานใหม่"],["返工需要多久？","Thời gian làm lại bao lâu?","托伊 赞 拉姆 来 包 楼","How long does it take to rework?","ใช้เวลานานแค่ไหนในการทำงานใหม่?"],["返工费用谁承担？","Chi phí sửa chữa ai chịu?","奇 菲 苏阿 贾 埃 秋","Who pays for the rework?","ใครเป็นคนจ่ายค่าทำใหม่?"],["不良品不能出货","Không được giao hàng lỗi.","空 德 加奥 杭 罗伊","Defective products cannot be shipped","ไม่สามารถจัดส่งสินค้าที่มีข้อบกพร่องได้"],["不良太多，不接受","Lỗi này nhiều, không chấp nhận.","罗伊 内 妞，空 扎普 嫩","Too many defects, do not accept","มีข้อบกพร่องมากเกินไปไม่ยอมรับ"],["安排货物待检","Sắp xếp hàng để kiểm tra.","色普 扎伊 杭 德 金扎","Arrange for goods to be inspected","จัดให้มีการตรวจสอบสินค้า"],["验货单","Biên bản kiểm tra.","边班 金扎","particular paper","ใบตรวจสอบ"],["签署验货报告","Ký biên bản kiểm tra.","基 边班 金扎","Sign inspection report","ลงนามในรายงานการตรวจสอบ"],["用什么运输？","Vận chuyển bằng gì?","万 传 邦 吉","Transported by what?","ขนส่งโดยอะไร?"],["货车送货","Giao bằng xe tải.","加奥 邦 塞 泰","Truck delivery","การจัดส่งรถบรรทุก"],["海运","Giao bằng đường biển.","加奥 邦 当 边","sea","การจัดส่ง"],["空运","Giao bằng đường hàng không.","加奥 邦 当 杭 空","Air cargo","การขนส่งทางอากาศ"],["运费多少？","Chi phí vận chuyển bao nhiêu?","奇 菲 万 传 包妞","How much is the shipping cost?","ค่าจัดส่งเท่าไหร่?"],["含税吗？","Bao gồm thuế chưa?","包 古姆 图 朱阿","Does it include taxes?","รวมภาษีหรือไม่?"],["需要增值税发票","Cần hóa đơn VAT.","甘 华 敦 VAT","VAT invoice required","ต้องมีใบกำกับภาษีมูลค่าเพิ่ม"],["送货地址是……","Địa chỉ giao hàng là …","迪阿 芝 加奥 杭 拉 …","Shipping address is...","ที่อยู่ในการจัดส่งคือ..."],["收货人是……","Người nhận hàng là …","内古 嫩 杭 拉 …","Consignee is...","ผู้รับฝากขายคือ..."],["收货人电话","Số điện thoại người nhận.","索 甸 托 内古 嫩","Consignee Phone","โทรศัพท์ผู้รับฝากขาย"],["货收到了吗？","Hàng đã nhận được chưa?","杭 达 嫩 德 朱阿","Did you receive the shipment?","คุณได้รับสินค้าหรือไม่"],["货物运输损坏","Hàng bị hư hỏng khi vận chuyển.","杭 比 呼 洪 克 万 传","Damaged cargo transport","การขนส่งสินค้าที่เสียหาย"],["货物投诉索赔","Khiếu nại về hàng hóa.","克乌 奈 维 杭 华","Cargo Complaint Claim","การเรียกร้องค่าสินไหมทดแทนจากการขนส่ง"],["我们需要换货","Chúng tôi cần đổi hàng.","冲 多伊 甘 多伊 杭","We need a replacement","เราต้องการคนมาแทนที่"],["我们需要退货","Chúng tôi cần hoàn trả hàng.","冲 多伊 甘 万 扎 杭","We need a return","เราต้องการผลตอบแทน"],["想取消这个订单","Đơn hàng này muốn hủy.","敦 杭 内 梦 辉","I want to cancel this order","ฉันต้องการยกเลิกคำสั่งซื้อนี้"],["取消订单原因……","Lý do hủy đơn là …","里 多 辉 敦 拉 …","Cancellation Reasons","เหตุผลที่ยกเลิก..."],["可以修改订单吗？","Có thể điều chỉnh đơn hàng không?","果 泰 迪乌 真 敦 杭 空","Can I modify my order?","ฉันสามารถแก้ไขคำสั่งซื้อของฉันได้หรือไม่"],["增加数量","Tăng số lượng.","唐 索 鲁昂","Increase amount","เพิ่มปริมาณ"],["减少数量","Giảm số lượng.","减 索 鲁昂","Decrease Quantity","ลดปริมาณ"],["变更交期","Thay đổi thời gian giao hàng.","泰 多伊 托伊 赞 加奥 杭","Change delivery date","เปลี่ยนวันที่จัดส่ง"],["合同在哪里？","Hợp đồng ở đâu?","霍普 东 欧 兜","Where is the contract?","สัญญาอยู่ที่ไหน?"],["发合同给我","Gửi hợp đồng cho tôi.","古伊 霍普 东 卓 多伊","Send me the contract","ส่งสัญญาให้ฉัน"],["仔细阅读合同","Đọc kỹ hợp đồng.","多 基 霍普 东","Read the contract carefully","อ่านสัญญาอย่างละเอียด"],["我同意","Tôi đồng ý.","多伊 东 伊","I agree","/N แกก็ไม่รู้หรอกว่า"],["我不同意","Tôi không đồng ý.","多伊 空 东 伊","I disagree","- ฉันไม่ได้จะพูดนะ"],["需要再协商","Cần thảo luận thêm.","甘 陶 伦 泰","Negotiation required","ต้องมีการเจรจาต่อรอง"],["约下次面谈","Hẹn gặp lại để thảo luận.","亨 嘎 来 德 陶 伦","Appointment for next interview","นัดสัมภาษณ์ครั้งต่อไป"],["会议几点开始？","Cuộc họp bắt đầu lúc mấy giờ?","古克 霍普 巴兜 卢克 米 遮","What time does the meeting start?","การประชุมเริ่มกี่โมง?"],["我们开始开会","Chúng ta bắt đầu họp nhé.","冲 塔 巴兜 霍普 捏","Let's start the meeting","มาเริ่มการประชุมกันเถอะ"],["今天议题是……","Nội dung hôm nay là …","诺伊 东 哄 奈 拉 …","Today's topic is...","หัวข้อวันนี้คือ..."],["我的意见是……","Theo ý kiến tôi …","贴 伊 坚 多伊","My comment is..","ความเห็นของฉันคือ..."],["您有什么意见？","Anh có ý kiến gì không?","安 果 伊 坚 吉 空","What do you think?","คุณคิดว่าไง?"],["有问题要问吗？","Có vấn đề gì cần hỏi?","果 万德 吉 甘 霍伊","Questions?","มีคำถามไหม?"],["记录意见","Ghi lại ý kiến.","给 来 伊 坚","Record comments","บันทึกความคิดเห็น"],["谁负责这件事？","Ai sẽ chịu trách nhiệm việc này?","埃 塞 秋 扎 尼姆 维耶 内","Who's in charge?","ใครเป็นผู้รับผิดชอบ?"],["每周汇报进度","Báo cáo tiến độ mỗi tuần.","包高 田多 每 屯","Weekly progress report","รายงานความคืบหน้ารายสัปดาห์"],["下班前发报告","Gửi báo cáo vào cuối ngày.","古伊 包高 沃 古伊 尼","Send a report before work","ส่งรายงานก่อนทำงาน"],["文件发Zalo","File gửi qua Zalo.","File 古伊 瓜 Zalo","File issue Zalo","ปัญหาเกี่ยวกับไฟล์ Zalo"],["发邮件","Gửi qua email.","古伊 瓜 email","Send email","ส่งอีเมล"],["你的Zalo号码是？","Số Zalo của anh là gì?","索 Zalo 库阿 安 拉 吉","What's your Zalo number?","หมายเลข Zalo ของคุณคืออะไร?"],["我没收到文件","Tôi không nhận được file.","多伊 空 嫩 德 file","I didn't receive the document","ฉันไม่ได้รับเอกสาร"],["重新发送一次","Gửi lại một lần nữa.","古伊 来 莫 兰 纳","Send again","ส่งอีกครั้ง"],["最新版图纸","Bản vẽ cập nhật mới.","班 维 卡普 纳特 莫伊","Latest Drawings","ภาพวาดล่าสุด"],["旧版本不能使用","Phiên bản cũ không dùng được.","菲恩 班 古 空 用 德","Old version unavailable","เวอร์ชันเก่าไม่พร้อมใช้งาน"],["作业流程是……","Quy trình làm việc là …","归 金 拉姆 维耶 拉 …","The workflow is...","ขั้นตอนการทำงานคือ..."],["需要培训员工","Cần đào tạo nhân viên.","甘 道 桃 尼安 温","Employee training required","ต้องมีการฝึกอบรมพนักงาน"],["现有员工数量？","Số nhân viên hiện tại?","索 尼安 温 贤 泰","Existing number of employees?","จำนวนพนักงานที่มีอยู่?"],["每日产能？","Năng lực sản xuất mỗi ngày?","南 卢克 三 苏特 每 尼","Daily capacity?","ความจุรายวัน?"],["设备产能","Công suất máy móc.","贡 苏特 梅 莫克","Equipment Capacity","ความจุของอุปกรณ์"],["能否承接大单？","Có thể đáp ứng đơn hàng lớn không?","果 泰 达 温 敦 杭 隆 空","Can I accept large orders?","ฉันสามารถรับคำสั่งซื้อจำนวนมากได้หรือไม่"],["厂房面积多大？","Nhà xưởng rộng bao nhiêu?","尼亚 雄 隆 包妞","What is the size of the plant?","ขนาดของพืชคืออะไร?"],["有营业执照吗？","Có giấy phép kinh doanh không?","果 扎伊 佩普 金 尊 空","Do you have a business license?","คุณมีใบอนุญาตประกอบธุรกิจหรือไม่?"],["有保险吗？","Có bảo hiểm không?","果 包 亨 空","Is there insurance?","มีประกันไหม?"],["希望长期合作","Chúng tôi mong hợp tác lâu dài.","冲 多伊 蒙 霍普 塔 楼 代","Looking forward to long-term cooperation","หวังว่าจะได้ร่วมมือกันในระยะยาว"],["合作共赢","Hợp tác cùng phát triển.","霍普 塔 贡 法 真","Win-Win Cooperation","ความร่วมมือที่ได้ประโยชน์ทั้งสองฝ่าย"],["感谢您的支持","Cảm ơn sự hỗ trợ của anh/chị.","甘恩 瑟 厚 卓 库阿 安/芝","Thank you for your support","ขอขอบคุณที่ให้การสนับสนุน"],["我们后续再联系","Chúng tôi sẽ liên lạc lại.","冲 多伊 塞 连 拉克 来","We'll be in touch","แล้วเราจะติดต่อกลับไป"]]},{"id":"s4_3","name":"生活百句","title":"衣食住行日常生活","expect":100,"items":[["你好","Xin chào.","新早","‘Hello!’","สวัสดีค่ะ"],["早上好","Chào buổi sáng.","早 布伊 桑","GOOD MORNING","สวัสดีตอนเช้า"],["下午好","Chào buổi chiều.","早 布伊 秋","Afternoon.","กระหม่อมเชื่อว่าพระองค์จะต้องทำได้เยี่ยม ไม่ต้องรีบนะพะยะค่ะ"],["晚上好","Chào buổi tối.","早 布伊 多伊","Good evening","-... ฉันจะเข้าไปช่วยเม็กกี้กับเรซ่า"],["晚安","Chúc ngủ ngon.","朱 古 贡","I love you too dear","- ฝันดีนะ แซม"],["再见","Tạm biệt.","坦别","Bye","ลาก่อน"],["回头见","Hẹn gặp lại.","亨 嘎 来","See you later","ดูยาครับ"],["谢谢","Cảm ơn.","甘恩","Thanks","ขอบคุณครับ"],["不客气","Không có gì.","空 果 吉","You're welcome","ไม่เป็นไร"],["对不起","Xin lỗi.","新 罗伊","I’m sorry","ขอโทษ"],["没关系","Không sao.","空 骚","It doesn’t matter","( \"คู\")"],["是的","Vâng.","万","Yeah.","ครับ"],["不是/不要","Không.","空","No/Don't","ไม่/ไม่ควร"],["可以、好的","Được.","德","Yes, OK","ใช่ตกลง"],["我不懂越南语","Tôi không hiểu tiếng Việt.","多伊 空 休 田 越","I don't speak Vietnamese","ฉันพูดภาษาเวียดนามไม่ได้"],["你会说英语吗？","Anh nói tiếng Anh được không?","安 诺伊 田 安 德 空","Do you speak English?","พูดภาษาอังกฤษรึเปล่า"],["说慢一点","Nói chậm lại nhé.","诺伊 占 来 捏","speak slowly","พูดช้าๆ"],["再说一遍","Nói lại một lần.","诺伊 来 莫 兰","Say it again.","- แกไอ้งั่ง"],["写出来","Viết ra chữ.","维特 拉 朱","Write it out","เขียนออกมา"],["我叫……","Tên tôi là …","登 多伊 拉 …","I am……","ฉันชื่อ..."],["我来自中国","Tôi đến từ Trung Quốc.","多伊 登 德 中郭","I come from China.","ฉันมาจากประเทศจีน"],["我住在这边","Tôi sống ở đây.","多伊 松 欧 叠","I live here","ฉันอาศัยอยู่ที่นี่"],["我在这里工作","Tôi ở đây làm việc.","多伊 欧 叠 拉姆 维耶","I work here in","ฉันทำงานที่นี่"],["今天天气很好","Hôm nay thời tiết đẹp.","哄 奈 托伊 叠 叠","It's a nice day.","มันเป็นวันที่สวยงาม มีอะไรเกิดขึ้นงั้นเหรอ?"],["今天下雨","Hôm nay trời mưa.","哄 奈 遮 木阿","It's raining today","วันนี้ฝนตก"],["今天天晴","Hôm nay trời nắng.","哄 奈 遮 南","It's sunny today","วันนี้แดดแรงมาก"],["天好热","Trời nóng quá.","遮 农 瓜","It's so hot","อากาศร้อนมาก"],["天好冷","Trời lạnh quá.","遮 兰 瓜","It's so cold","อากาศหนาวมาก"],["几点了？","Mấy giờ rồi?","米 遮 罗伊","What time?","กี่โมงแล้วเนี่ย?"],["现在……点","Bây giờ là … giờ.","巴 遮 拉 … 遮","Now... point","ตอนนี้... แต้ม"],["今天几号？","Hôm nay ngày mấy?","哄 奈 尼 米","what date is today","อะไรวันนี้คืออะไร? ฉันขอโทษ"],["今天星期几？","Hôm nay thứ mấy?","哄 奈 特 米","What day of the week is it?","วันนี้วันอะไร?"],["我饿了","Tôi đói bụng.","多伊 多伊 邦","I am hungry","ฉันหิวจัง"],["我渴了","Tôi khát nước.","多伊 卡特 努克","I am thirsty","ฉันหิวน้ำ"],["饭店在哪里？","Quán ăn ở đâu?","宽 安 欧 兜","Where is the hotel?","โรงแรมอยู่ที่ไหน?"],["给我菜单","Menu cho tôi.","Menu 卓 多伊","Give me the menu","เอาเมนูมาให้ฉัน"],["这个菜是什么？","Món này là gì?","蒙 内 拉 吉","What is this dish?","เมนูนี้คืออะไร?"],["我想吃河粉","Tôi muốn ăn phở.","多伊 梦 安 佛","I want to eat river noodles","ฉันอยากกินก๋วยเตี๋ยวแม่น้ำ"],["我想吃米饭","Tôi muốn ăn cơm.","多伊 梦 安 根","I want to eat rice","ฉันอยากกินข้าว"],["给我一杯白水","Cho tôi một ly nước lọc.","卓 多伊 莫 利 努克 洛克","Give me a glass of white water","ให้ฉันแก้วน้ำสีขาว"],["给我冰茶","Cho tôi trà đá.","卓 多伊 扎 达","Give me iced tea.","เอาชาเย็นมาให้ฉัน"],["不吃辣","Không ăn cay.","空 安 盖","Doesn't eat spicy","ไม่กินเผ็ด"],["微辣","Ít cay.","伊特 盖","mildly spicy","เผ็ดเล็กน้อย"],["不要葱蒜","Không hành, không tỏi.","空 航，空 多伊","No scallions, no garlic.","ไม่มีเกล็ดไม่มีกระเทียม"],["吃素","Ăn chay.","安 斋","a weakling","มังสวิรัติ"],["多少钱？","Bao nhiêu tiền?","包妞 田","How much?","- เท่าไร?"],["太贵了","Đắt quá.","达特 瓜","too expensive","เเพงไป"],["便宜一点行吗？","Giảm giá được không?","减 加 德 空","Is it cheaper?","ถูกกว่าไหม?"],["最低多少钱？","Giá bao nhiêu cuối cùng?","加 包妞 古伊 贡","How much is the minimum?","ขั้นต่ำเท่าไหร่?"],["我要这个","Tôi lấy cái này.","多伊 雷 该 内","(OS) I want this one.","ฉันต้องการสิ่งนี้"],["不要那个","Không lấy cái kia.","空 雷 该 基亚","Don't do that.","อย่าทำอย่างนั้น"],["结账","Thanh toán.","汤 托安","Check out","เช็คเอาท์"],["找您零钱","Tiền thừa đây.","田 图阿 叠","Here's your change","นี่คือการเปลี่ยนแปลงของคุณ"],["有发票吗？","Có hóa đơn không?","果 华 敦 空","Have an invoice?","มีใบแจ้งหนี้ใช่ไหม?"],["这个卖吗？","Cái này bán không?","该 内 班 空","Is this for sale?","อันนี้ขายหรือเปล่า"],["质量好不好？","Chất lượng có tốt không?","贾鲁昂 果 托 空","Is the quality good?","คุณภาพดีไหม?"],["有保修吗？","Có bảo hành không?","果 包 亨 空","Is there a warranty?","มีการรับประกันหรือไม่?"],["我想买衣服","Tôi muốn mua quần áo.","多伊 梦 木阿 宽 奥","I want to buy clothes","ฉันต้องการซื้อเสื้อผ้า"],["大一号","Kích thước lớn hơn.","克修克 隆 亨","Big One","บิ๊กวัน"],["小一号","Kích thước nhỏ hơn.","克修克 诺 亨","Small One","อันเล็ก"],["可以试一下吗？","Thử cái này được không?","图 该 内 德 空","Can you give it a try?","คุณลองดูได้ไหม?"],["我想租房","Tôi muốn thuê nhà.","多伊 梦 图埃 尼亚","I want to rent","ฉันต้องการเช่า"],["月租多少？","Giá thuê bao nhiêu một tháng?","加 图埃 包妞 莫 唐","How much is the monthly rent?","ค่าเช่ารายเดือนเท่าไหร่?"],["水电另算吗？","Điện nước tính riêng?","甸 努克 丁 里翁","Does water and electricity count separately?","ค่าน้ำและค่าไฟฟ้านับแยกกันหรือไม่?"],["有wifi吗？","Có wifi không?","果 wifi 空","Is there wifi?","มี Wi-Fi ไหม?"],["wifi密码是什么？","Mật khẩu wifi là gì?","马特 考 wifi 拉 吉","what is the wifi password?","รหัสผ่าน Wi-Fi คืออะไร?"],["有空调吗？","Có điều hòa không?","果 迪乌 华 空","Is there an air conditioner?","มีเครื่องปรับอากาศไหม?"],["有热水器吗？","Có nóng lạnh không?","果 农 兰 空","Is there a water heater?","มีเครื่องทำน้ำอุ่นไหม?"],["卫生间在哪？","Nhà vệ sinh ở đâu?","尼亚 维 辛 欧 兜","Where's the bathroom?","ห้องน้ำอยู่ที่ไหน?"],["热水洗澡","Tắm nước nóng.","达姆 努克 农","Hot bath","อ่างน้ำร้อน"],["我想叫出租车","Tôi muốn gọi taxi.","多伊 梦 戈伊 taxi","I want to call a taxi","ฉันต้องการเรียกแท็กซี่"],["送我去……","Đưa tôi đến …","杜阿 多伊 登 …","Take me there...","พาฉันไปที่นั่น..."],["这条路到那里吗？","Đường này có đến đó không?","当 内 果 登 多 空","Is this the way to get there?","นี่คือวิธีที่จะไปถึงที่นั่นใช่ไหม?"],["打车多少钱？","Bao nhiêu tiền taxi?","包妞 田 taxi","How much is a taxi?","แท็กซี่ราคาเท่าไหร่?"],["公交站在哪里？","Đi xe buýt ở đâu?","迪 塞 布伊特 欧 兜","Where is the bus stop?","ป้ายรถเมล์อยู่ที่ไหน?"],["车票多少钱？","Vé xe bao nhiêu?","维 塞 包妞","How much are the tickets?","ตั๋วราคาเท่าไหร่?"],["我想去超市","Tôi muốn đi siêu thị.","多伊 梦 迪 修 提","I want to go to the supermarket","ฉันอยากไปซูเปอร์มาร์เก็ต"],["超市在哪里？","Siêu thị ở đâu?","修 提 欧 兜","Where is the supermarket?","ซูเปอร์มาร์เก็ตอยู่ที่ไหน?"],["我想买青菜","Tôi muốn mua rau.","多伊 梦 木阿 绕","I want to buy greens","ฉันต้องการซื้อกรีน"],["我想买肉","Tôi muốn mua thịt.","多伊 梦 木阿 提特","I want to buy meat","ฉันต้องการซื้อเนื้อสัตว์"],["新鲜水果","Trái cây tươi.","拆 盖 图伊","FRESH FRUITS","ผลไม้สด"],["多重？","Cân nặng bao nhiêu?","甘 囊 包妞","Multi","เท่าไหร่?"],["给我一个袋子","Cho tôi một túi.","卓 多伊 莫 图伊","Give me a bag.","เอากระเป๋ามาให้ฉัน"],["不要塑料袋","Không cần túi nhựa.","空 甘 图伊 尼亚","No plastic bags","ไม่มีถุงพลาสติก"],["我很累","Tôi mệt mỏi.","多伊 梅特 莫伊","I am very tired","ฉันเหนื่อยจริงๆ"],["我困了","Tôi buồn ngủ.","多伊 布温 古","I'm sleepy.","ฉันง่วงแล้ว"],["我很开心","Tôi vui.","多伊 维","i was happy","#ฉันช่างมีความสุข#"],["我不舒服","Tôi không khỏe.","多伊 空 克","I’m not feeling well.","- หนูรู้สึกไม่ดี"],["你还好吗？","Bạn khỏe không?","班 克 空","Are you okay?","'ทำให้เกิดมันทำให้เขามีความสุขจริงๆ"],["家人在中国","Gia đình tôi ở Trung Quốc.","加丁 多伊 欧 中郭","Family in China","ครอบครัวในประเทศจีน"],["我已婚","Tôi có vợ/chồng.","多伊 果 沃/钟","I am married","ฉันแต่งงานแล้ว"],["我未婚","Tôi chưa có vợ/chồng.","多伊 朱阿 果 沃/钟","I am unmarried","ฉันยังไม่ได้แต่งงาน"],["我有孩子","Tôi có con.","多伊 果 贡","I have children!","ฉันมีลูก"],["我的爱好是散步","Sở thích của tôi là đi bộ.","索 提 库阿 多伊 拉 迪 波","My hobby is walking","งานอดิเรกของฉันคือการเดิน"],["我喜欢咖啡","Tôi thích cà phê.","多伊 提 卡 菲","I like coffee","ฉันชอบกาแฟ"],["我不喝酒","Tôi không thích rượu.","多伊 空 提 邹","I ain’t drinking!","ฉันไม่ดื่ม"],["少喝酒","Uống ít rượu.","翁 伊特 邹","Drink less","ดื่มน้อยลง"],["今天周末","Hôm nay cuối tuần.","哄 奈 古伊 屯","This weekend","สุดสัปดาห์นี้"],["我想出去玩","Tôi muốn đi chơi.","多伊 梦 迪 拆","I want to go out","ฉันอยากออกไปข้างนอก"],["很高兴和你聊天","Rất vui nói chuyện với anh.","拉特 维 诺伊 川 维 安","Nice chatting with you","ยินดีที่ได้คุยกับคุณ"]]},{"id":"s4_4","name":"应急百句","title":"问路、就医、应急、安全","expect":100,"items":[["请帮帮我","Xin giúp tôi.","新 朱普 多伊","please help me","ช่วยด้วย! ช่วยด้วย! ช่วยด้วย!"],["我迷路了","Tôi bị lạc đường.","多伊 比 拉克 当","I lost my way.","ฉันเสียทางเดินของฉัน"],["……在哪里？","… ở đâu?","… 欧 兜","Where?","ที่ไหน？"],["车站在哪里？","Nhà ga ở đâu?","尼亚 嘎 欧 兜","Where is the station?","สถานีอยู่ที่ไหน?"],["医院在哪里？","Bệnh viện ở đâu?","本 温 欧 兜","Where is the hospital?","โรงพยาบาลอยู่ที่ไหน?"],["药店在哪里？","Cửa hàng thuốc ở đâu?","库阿 杭 图克 欧 兜","Where is the pharmacy?","ร้านขายยาอยู่ที่ไหน?"],["警察在哪里？","Cảnh sát ở đâu?","金 萨特 欧 兜","Where are the cops?","ตำรวจอยู่ที่ไหน?"],["银行在哪里？","Ngân hàng ở đâu?","恩 杭 欧 兜","Where is the bank?","ธนาคารอยู่ที่ไหน?"],["邮局在哪里？","Bưu điện ở đâu?","布 甸 欧 兜","Where is the post office?","ที่ทำการไปรษณีย์อยู่ที่ไหน?"],["杂货店在哪？","Cửa hàng tạp hóa ở đâu?","库阿 杭 扎 华 欧 兜","Where is the grocery store?","ร้านขายของชำอยู่ที่ไหน?"],["公共卫生间在哪？","Nhà vệ sinh công cộng ở đâu?","尼亚 维辛 贡 贡 欧 兜","Where is the public bathroom?","ห้องน้ำสาธารณะอยู่ที่ไหน?"],["这条路通往哪里？","Đường này đi đến đâu?","当 内 迪 登 兜","Where does this road lead to?","ถนนเส้นนี้ไปทางไหน?"],["直走","Đi thẳng.","迪 唐","go straight}","ตรงไปครับ"],["左转","Rẽ trái.","热 柴","took left","ซ้าย"],["右转","Rẽ phải.","热 法伊","Turn right.}","ขวาหรอ ? -ขวา"],["过桥","Đi qua cây cầu.","迪 瓜 盖 勾","bridge","ข้ามสะพานมา"],["过十字路口","Đi qua ngã tư.","迪 瓜 恩 图","Cross the intersection","ข้ามสี่แยก"],["离这里多远？","Cách đây bao xa?","嘎 叠 包 沙","How far is it from here?","ห่างจากที่นี่แค่ไหน?"],["走路多久？","Đi bộ bao lâu?","迪 波 包 楼","How long is the walk?","ใช้เวลาเดินนานแค่ไหน?"],["坐车多久？","Đi xe bao lâu?","迪 塞 包 楼","How long is the ride?","ใช้เวลาเดินทางนานแค่ไหน"],["有公交到那里吗？","Có xe buýt đến đó không?","果 塞 布伊特 登 多 空","Is there a bus to get there?","มีรถประจำทางไปที่นั่นไหม?"],["几路公交？","Xe buýt số mấy?","塞 布伊特 索 米","How many buses?","มีรถบัสกี่คัน?"],["公交站牌在哪？","Trạm dừng ở đâu?","扎姆 敦 欧 兜","Where are the bus stops?","ป้ายรถเมล์อยู่ที่ไหน?"],["我想租摩托","Tôi muốn thuê xe máy.","多伊 梦 图埃 塞 马伊","I want to rent a motorbike","ฉันต้องการเช่ารถจักรยานยนต์"],["摩托租金多少？","Giá thuê xe máy bao nhiêu?","加 图埃 塞 马伊 包妞","How much is the motorcycle rental?","มอเตอร์ไซค์ให้เช่าราคาเท่าไหร่?"],["有头盔吗？","Có mũ bảo hiểm không?","果 木 包 亨 空","Do you have a helmet?","คุณมีหมวกกันน็อคหรือไม่?"],["必须戴头盔","Phải đội mũ bảo hiểm.","法伊 多伊 木 包 亨","Helmet must be worn","ต้องสวมหมวกกันน็อค"],["不要开太快","Không chạy xe quá nhanh.","空 扎伊 塞 瓜 宁","Don't drive too fast","อย่าขับรถเร็วเกินไป"],["小心来往车辆","Cẩn thận xe cộ.","根吞 塞 果","Be careful with traffic","ระวังรถติด"],["我出事故了","Tôi bị tai nạn.","多伊 比 泰 南","I was in an accident","ฉันประสบอุบัติเหตุ"],["快叫警察","Gọi cảnh sát nhanh.","戈伊 金 萨特 宁","Call the police!","โทรเรียกตำรวจ!"],["快叫救护车","Gọi cấp cứu nhanh.","戈伊 加普 古 宁","Call an ambulance!","พระเจ้าเรียกรถพยาบาลที"],["急救电话115","Số cấp cứu là 115.","索 加普 古 拉 115","First Aid Phone 115","โทรศัพท์ปฐมพยาบาล 115"],["报警电话113","Số cảnh sát là 113.","索 金 萨特 拉 113","Police Phone 113","โทรศัพท์ตำรวจ 113"],["我头疼","Tôi đau đầu.","多伊 兜 兜","I have a headache","ผมปวดหัว"],["我肚子疼","Tôi đau bụng.","多伊 兜 邦","why are you mean","ปวดท้อง"],["我喉咙痛","Tôi đau họng.","多伊 兜 洪","I have a sore throat","ฉันมีอาการเจ็บคอ"],["我发烧","Tôi sốt.","多伊 索特","I have a fever","ฉันมีไข้"],["我咳嗽","Tôi ho.","多伊 霍","I cough.","ฉันไอ"],["我呼吸困难","Tôi khó thở.","多伊 克 特","I have trouble breathing","ฉันมีปัญหาในการหายใจ"],["我拉肚子","Tôi bị tiêu chảy.","多伊 比 丢 拆","I have diarrhea","ฉันมีอาการท้องเสีย"],["我想吐","Tôi bị nôn.","多伊 比 农","I want to throw up","ฉันอยากจะอ้วก"],["我过敏","Tôi bị dị ứng.","多伊 比 迪 温","I am allergic","ฉันแพ้"],["我牙疼","Tôi bị đau răng.","多伊 兜 让","(BrE) I've got toothache.","ฉันมีอาการปวดฟัน"],["我手疼","Tay tôi bị đau.","戴 多伊 比 兜","My hand hurts","ฉันเจ็บมือ"],["我脚疼","Chân tôi bị đau.","陈 多伊 比 兜","My feet hurt.","เท้าของฉันเจ็บ"],["擦伤","Bị trầy xước.","比 扎伊 索克","Abrasions","รอยถลอก"],["流血","Bị chảy máu.","比 扎伊 马乌","bleed","เลือดออก"],["烫伤","Bị bỏng.","比 邦","Scald","แผลไหม้"],["扭伤","Bị bong gân.","比 邦 甘","Sprain","เคล็ดขัดยอก"],["被虫子咬了","Tôi bị côn trùng cắn.","多伊 比 贡 重 甘","Got bitten by a bug","โดนแมลงกัด"],["我高血压","Tôi huyết áp cao.","多伊 惠特 阿普 高","I have high blood pressure","ฉันมีความดันโลหิตสูง"],["我糖尿病","Tôi bị tiểu đường.","多伊 比 丢 当","I have diabetes","ฉันเป็นโรคเบาหวาน"],["我自带药","Tôi có thuốc riêng.","多伊 果 图克 里翁","I bring my own medication","ฉันนำยามาเอง"],["我需要医生检查","Tôi cần bác sĩ khám.","多伊 甘 巴克 西 康","I need to see a doctor","ฉันต้องการพบแพทย์"],["医生是中国人吗？","Bác sĩ là người Trung Quốc không?","巴克 西 拉 内古 中郭 空","Is the doctor Chinese?","หมอเป็นคนจีนหรือเปล่า?"],["我需要翻译","Tôi cần phiên dịch.","多伊 甘 菲恩 迪","I need a translation","ฉันต้องการคำแปล"],["这是我的证件","Đây là giấy tờ tùy thân.","叠 拉 扎伊 多 图伊 坦","Here's my ID","และนี่"],["我的护照","Hộ chiếu của tôi.","霍普 秋 库阿 多伊","My passport?","หนังสือเดินทางของฉัน"],["工作证","Giấy phép lao động.","扎伊 佩普 劳 东","I.D. card","ใบอนุญาตทำงาน"],["钱包丢了","Tôi bị mất ví.","多伊 比 马特 维","I lost my wallet","ฉันทำกระเป๋าเงินหาย"],["手机丢了","Tôi bị mất điện thoại.","多伊 比 马特 甸 托","Lost phone","โทรศัพท์หาย"],["我被偷了","Tôi bị trộm.","多伊 比 卓姆","I was stolen","ฉันถูกขโมย"],["这个人偷我的东西","Người này lấy trộm đồ của tôi.","内古 内 雷 卓姆 多 库阿 多伊","This man stole from me","ผู้ชายคนนี้ขโมยไปจากฉัน"],["不要碰我的东西","Đừng đụng vào đồ của tôi.","敦 东 沃 多 库阿 多伊","Don't touch my stuff.","อย่าแตะต้องของของฉัน"],["这个不是我的","Cái này không phải của tôi.","该 内 空 法伊 库阿 多伊","This is not mine","นี่ไม่ใช่ของฉัน"],["我要锁房门","Tôi cần khóa phòng.","多伊 甘 阔 丰","I want to lock the door","ฉันต้องการล็อคประตู"],["不要给陌生人开门","Không mở cửa cho người lạ.","空 莫 库阿 卓 内古 拉","Don't open the door to strangers","อย่าเปิดประตูต้อนรับคนแปลกหน้า"],["着火了吗？","Có cháy không?","果 拆 空","Is it on fire?","ไฟไหม้หรือเปล่า?"],["着火了，快跑出去","Cháy rồi, chạy ra ngoài.","拆 罗伊，扎伊 拉 外","It's on fire. Get out of here.","ไฟไหม้แล้วออกไปจากที่นี่"],["安全出口在哪？","Cửa thoát hiểm ở đâu?","库阿 托阿 希姆 欧 兜","Where is the safe exit?","ทางออกที่ปลอดภัยอยู่ที่ไหน?"],["起火不要坐电梯","Không dùng thang máy khi cháy.","空 用 唐 梅 克 拆","Do not take the elevator in case of fire","ห้ามขึ้นลิฟต์ในกรณีที่เกิดไฟไหม้"],["地震了吗？","Có động đất không?","果 东 达特 空","Is there an earthquake?","มีแผ่นดินไหวหรือไม่?"],["安全了吗？","An toàn chưa?","安团 朱阿","Is it safe?","ปลอดภัยรึยัง?"],["我不会游泳","Tôi không biết bơi.","多伊 空 别 波伊","I can't swim.","ฉันว่ายน้ำไม่เป็น"],["水深危险","Nước sâu, nguy hiểm.","努克 搜，归贤","Depth Hazard","อันตรายจากความลึก"],["禁止在此游泳","Không bơi ở đây.","空 波伊 欧 叠","No swimming here","ห้ามว่ายน้ำที่นี่"],["我想换钱","Tôi muốn đổi tiền.","多伊 梦 多伊 田","I want to exchange money.","ฉันต้องการเปลี่ยนเงิน"],["换越南盾","Đổi tiền Việt Nam.","多伊 田 越 南","Change to Vietnamese dong","เปลี่ยนเป็นดองเวียดนาม"],["汇率多少？","Tỷ giá bao nhiêu?","提 加 包妞","What is the exchange rate?","อัตราแลกเปลี่ยนคืออะไร?"],["我换人民币","Tôi đổi tiền Nhân dân tệ.","多伊 多伊 田 恩 丹 泰","I will exchange it for RMB","ฉันจะแลกเป็นเงินหยวน"],["ATM取款机在哪？","Có ATM ở đâu?","果 ATM 欧 兜","Where is the ATM?","ตู้เอทีเอ็มอยู่ที่ไหน?"],["银行卡取不出钱","Thẻ ngân hàng không rút được.","泰 恩 杭 空 鲁特 德","Unable to withdraw funds from card","ถอนเงินจากบัตรไม่ได้"],["卡被锁了","Thẻ bị khóa.","泰 比 阔","Card is locked","บัตรถูกล็อค"],["我要寄快递","Tôi muốn gửi hàng.","多伊 梦 古伊 杭","I want to send a package.","ฉันต้องการส่งพาร์ทเนอร์จัดส่ง"],["寄回中国","Gửi về Trung Quốc.","古伊 维 中郭","Shipping to China","การจัดส่งไปยังประเทศจีน"],["需要几天？","Cần bao nhiêu ngày?","甘 包妞 尼","How many days?","กี่วัน?"],["物品易碎","Hàng dễ vỡ.","杭 耶 沃","Item is fragile","รายการมีความเปราะบาง"],["需要妥善包装","Cần đóng gói cẩn thận.","甘 东 戈伊 根吞","Needs to be properly packaged","ต้องได้รับการบรรจุหีบห่ออย่างเหมาะสม"],["我取快递","Tôi muốn nhận hàng.","多伊 梦 嫩 杭","I'll pick up the courier","ฉันจะไปรับพาร์ทเนอร์จัดส่ง"],["取件码是什么？","Mã nhận hàng là gì?","马 嫩 杭 拉 吉","What is a pickup code?","รหัสรับคืออะไร"],["我提前预约了","Tôi có hẹn trước.","多伊 果 亨 卓","I booked in advance","ฉันจองล่วงหน้า"],["我记不住地址","Tôi không nhớ địa chỉ.","多伊 空 诺 迪阿 芝","I can't remember the address","ฉันจำที่อยู่ไม่ได้"],["帮我拍张照","Chụp ảnh cho tôi.","朱普 安 卓 多伊","Take a photo for me","ถ่ายรูปให้ฉันหน่อย"],["一起拍照","Chụp ảnh cùng nhau.","朱普 安 贡 诺","Take a photo together","ถ่ายรูปร่วมกัน"],["禁止拍照","Không chụp ảnh được.","空 朱普 安 德","No photos allowed","ห้ามถ่ายภาพ"],["这里禁止吸烟","Không hút thuốc ở đây.","空 胡特 图克 欧 叠","Smoking is not allowed here","ที่นี่ไม่อนุญาตให้สูบบุหรี่"],["禁止乱扔垃圾","Không xả rác ở đây.","空 萨 扎克 欧 叠","Prohibition against littering","ห้ามทิ้งขยะ"],["遵守规定","Tuân thủ quy định.","团 图 归 定","Compliance","ปฏิบัติตามกฎ"],["感谢帮忙","Cảm ơn đã giúp đỡ.","甘恩 达 朱普 多","Thanks for your help","ขอบคุณที่ช่วยดูให้"]]}];
+
+</script>
+<script data-page-node-id="4J3pdAwELs3Jh8JQYWwghn" data-pnid-children="knjs0k61bj0x2fwvXBcTWG">
+/* 应用逻辑：依赖数据文件中的 SCENES / SENT4 / VOCAB / MONEY / APP_VER / APP_DATE */
+'use strict';
+
+const $ = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+
+const FAV_KEY = 'vnAssistFavV1';
+const HIST_KEY = 'vnAssistHistV1';
+const OPT_KEY = 'vnAssistOptV1';
+const state = {
+  tab: 'scene',
+  scene: SCENES[0].id,
+  sceneOpen: false,
+  vocab: VOCAB[0].id,
+  q: '',
+  dir: 'zh2vi',
+  fav: loadFav(),
+  hist: loadHist(),
+  opt: loadOpt()
+};
+
+function loadOpt() {
+  try { return Object.assign({ auto: true, fs: 0 }, JSON.parse(localStorage.getItem(OPT_KEY) || '{}')); } catch (e) { return { auto: true, fs: 0 }; }
+}
+function saveOpt() {
+  try { localStorage.setItem(OPT_KEY, JSON.stringify(state.opt)); } catch (e) {}
+}
+function loadHist() {
+  try { const a = JSON.parse(localStorage.getItem(HIST_KEY) || '[]'); return Array.isArray(a) ? a.filter(x => Array.isArray(x) && x.length >= 2) : []; } catch (e) { return []; }
+}
+function saveHist() {
+  try { localStorage.setItem(HIST_KEY, JSON.stringify(state.hist.slice(0, 20))); } catch (e) {}
+}
+function pushHist(zh, vi, lang) {
+  if (!zh || !vi) return;
+  const i = state.hist.findIndex(x => x[0] === zh);
+  if (i >= 0) state.hist.splice(i, 1);
+  state.hist.unshift([zh, vi, lang]);
+  state.hist = state.hist.slice(0, 20);
+  saveHist();
+}
+
+function loadFav() {
+  try { const a = JSON.parse(localStorage.getItem(FAV_KEY) || '[]'); return Array.isArray(a) ? a.filter(x => Array.isArray(x) && x.length >= 3) : []; } catch (e) { return []; }
+}
+function saveFav() {
+  try { localStorage.setItem(FAV_KEY, JSON.stringify(state.fav)); } catch (e) { /* 隐私模式忽略 */ }
+}
+function favOf(zh) { return state.fav.find(x => x[0] === zh); }
+function isFav(zh) { return !!favOf(zh); }
+function toggleFav(zh, vi, py, lang, en, th) {
+  const i = state.fav.findIndex(x => x[0] === zh);
+  if (i >= 0) state.fav.splice(i, 1);
+  else state.fav.push([zh, vi, py, lang, en, th]);
+  saveFav();
+  return i < 0;
+}
+
+/* ---------- 语音朗读 ---------- */
+let voices = [];
+function loadVoices() { voices = window.speechSynthesis ? speechSynthesis.getVoices() : []; }
+if ('speechSynthesis' in window) {
+  loadVoices();
+  speechSynthesis.onvoiceschanged = loadVoices;
+}
+function pickVoice(lang) {
+  if (!voices.length) return null;
+  const p = { vi:'vi', en:'en', th:'th', zh:'zh' }[lang] || 'zh';
+  return voices.find(v => new RegExp('^' + p, 'i').test(v.lang)) || null;
+}
+function speak(text, lang, slow) {
+  if (!('speechSynthesis' in window)) { toast('本机浏览器不支持朗读，请用 Chrome/Edge 打开'); return; }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = LANGS[lang] ? LANGS[lang].tts : 'zh-CN';
+  const v = pickVoice(lang);
+  if (v) u.voice = v;
+  else if (lang === 'vi') toast('未装越南语音包，发音可能不准（Win：设置→时间和语言→语音→添加语音）');
+  else if (lang === 'th') toast('未装泰语音包，发音可能不准（Win：设置→时间和语言→语音→添加语音）');
+  u.rate = slow ? 0.55 : 0.92;
+  speechSynthesis.cancel();
+  speechSynthesis.speak(u);
+}
+
+/* ---------- 提示条 ---------- */
+let toastTimer = null;
+function toast(msg) {
+  const t = $('#toast');
+  t.textContent = msg;
+  t.classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove('show'), 2600);
+}
+
+/* ---------- 语句卡片 ---------- */
+function phraseCard(zh, vi, py, lang, en, th) {
+  lang = lang || 'vi';
+  const starred = isFav(zh);
+  const d = document.createElement('div');
+  d.className = 'pcard' + (starred ? ' starred' : '');
+  d.innerHTML =
+    '<div class="zh"></div>' +
+    '<div class="vi"></div>' +
+    (en ? '<div class="en"></div>' : '') +
+    (th ? '<div class="th"></div>' : '') +
+    '<div class="py"></div>' +
+    '<div class="acts">' +
+    '<button class="btn-play" type="button">朗读</button>' +
+    '<button class="btn-slow" type="button">慢速</button>' +
+    (en ? '<button class="btn-en" type="button">英</button>' : '') +
+    (th ? '<button class="btn-th" type="button">泰</button>' : '') +
+    '<button class="btn-copy" type="button">复制</button>' +
+    '<button class="btn-fav" type="button">' + (starred ? '已收藏' : '收藏') + '</button>' +
+    '</div>';
+  $('.zh', d).textContent = zh;
+  $('.vi', d).textContent = vi;
+  if (en) $('.en', d).textContent = 'EN: ' + en;
+  if (th) { const el = $('.th', d); el.textContent = 'TH: ' + th; el.classList.add('thtxt'); el.lang = 'th'; }
+  $('.py', d).textContent = py ? '谐音 ' + py : '';
+  $('.btn-play', d).onclick = () => { speak(vi, lang); pushHist(zh, vi, lang); };
+  $('.btn-slow', d).onclick = () => { speak(vi, lang, true); pushHist(zh, vi, lang); };
+  if (en) $('.btn-en', d).onclick = () => { speak(en, 'en'); pushHist(zh, en, 'en'); };
+  if (th) $('.btn-th', d).onclick = () => { speak(th, 'th'); pushHist(zh, th, 'th'); };
+  $('.btn-copy', d).onclick = () => copyText(zh + '\n' + vi + (py ? '\n' + py : '') + (en ? '\n' + en : '') + (th ? '\n' + th : ''));
+  $('.btn-fav', d).onclick = () => {
+    const on = toggleFav(zh, vi, py, lang, en, th);
+    d.classList.toggle('starred', on);
+    $('.btn-fav', d).textContent = on ? '已收藏' : '收藏';
+    toast(on ? '已加入收藏' : '已移出收藏');
+    if (state.tab === 'fav') renderTab();
+  };
+  return d;
+}
+function copyText(txt) {
+  const ta = document.createElement('textarea');
+  ta.value = txt;
+  ta.style.cssText = 'position:fixed;left:-999px;top:0';
+  document.body.appendChild(ta);
+  ta.select();
+  let ok = false;
+  try { ok = document.execCommand('copy'); } catch (e) { ok = false; }
+  document.body.removeChild(ta);
+  if (!ok && navigator.clipboard) navigator.clipboard.writeText(txt).then(() => toast('已复制'), () => toast('复制失败，请长按选择'));
+  else toast(ok ? '已复制' : '复制失败，请长按选择');
+}
+
+/* ---------- 场景 tab ---------- */
+function allScenes() { return SCENES.concat(SENT4); }
+function renderSceneView(host) {
+  const scs = allScenes();
+
+  /* ---- 第一层：12 组场景宫格 ---- */
+  if (!state.sceneOpen) {
+    const t = document.createElement('div');
+    t.className = 'sec-title';
+    t.textContent = '全部场景 · ' + scs.length + ' 组';
+    host.appendChild(t);
+
+    const g = document.createElement('div');
+    g.className = 'ggrid';
+    scs.forEach((sc, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.className = 'gcard' + (sc.items.length >= 100 ? ' big' : '');
+      b.innerHTML = '<span class="no"></span><span class="nm"></span>' +
+        (sc.title ? '<span class="st"></span>' : '') + '<span class="ct"></span>';
+      $('.no', b).textContent = ('0' + (i + 1)).slice(-2);
+      $('.nm', b).textContent = sc.name;
+      if (sc.title) $('.st', b).textContent = sc.title;
+      $('.ct', b).textContent = sc.items.length + ' 句';
+      b.onclick = () => {
+        state.scene = sc.id; state.sceneOpen = true; state.q = '';
+        syncGlobalInput(); renderTab();
+      };
+      g.appendChild(b);
+    });
+    host.appendChild(g);
+
+    const note = document.createElement('div');
+    note.className = 'tip note';
+    note.textContent = '越南语有 6 个声调，谐音只能近似；开口前先点「朗读」听标准发音，配合手势、指着实物或用 Zalo 发文字最稳。';
+    host.appendChild(note);
+    return;
+  }
+
+  /* ---- 第二层：单组句子的详情页 ---- */
+  const sc = scs.find(x => x.id === state.scene) || scs[0];
+  state.scene = sc.id;
+
+  const head = document.createElement('div');
+  head.className = 'schead';
+  head.innerHTML = '<button class="back" type="button" aria-label="返回场景">' +
+    '<svg viewBox="0 0 24 24"><path d="M15 4.5 7.5 12 15 19.5"/></svg></button>' +
+    '<div class="sct"><div class="sch1"></div><div class="sch2"></div></div>';
+  $('.back', head).onclick = () => { state.sceneOpen = false; state.q = ''; syncGlobalInput(); renderTab(); };
+  $('.sch1', head).textContent = sc.name;
+  $('.sch2', head).textContent = (sc.title ? sc.title + ' · ' : '') + sc.items.length + ' 句';
+  host.appendChild(head);
+
+  const kw = state.q;
+  let items = sc.items;
+  if (kw) {
+    const low = kw.toLowerCase();
+    items = sc.items.filter(it => it[0].includes(kw) ||
+      String(it[1]).toLowerCase().includes(low) || String(it[2]).includes(kw) ||
+      String(it[3] || '').toLowerCase().includes(low) || String(it[4] || '').includes(kw));
+  }
+
+  const box = document.createElement('div');
+  box.className = 'listbox';
+  host.appendChild(box);
+
+  if (!items.length) {
+    const t = document.createElement('div');
+    t.className = 'tip';
+    t.textContent = kw ? '本组里没有匹配「' + kw + '」的句子，清空搜索可看全部。' : '这组句子还没录入。';
+    box.appendChild(t);
+    return;
+  }
+  items.forEach(it => box.appendChild(phraseCard(it[0], it[1], it[2], 'vi', it[3], it[4])));
+}
+
+/* ---------- 词库 tab ---------- */
+function renderVocabView(host) {
+  const chips = document.createElement('div');
+  chips.className = 'chips';
+  const note = document.createElement('div');
+  note.className = 'tip note';
+  note.textContent = '词库是积木：动词+名词自己拼短句，如 kiểm tra（检查）+ máy（机器）= kiểm tra máy（检查机器）。开口先称呼：男员工 anh（安）、女员工 chị（芝）、比自己小 em（恩）、领导 sếp（塞普）。点卡片即朗读。';
+  const h = document.createElement('div');
+  h.className = 'sec-title';
+  const grid = document.createElement('div');
+  grid.className = 'wgrid';
+  host.appendChild(chips);
+  host.appendChild(note);
+  host.appendChild(h);
+  host.appendChild(grid);
+
+  const paint = () => {
+    const g = VOCAB.find(x => x.id === state.vocab) || VOCAB[0];
+    state.vocab = g.id;
+    $$('.chip', chips).forEach(b => b.classList.toggle('on', b.dataset.id === g.id));
+    h.textContent = g.name + ' · ' + g.items.length + ' 词（谐音仅近似）';
+    grid.innerHTML = '';
+    g.items.forEach(it => {
+      const c = document.createElement('button');
+      c.type = 'button';
+      c.className = 'wcard';
+      c.innerHTML = '<b></b><span></span><i></i>' + (it[3] ? '<em class="en"></em>' : '') + (it[4] ? '<em class="th"></em>' : '');
+      $('b', c).textContent = it[0];
+      $('span', c).textContent = it[2];
+      $('i', c).textContent = it[1];
+      c.onclick = () => { speak(it[0], 'vi'); pushHist(it[2], it[0]); };
+      if (it[3]) { const em = $('em.en', c); em.textContent = 'EN: ' + it[3]; em.onclick = e => { e.stopPropagation(); speak(it[3], 'en'); pushHist(it[2], it[3], 'en'); }; }
+      if (it[4]) { const em = $('em.th', c); em.textContent = 'TH: ' + it[4]; em.classList.add('thtxt'); em.lang = 'th'; em.onclick = e => { e.stopPropagation(); speak(it[4], 'th'); pushHist(it[2], it[4], 'th'); }; }
+      grid.appendChild(c);
+    });
+  };
+  VOCAB.forEach(g => {
+    const b = document.createElement('button');
+    b.type = 'button';
+    b.className = 'chip';
+    b.dataset.id = g.id;
+    b.textContent = g.name;
+    b.onclick = () => {
+      if (state.vocab !== g.id) { state.vocab = g.id; paint(); }
+    };
+    chips.appendChild(b);
+  });
+  paint();
+}
+
+/* ---------- 搜索 tab ---------- */
+function renderSearchView(host) {
+  /* 顶部已有常驻搜索框时，这里不再重复放一个 */
+  const hasTop = !!$('#qGlobal');
+  let inp = null;
+  if (!hasTop) {
+    inp = document.createElement('input');
+    inp.className = 'search';
+    inp.type = 'search';
+    inp.placeholder = '输入中文或越南文关键词，如：不良、返工、多少钱';
+    inp.value = state.q;
+    host.appendChild(inp);
+  }
+
+  const box = document.createElement('div');
+  box.className = 'listbox';
+  host.appendChild(box);
+
+  const doSearch = () => {
+    if (inp) state.q = inp.value.trim();
+    box.innerHTML = '';
+    if (!state.q) {
+      const t = document.createElement('div');
+      t.className = 'tip';
+      t.textContent = '输入关键词后，全部场景一起搜。支持中文、越南文、谐音三种写法。';
+      box.appendChild(t);
+      return;
+    }
+    const kw = state.q.toLowerCase();
+    const hit = [];
+    allScenes().forEach(s => s.items.forEach(it => {
+      if (it[0].includes(state.q) || String(it[1]).toLowerCase().includes(kw) || String(it[2]).includes(state.q) ||
+          String(it[3] || '').toLowerCase().includes(kw) || String(it[4] || '').includes(state.q)) {
+        hit.push([s.name, it]);
+      }
+    }));
+    const vhit = [];
+    VOCAB.forEach(g => g.items.forEach(it => {
+      if (it[0].toLowerCase().includes(kw) || it[1].includes(state.q) || it[2].includes(state.q)) {
+        vhit.push([g.name, it]);
+      }
+    }));
+    const CAP = 50;
+    const vShow = vhit.slice(0, CAP);
+    const hShow = hit.slice(0, Math.max(0, CAP - vShow.length));
+    const t = document.createElement('div');
+    t.className = 'sec-title';
+    t.textContent = '搜索结果 · 句子 ' + hit.length + ' 条 + 词 ' + vhit.length + ' 条' + (hit.length + vhit.length > CAP ? '（仅显示前 ' + CAP + ' 条）' : '');
+    box.appendChild(t);
+    if (!hit.length && !vhit.length) {
+      const e = document.createElement('div');
+      e.className = 'tip';
+      e.textContent = '没找到，换个关键词试试；或用「互译」tab 现翻。';
+      box.appendChild(e);
+      return;
+    }
+    vShow.forEach(([name, it]) => {
+      const c = document.createElement('button');
+      c.type = 'button';
+      c.className = 'wcard wfull';
+      c.innerHTML = '<b></b><span></span><i></i>' + (it[3] ? '<em class="en"></em>' : '') + (it[4] ? '<em class="th"></em>' : '');
+      $('b', c).textContent = it[0];
+      $('span', c).textContent = it[2];
+      $('i', c).textContent = it[1] + ' · ' + name;
+      c.onclick = () => { speak(it[0], 'vi'); pushHist(it[2], it[0]); };
+      if (it[3]) { const em = $('em.en', c); em.textContent = 'EN: ' + it[3]; em.onclick = e => { e.stopPropagation(); speak(it[3], 'en'); pushHist(it[2], it[3], 'en'); }; }
+      if (it[4]) { const em = $('em.th', c); em.textContent = 'TH: ' + it[4]; em.classList.add('thtxt'); em.lang = 'th'; em.onclick = e => { e.stopPropagation(); speak(it[4], 'th'); pushHist(it[2], it[4], 'th'); }; }
+      box.appendChild(c);
+    });
+    hShow.forEach(([name, it]) => {
+      const c = phraseCard(it[0], it[1], it[2], 'vi', it[3], it[4]);
+      const tag = document.createElement('span');
+      tag.className = 'sc-tag';
+      tag.textContent = name;
+      $('.zh', c).appendChild(tag);
+      box.appendChild(c);
+    });
+  };
+  if (inp) {
+    let tm = null;
+    inp.oninput = () => { clearTimeout(tm); tm = setTimeout(doSearch, 220); };
+  }
+  doSearch();
+}
+
+/* ---------- 语言识别 ---------- */
+const VI_CHARS = 'ăâđêôơưàáảãạằắẳẵặầấẩẫậèéẻẽẹềếểễệìíỉĩịòóỏõọồốổỗộờớởỡợùúủũụừứửữựỳýỷỹỵ';
+function detectLang(t) {
+  if (!t) return 'other';
+  if (/[\u4e00-\u9fff]/.test(t)) return 'zh';
+  if (/[\u0e00-\u0e7f]/.test(t)) return 'th';
+  const low = t.toLowerCase();
+  let viHit = 0;
+  for (const ch of low) if (VI_CHARS.indexOf(ch) >= 0) viHit++;
+  if (viHit > 0) return 'vi';
+  if (/[a-z]/i.test(t)) return 'latin';
+  return 'other';
+}
+
+/* ---------- V1.6.0 四语种表（方向统一用 '<from>2<to>'，如 zh2th） ----------
+   百度语种码依据：百度翻译开放平台《通用文本翻译API-接入文档》常见语种列表（zh / vie / en / th）。
+   MyMemory 语种码：本次实测 zh-CN|th-TH 可用；Web Speech 语音码 th-TH 见 WICG 端侧识别语言列表。 */
+var LANGS = {
+  zh: { name:'中文',   baidu:'zh',  my:'zh-CN', tts:'zh-CN', label:'输入中文', ph:'打字，或点下方麦克风说话' },
+  vi: { name:'越南语', baidu:'vie', my:'vi',    tts:'vi-VN', label:'输入越南文（递给越南同事打字/说话）', ph:'请越南同事输入，或粘贴对方发来的文字' },
+  en: { name:'英语',   baidu:'en',  my:'en-US', tts:'en-US', label:'输入英文（递给对方打字/说话）', ph:'请对方输入，或粘贴对方发来的文字' },
+  th: { name:'泰语',   baidu:'th',  my:'th-TH', tts:'th-TH', label:'输入泰文（递给泰国同事打字/说话）', ph:'请泰国同事输入，或粘贴对方发来的文字' }
+};
+var LANG_KEYS = ['zh','vi','en','th'];
+function dirFrom(d) { return String(d || 'zh2vi').split('2')[0]; }
+function dirTo(d)   { return String(d || 'zh2vi').split('2')[1] || 'vi'; }
+function dirToLang(d) { return dirFrom(d); }  // 语音识别跟随「源语言」
+function langOf(k) { return LANGS[k] || LANGS.zh; }
+
+/* ---------- 互译 tab ---------- */
+function renderTranslateView(host) {
+  host.innerHTML =
+    '<div class="trow">' +
+    '<button type="button" class="mini tog' + (state.opt.auto ? ' on' : '') + '" id="autoBtn">输入即译：' + (state.opt.auto ? '开' : '关') + '</button>' +
+    '<button type="button" class="mini" id="convBtn">对话模式（递手机）</button>' +
+    '<button type="button" class="mini" id="photoBtn">拍照翻译</button>' +
+    '</div>' +
+    '<div class="langbar">' +
+    '<select id="fromSel" aria-label="源语言"></select>' +
+    '<button type="button" class="swapnow" id="swapBtn" title="交换方向">⇄</button>' +
+    '<select id="toSel" aria-label="目标语言"></select>' +
+    '</div>' +
+    '<div class="lang-note" id="dirNote"></div>' +
+    '<label class="lbl" id="srcLbl">输入中文</label>' +
+    '<textarea id="srcTa" rows="3" placeholder="打字，或点下方麦克风说话"></textarea>' +
+    '<div class="trow">' +
+    '<button type="button" class="mini" id="micBtn">语音输入</button>' +
+    '<button type="button" class="mini" id="clrBtn">清空</button>' +
+    '<button type="button" class="primary" id="goBtn">翻译</button>' +
+    '</div>' +
+    '<div class="trow">' +
+    '<button type="button" class="mini" id="hintBtn">语音说不了？看这里</button>' +
+    '</div>' +
+    '<label class="lbl">结果</label>' +
+    '<div class="tres" id="resBox"><div class="tip">翻译结果会显示在这里，可朗读、可复制。</div></div>' +
+    '<div class="tip warnline">机翻结果仅供参考。重要内容（安全、品质判定、金额承诺）请用场景库固定语句或与对方确认，别只靠机翻。</div>' +
+    '<div class="sec-title" style="margin-top:16px">最近用过</div>' +
+    '<div class="listbox" id="histBox"></div>';
+
+  const optsHtml = sel => LANG_KEYS.map(k => '<option value="' + k + '"' + (k === sel ? ' selected' : '') + '>' + LANGS[k].name + '</option>').join('');
+  const fillSel = () => {
+    const f = dirFrom(state.dir), t = dirTo(state.dir);
+    $('#fromSel', host).innerHTML = optsHtml(f);
+    $('#toSel', host).innerHTML = optsHtml(t);
+    const cross = f !== 'zh' && t !== 'zh';
+    $('#dirNote', host).textContent = '当前：' + LANGS[f].name + ' → ' + LANGS[t].name
+      + (cross ? ' · 跨外语方向为机翻初稿，请人工确认' : '（4 语种共 12 种方向）');
+  };
+  const setDir = (d, quiet) => {
+    if (dirFrom(d) === dirTo(d)) { fillSel(); return; }
+    const changed = state.dir !== d;
+    state.dir = d;
+    fillSel();
+    const f = dirFrom(d);
+    $('#srcLbl', host).textContent = LANGS[f].label;
+    $('#srcTa', host).placeholder = LANGS[f].ph;
+    const taEl = $('#srcTa', host);
+    if (f === 'th') { taEl.lang = 'th'; taEl.classList.add('thtxt'); }
+    else { taEl.lang = f; taEl.classList.remove('thtxt'); }
+    if (changed && !quiet) clearOut();
+  };
+  setDirQuiet = d => setDir(d, true);
+  $('#fromSel', host).onchange = () => {
+    const f = $('#fromSel', host).value;
+    let t = dirTo(state.dir);
+    if (t === f) t = (f === 'zh' ? 'vi' : 'zh');
+    setDir(f + '2' + t);
+  };
+  $('#toSel', host).onchange = () => {
+    const t = $('#toSel', host).value;
+    let f = dirFrom(state.dir);
+    if (f === t) f = (t === 'zh' ? 'vi' : 'zh');
+    setDir(f + '2' + t);
+  };
+
+  const resBox = $('#resBox', host);
+  const clearOut = () => { resBox.innerHTML = '<div class="tip">翻译结果会显示在这里，可朗读、可复制。</div>'; lastSrc = lastOut = lastDir = ''; };
+
+  $('#swapBtn', host).onclick = () => {
+    setDir(dirTo(state.dir) + '2' + dirFrom(state.dir));
+    $('#srcTa', host).value = '';
+    clearOut();
+    $('#srcTa', host).focus();
+  };
+  $('#goBtn', host).onclick = () => doTranslate(resBox);
+  $('#clrBtn', host).onclick = () => { $('#srcTa', host).value = ''; clearOut(); };
+  $('#hintBtn', host).onclick = showMicGuide;
+  $('#micBtn', host).onclick = () => startDictation($('#srcTa', host), txt => { autoPickDir(txt); doTranslate(resBox); }, null, $('#micBtn', host));
+  $('#convBtn', host).onclick = openConv;
+  $('#autoBtn', host).onclick = () => {
+    state.opt.auto = !state.opt.auto; saveOpt();
+    $('#autoBtn', host).textContent = '输入即译：' + (state.opt.auto ? '开' : '关');
+    $('#autoBtn', host).classList.toggle('on', state.opt.auto);
+    toast(state.opt.auto ? '停止输入 0.9 秒后自动翻译（需联网）' : '已关闭自动翻译，点「翻译」按钮才发起请求');
+  };
+
+  const ta = $('#srcTa', host);
+  ta.addEventListener('keydown', e => {
+    if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); doTranslate(resBox); }
+  });
+  let at = null;
+  ta.addEventListener('input', () => {
+    const v = ta.value;
+    autoPickDir(v);
+    if (!state.opt.auto) return;
+    clearTimeout(at);
+    if (v.trim().length < 2) return;
+    at = setTimeout(() => { if (v.trim() !== lastSrc) doTranslate(resBox, true); }, 900);
+  });
+
+  $('#photoBtn', host).onclick = openPhotoTrans;
+  renderHist($('#histBox', host));
+  setDir(state.dir, true);
+}
+
+function autoPickDir(v) {
+  const map = { zh:'zh', vi:'vi', latin:'en', th:'th' };
+  const f = map[detectLang(v)];
+  if (!f) return;
+  let t = dirTo(state.dir);
+  if (t === f) t = (f === 'zh' ? 'vi' : 'zh');
+  setDirQuiet(f + '2' + t);
+}
+let setDirQuiet = () => {};
+
+function renderHist(box) {
+  box.innerHTML = '';
+  if (!state.hist.length) {
+    const t = document.createElement('div');
+    t.className = 'tip';
+    t.textContent = '翻过的句子会留在这里（最近 20 条），现场反复用同一句时不用再打一遍。';
+    box.appendChild(t);
+    return;
+  }
+  state.hist.forEach(it => box.appendChild(phraseCard(it[0], it[1], '', it[2] || 'vi', '', '')));
+  const bar = document.createElement('div');
+  bar.className = 'trow';
+  const b = document.createElement('button');
+  b.type = 'button';
+  b.className = 'mini';
+  b.textContent = '清空最近使用';
+  b.onclick = () => { state.hist = []; saveHist(); renderHist(box); toast('已清空'); };
+  bar.appendChild(b);
+  box.appendChild(bar);
+}
+
+/* ---------- V1.7.0 对话模式：气泡流 / 对面屏 双模，共用同一份会话数组 ----------
+   说话方用中性双色 --me / --them；语种色 --vi/--en/--th 只做气泡竖条，避免语义冲突。
+   左右对齐 + 「我 / 对方」文字标签同时存在，不单靠颜色区分（WCAG 2.1 SC 1.4.11）。 */
+function escHtml(x) {
+  return String(x == null ? '' : x).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+/* 场景库条目：越南语列是原版人工语料；英文/泰文列是机翻初稿，标记必须区分，不冒充固定译法 */
+function convLib(zhText, cvF) {
+  const col = { vi:1, en:3, th:4 }[cvF];
+  const q = (zhText || '').trim();
+  if (col === undefined || !q) return { out:'', kind:'' };
+  let out = '';
+  const scan = arr => (arr || []).forEach(sec => (sec.items || []).forEach(it => {
+    if (!out && it[0] && String(it[0]).trim() === q && it[col]) out = it[col];
+  }));
+  scan(SC_A); scan(SC_B); scan(SC_C); scan(SC_D); scan(SENT4);
+  if (!out) return { out:'', kind:'' };
+  return { out: out, kind: cvF === 'vi' ? 'fixed' : 'lib' };
+}
+function openConv() {
+  const m = $('#mask');
+  let cvF = (dirFrom(state.dir) !== 'zh' ? dirFrom(state.dir) : dirTo(state.dir));
+  if (cvF === 'zh') cvF = 'vi';
+  const fName = LANGS[cvF].name;
+  let mode = 'bubble';
+  try { mode = localStorage.getItem('hy_conv_mode') === 'face' ? 'face' : 'bubble'; } catch (e) {}
+  const log = [];
+  let speakerLang = 'zh';  // Web Speech 必须显式指定 lang，无法自动判语种；由「我 / 对方」chip 决定
+
+  m.innerHTML =
+    `<div class="conv">
+      <div class="conv-head">
+        <button type="button" class="mini" id="cvClose">关闭</button>
+        <div class="conv-head-t">中文 ⇄ ${fName}</div>
+        <div class="conv-modes">
+          <button type="button" data-mode="bubble">气泡流</button>
+          <button type="button" data-mode="face">对面屏</button>
+        </div>
+      </div>
+      <div class="conv-body">
+        <div class="conv-log" id="cvLog"></div>
+        <div class="conv-face" id="cvFace" hidden>
+          <div class="conv-top">
+            <div class="conv-lbl">${fName}（给对方看，字是倒的）</div>
+            <div class="conv-txt vi-txt"></div>
+            <div class="conv-btns">
+              <button type="button" class="mini" id="cvPlayVi">朗读</button>
+              <button type="button" class="mini" id="cvPlayViSlow">慢速</button>
+            </div>
+          </div>
+          <div class="conv-bot">
+            <div class="conv-lbl">中文（你这边）</div>
+            <div class="conv-txt zh-txt"></div>
+          </div>
+        </div>
+      </div>
+      <div class="conv-in">
+        <div class="cv-who">
+          <button type="button" id="cvWhoMe" class="on">我说中文</button>
+          <button type="button" id="cvWhoThem">对方说${fName}</button>
+          <span class="cv-micstate" id="cvMicState">麦克风待命</span>
+        </div>
+        <div class="conv-tip" id="cvTip">气泡按说话方分色：浅棕=你、灰绿=对方；语种色只做竖条。</div>
+        <div class="conv-row"><textarea id="cvTa" rows="1" placeholder="打字，或点下方圆形按钮说话"></textarea></div>
+        <div class="conv-row btns">
+          <button type="button" class="mini" id="cvClear">清空对话</button>
+          <button type="button" class="primary" id="cvGo">翻译并显示</button>
+        </div>
+        <div class="cv-micwrap">
+          <button type="button" class="cvmic" id="cvMicBig" title="点一下开始说话，再点一下结束">
+            <span class="cvmic-ico"></span><span class="cvmic-txt">说话</span>
+          </button>
+        </div>
+      </div>
+    </div>`;
+  m.classList.add('show');
+  m.classList.add('convmode');
+
+  const logEl = $('#cvLog', m), faceEl = $('#cvFace', m), ta = $('#cvTa', m), tip = $('#cvTip', m);
+  const viTxt = $('.vi-txt', m), zhTxt = $('.zh-txt', m);
+  if (cvF === 'th') { viTxt.classList.add('thtxt'); viTxt.lang = 'th'; }
+  viTxt.style.color = 'var(--' + cvF + ')';  // 旧版写死 --vi，泰/英方向语种色不一致
+
+  const tagText = {
+    fixed: '场景库固定语句',
+    lib:   '场景库词条（机翻初稿）',
+    phrase:'固定译法（人工核过）',
+    mt:    '机翻初稿 · 关键用语请确认'
+  };
+  const setMode = (v, save) => {
+    mode = v === 'face' ? 'face' : 'bubble';
+    logEl.hidden = (mode === 'face');
+    faceEl.hidden = (mode !== 'face');
+    $$('.conv-modes button', m).forEach(b => b.classList.toggle('on', b.dataset.mode === mode));
+    if (save) { try { localStorage.setItem('hy_conv_mode', mode); } catch (e) {} }
+    tip.textContent = mode === 'face'
+      ? '对面屏：把手机转过去，对方读上半屏的倒置大字；也可点「朗读」。'
+      : '气泡按说话方分色：浅棕=你、灰绿=对方；语种色只做竖条。';
+  };
+  const setWho = v => {
+    speakerLang = v;
+    $('#cvWhoMe', m).classList.toggle('on', v === 'zh');
+    $('#cvWhoThem', m).classList.toggle('on', v !== 'zh');
+  };
+  const paint = () => {
+    if (!log.length) {
+      logEl.innerHTML = '<div class="cv-empty">还没有对话。<br>点下方圆形按钮说一句，或打字后点「翻译并显示」。<br>「对面屏」可切回给对面人看的倒置大字。</div>';
+      zhTxt.textContent = ''; viTxt.textContent = '';
+    } else {
+      logEl.innerHTML = log.map((e, i) => {
+        const isMe = e.who === 'me';
+        const bar = isMe ? 'var(--' + cvF + ')' : 'var(--brand)';
+        const outLang = isMe ? cvF : 'zh';
+        const srcTh = detectLang(e.src) === 'th' ? ' thtxt' : '';
+        return '<div class="cbub ' + (isMe ? 'me' : 'them') + '">' +
+          '<div class="cbub-bar" style="background:' + bar + '"></div>' +
+          '<div class="cbub-who">' + (isMe ? '我 · 中文' : '对方 · ' + fName) + '</div>' +
+          '<div class="cbub-src' + srcTh + '"' + (srcTh ? ' lang="th"' : '') + '>' + escHtml(e.src) + '</div>' +
+          '<div class="cbub-out' + (outLang === 'th' ? ' thtxt' : '') + '"' + (outLang === 'th' ? ' lang="th"' : '') + '>' + escHtml(e.out) + '</div>' +
+          '<div class="cbub-foot"><span class="cbub-tag ' + e.kind + '">' + (tagText[e.kind] || tagText.mt) + '</span>' +
+          '<button type="button" class="cbub-play" data-i="' + i + '">朗读</button></div>' +
+        '</div>';
+      }).join('');
+      const last = log[log.length - 1];
+      zhTxt.textContent = last.zh; viTxt.textContent = last.vi;
+    }
+    logEl.scrollTop = logEl.scrollHeight;
+  };
+  const push = e => {
+    log.push(e);
+    if (log.length > 30) log.shift();
+    paint();
+    pushHist(e.zh, e.vi, cvF);
+  };
+  const run = () => {
+    const src = ta.value.trim();
+    if (!src) { tip.textContent = '先说一句，或打字'; return; }
+    // 对方说英语时 detectLang 返回 'latin'（不是 'en'），旧版用 detectLang(src)===cvF 判方向会误判；
+    // 现统一按「是否中文」判定说话方，方向随之确定，四语种都成立。
+    const isMe = detectLang(src) === 'zh';
+    const dir = isMe ? 'zh2' + cvF : cvF + '2zh';
+    const done = (out, kind) => {
+      const zh = isMe ? src : out, vi = isMe ? out : src;
+      push({ who: isMe ? 'me' : 'them', src: src, out: out, zh: zh, vi: vi, kind: kind });
+      ta.value = '';
+      tip.textContent = (mode === 'face' ? '已显示在对面屏，把手机转过去给对方看。' : '已加入对话。')
+        + (kind === 'mt' ? '机翻初稿，关键用语请确认。' : '命中固定译法，未走机翻。');
+    };
+    const fix = isMe ? phraseFix(src, dir) : '';
+    if (fix) { done(fix, 'phrase'); return; }
+    const lib = isMe ? convLib(src, cvF) : { out:'', kind:'' };
+    if (lib.out) { done(lib.out, lib.kind); return; }
+    tip.textContent = '翻译中…（需联网）';
+    translate(src, dir).then(out => done(out, 'mt'))
+      .catch(e => { tip.textContent = '翻译失败：' + (e && e.message ? e.message : '网络不通') + '。可改用场景库固定语句。'; });
+  };
+
+  $$('.conv-modes button', m).forEach(b => { b.onclick = () => setMode(b.dataset.mode, true); });
+  $('#cvWhoMe', m).onclick = () => setWho('zh');
+  $('#cvWhoThem', m).onclick = () => setWho(cvF);
+  const micState = $('#cvMicState', m), micBig = $('#cvMicBig', m), micLabel = $('.cvmic-txt', m);
+  micState.textContent = '麦克风待命';  // paintMicBtn 依赖非空初值还原文字，显式设一次不依赖模板解析
+  // paintMicBtn 只改传入元素的 class，这里把状态同步到圆形大按钮（文字改「停止」+ 外圈脉冲）
+  const micObs = window.MutationObserver ? new window.MutationObserver(() => {
+    const live = micState.classList.contains('mic-live');
+    micBig.classList.toggle('on', live);
+    micLabel.textContent = live ? '停止' : '说话';
+  }) : { observe(){}, disconnect(){} };
+  micObs.observe(micState, { attributes:true, attributeFilter:['class'] });
+  micBig.onclick = () => startDictation(ta, () => { if (ta.value.trim()) run(); }, speakerLang, micState);
+  $('#cvGo', m).onclick = run;
+  $('#cvClear', m).onclick = () => { log.length = 0; paint(); tip.textContent = '对话已清空（历史页记录不受影响）'; };
+  $('#cvClose', m).onclick = () => { micObs.disconnect(); m.classList.remove('show'); m.classList.remove('convmode'); };
+  $('#cvPlayVi', m).onclick = () => { if (log.length) speak(log[log.length - 1].vi, cvF); else tip.textContent = '先翻译出' + fName; };
+  $('#cvPlayViSlow', m).onclick = () => { if (log.length) speak(log[log.length - 1].vi, cvF, true); else tip.textContent = '先翻译出' + fName; };
+  logEl.addEventListener('click', ev => {
+    const b = ev.target.closest ? ev.target.closest('.cbub-play') : null;
+    if (!b) return;
+    const e = log[Number(b.dataset.i)];
+    if (e) speak(e.out, e.who === 'me' ? cvF : 'zh');
+  });
+  ta.addEventListener('keydown', e => { if (e.key === 'Enter' && !e.shiftKey) { e.preventDefault(); run(); } });
+  setMode(mode, false);
+  setWho('zh');
+  paint();
+}
+
+let lastSrc = '', lastOut = '', lastDir = '';
+function doTranslate(resBox, quiet) {
+  const src = $('#srcTa', document).value.trim();
+  const dir = state.dir;
+  if (!src) { if (!quiet) toast('请先输入内容'); return; }
+  if (dir === lastDir && src === lastSrc && lastOut) { paintRes(src, lastOut, dir, resBox); return; }
+  if (src.length > 480) { toast('一次别超过 480 字，请分段'); return; }
+  resBox.innerHTML = '<div class="tip">翻译中…（需联网）</div>';
+  translate(src, dir).then(txt => {
+    lastSrc = src; lastOut = txt; lastDir = dir;
+    paintRes(src, txt, dir, resBox);
+    const _f = dirFrom(dir), _t = dirTo(dir);
+    const _toZh = _t === 'zh';
+    const _zh = _toZh ? txt : src;
+    const _tgt = _toZh ? src : txt;
+    const _lang = _toZh ? _f : _t;
+    pushHist(_zh, _tgt, _lang);
+  }).catch(err => {
+    resBox.innerHTML = '';
+    const d = document.createElement('div');
+    d.className = 'tip err';
+    d.textContent = '翻译失败：' + (err && err.message ? err.message : '网络不通') + '。请确认手机已联网，或改用场景库固定语句。';
+    resBox.appendChild(d);
+  });
+}
+
+/* ===================== 翻译配置（可选，留空则走 MyMemory 兜底） ===================== */
+// 想让"互译"在国内也快且稳，去 https://fanyi-api.baidu.com 免费申请「通用翻译」，
+// 把下面两项填好即可（免费额度 200 万字符/月，国内直连，不受 MyMemory 被墙影响）。
+const BAIDU_APPID = '';        // 留空 → 自动用 MyMemory；填了 → 优先用百度
+const BAIDU_KEY   = '';
+// 安全模式（可选）：把密钥放服务器端代理，前端只填代理地址，密钥不出服务器。
+// 用法见包内 netlify/functions/translate.js；留空则忽略。
+const BAIDU_PROXY_URL = '';
+
+// 语音识别（百度 ASR）：让国内 Chrome / 安卓也能「点按钮直接说中文出字」，绕过被墙的浏览器引擎。
+// 注意：百度「语音识别」与上面「翻译」是两套独立产品、密钥不同，需到 https://console.bce.baidu.com/ai
+//   → 语音技术 → 创建应用，拿到 API Key / Secret Key（不是翻译的 APPID/KEY）。
+// 浏览器无法跨域直连百度且 Secret 需保密，所以【必须走服务端代理】。把代理地址填到下面：
+//   例：Netlify 部署后填 '/.netlify/functions/asr'，自建服务填 'https://你的域名/asr'。
+// 留空 → 中文方向自动回退为浏览器内置语音识别（国内 Chrome 可能连不上服务器），越南语始终靠输入法/浏览器。
+const BAIDU_ASR_PROXY = '';
+
+// 语音识别（可选·高精度云端）：OpenAI Whisper / 兼容端点，越南语、中文都支持，准确度远高于浏览器内置。
+// 百度 ASR 只支持中文，越南语想高精度就靠这个。把服务端代理地址填到下面：
+//   例：Netlify 部署后填 '/.netlify/functions/whisper'，自建服务填 'https://你的域名/whisper'。
+// 留空 → 越南语走浏览器内置识别（已加本应用词库纠错），中文仍优先百度（若已配）。
+// 服务端密钥 OPENAI_APIKEY（及可选 WHISPER_MODEL）的配置见包内 netlify/functions/whisper.js。
+const WHISPER_PROXY = '';
+
+/* ---------- MD5（百度签名用，UTF-8 安全；取自 blueimp-md5 2.19.0，MIT License） ---------- */
+!function(n){"use strict";function d(n,t){var r=(65535&n)+(65535&t);return(n>>16)+(t>>16)+(r>>16)<<16|65535&r}function f(n,t,r,e,o,u){return d((u=d(d(t,n),d(e,u)))<<o|u>>>32-o,r)}function l(n,t,r,e,o,u,c){return f(t&r|~t&e,n,t,o,u,c)}function g(n,t,r,e,o,u,c){return f(t&e|r&~e,n,t,o,u,c)}function v(n,t,r,e,o,u,c){return f(t^r^e,n,t,o,u,c)}function m(n,t,r,e,o,u,c){return f(r^(t|~e),n,t,o,u,c)}function c(n,t){var r,e,o,u;n[t>>5]|=128<<t%32,n[14+(t+64>>>9<<4)]=t;for(var c=1732584193,f=-271733879,i=-1732584194,a=271733878,h=0;h<n.length;h+=16)c=l(r=c,e=f,o=i,u=a,n[h],7,-680876936),a=l(a,c,f,i,n[h+1],12,-389564586),i=l(i,a,c,f,n[h+2],17,606105819),f=l(f,i,a,c,n[h+3],22,-1044525330),c=l(c,f,i,a,n[h+4],7,-176418897),a=l(a,c,f,i,n[h+5],12,1200080426),i=l(i,a,c,f,n[h+6],17,-1473231341),f=l(f,i,a,c,n[h+7],22,-45705983),c=l(c,f,i,a,n[h+8],7,1770035416),a=l(a,c,f,i,n[h+9],12,-1958414417),i=l(i,a,c,f,n[h+10],17,-42063),f=l(f,i,a,c,n[h+11],22,-1990404162),c=l(c,f,i,a,n[h+12],7,1804603682),a=l(a,c,f,i,n[h+13],12,-40341101),i=l(i,a,c,f,n[h+14],17,-1502002290),c=g(c,f=l(f,i,a,c,n[h+15],22,1236535329),i,a,n[h+1],5,-165796510),a=g(a,c,f,i,n[h+6],9,-1069501632),i=g(i,a,c,f,n[h+11],14,643717713),f=g(f,i,a,c,n[h],20,-373897302),c=g(c,f,i,a,n[h+5],5,-701558691),a=g(a,c,f,i,n[h+10],9,38016083),i=g(i,a,c,f,n[h+15],14,-660478335),f=g(f,i,a,c,n[h+4],20,-405537848),c=g(c,f,i,a,n[h+9],5,568446438),a=g(a,c,f,i,n[h+14],9,-1019803690),i=g(i,a,c,f,n[h+3],14,-187363961),f=g(f,i,a,c,n[h+8],20,1163531501),c=g(c,f,i,a,n[h+13],5,-1444681467),a=g(a,c,f,i,n[h+2],9,-51403784),i=g(i,a,c,f,n[h+7],14,1735328473),c=v(c,f=g(f,i,a,c,n[h+12],20,-1926607734),i,a,n[h+5],4,-378558),a=v(a,c,f,i,n[h+8],11,-2022574463),i=v(i,a,c,f,n[h+11],16,1839030562),f=v(f,i,a,c,n[h+14],23,-35309556),c=v(c,f,i,a,n[h+1],4,-1530992060),a=v(a,c,f,i,n[h+4],11,1272893353),i=v(i,a,c,f,n[h+7],16,-155497632),f=v(f,i,a,c,n[h+10],23,-1094730640),c=v(c,f,i,a,n[h+13],4,681279174),a=v(a,c,f,i,n[h],11,-358537222),i=v(i,a,c,f,n[h+3],16,-722521979),f=v(f,i,a,c,n[h+6],23,76029189),c=v(c,f,i,a,n[h+9],4,-640364487),a=v(a,c,f,i,n[h+12],11,-421815835),i=v(i,a,c,f,n[h+15],16,530742520),c=m(c,f=v(f,i,a,c,n[h+2],23,-995338651),i,a,n[h],6,-198630844),a=m(a,c,f,i,n[h+7],10,1126891415),i=m(i,a,c,f,n[h+14],15,-1416354905),f=m(f,i,a,c,n[h+5],21,-57434055),c=m(c,f,i,a,n[h+12],6,1700485571),a=m(a,c,f,i,n[h+3],10,-1894986606),i=m(i,a,c,f,n[h+10],15,-1051523),f=m(f,i,a,c,n[h+1],21,-2054922799),c=m(c,f,i,a,n[h+8],6,1873313359),a=m(a,c,f,i,n[h+15],10,-30611744),i=m(i,a,c,f,n[h+6],15,-1560198380),f=m(f,i,a,c,n[h+13],21,1309151649),c=m(c,f,i,a,n[h+4],6,-145523070),a=m(a,c,f,i,n[h+11],10,-1120210379),i=m(i,a,c,f,n[h+2],15,718787259),f=m(f,i,a,c,n[h+9],21,-343485551),c=d(c,r),f=d(f,e),i=d(i,o),a=d(a,u);return[c,f,i,a]}function i(n){for(var t="",r=32*n.length,e=0;e<r;e+=8)t+=String.fromCharCode(n[e>>5]>>>e%32&255);return t}function a(n){var t=[];for(t[(n.length>>2)-1]=void 0,e=0;e<t.length;e+=1)t[e]=0;for(var r=8*n.length,e=0;e<r;e+=8)t[e>>5]|=(255&n.charCodeAt(e/8))<<e%32;return t}function e(n){for(var t,r="0123456789abcdef",e="",o=0;o<n.length;o+=1)t=n.charCodeAt(o),e+=r.charAt(t>>>4&15)+r.charAt(15&t);return e}function r(n){return unescape(encodeURIComponent(n))}function o(n){return i(c(a(n=r(n)),8*n.length))}function u(n,t){return function(n,t){var r,e=a(n),o=[],u=[];for(o[15]=u[15]=void 0,16<e.length&&(e=c(e,8*n.length)),r=0;r<16;r+=1)o[r]=909522486^e[r],u[r]=1549556828^e[r];return t=c(o.concat(a(t)),512+8*t.length),i(c(u.concat(t),640))}(r(n),r(t))}function t(n,t,r){return t?r?u(t,n):e(u(t,n)):r?o(n):e(o(n))}"function"==typeof define&&define.amd?define(function(){return t}):"object"==typeof module&&module.exports?module.exports=t:n.md5=t}(this);
+/* ---------- 翻译缓存（重复句离线也能秒回） ---------- */
+function trCacheGet(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
+function trCachePut(key, val) { try { localStorage.setItem(key, val); } catch (e) {} }
+
+/* ---------- 百度翻译（直接调用，需 APPID+KEY） ---------- */
+function baiduTranslate(text, dir) {
+  const c = pairCodes(dir);
+  const from = c.bf, to = c.bt;
+  const appid = BAIDU_APPID, key = BAIDU_KEY;
+  const salt = (Date.now() + Math.floor(Math.random() * 10000)).toString();
+  const sign = md5(appid + text + salt + key);
+  const url = 'https://fanyi-api.baidu.com/api/trans/vip/translate?q=' + encodeURIComponent(text)
+    + '&from=' + from + '&to=' + to + '&appid=' + encodeURIComponent(appid)
+    + '&salt=' + encodeURIComponent(salt) + '&sign=' + encodeURIComponent(sign);
+  return baiduFetch(url);
+}
+/* ---------- 百度翻译（走服务器端代理，密钥不出前端） ---------- */
+function baiduViaProxy(text, dir, proxyUrl) {
+  const c = pairCodes(dir);
+  const from = c.bf, to = c.bt;
+  return fetch(proxyUrl, { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify({ q: text, from: from, to: to }) })
+    .then(r => r.json())
+    .then(j => { if (j && j.error_code) throw new Error('代理错误 ' + j.error_code); const t = j && j.trans_result && j.trans_result[0] && j.trans_result[0].dst; if (!t) throw new Error('代理无译文'); return t; });
+}
+function baiduFetch(url) {
+  return new Promise((resolve, reject) => {
+    const ctrl = ('AbortController' in window) ? new AbortController() : null;
+    if (ctrl) setTimeout(() => ctrl.abort(), 12000);
+    fetch(url, ctrl ? { signal: ctrl.signal } : undefined)
+      .then(r => { if (!r.ok) throw new Error('百度接口返回 ' + r.status); return r.json(); })
+      .then(j => {
+        if (j && j.error_code) throw new Error('百度错误 ' + j.error_code + (j.error_msg ? '：' + j.error_msg : ''));
+        const t = j && j.trans_result && j.trans_result[0] && j.trans_result[0].dst;
+        if (!t) throw new Error('百度无译文');
+        resolve(t);
+      })
+      .catch(e => reject(e.name === 'AbortError' ? new Error('请求超时') : e));
+  });
+}
+
+/* ---------- V1.6.0 高频客套语固定译法（机翻易错，命中直接返回，不走机翻） ----------
+   实测依据（2026-11-06，MyMemory 中→越/英/泰各 8 条客套语抽样）：
+   「初次见面请多多关照」三语机翻全部误译为「第一次见面要小心 / 保重」；
+   「不客气」泰语漏译，直接返回英文 You're welcome.。
+   下列译法取自同批实测中的正确片段与应用自带场景库固定语句，非凭空编写，
+   但仍属「待人工校对初稿」：泰方/越方人员确认后可直接改本表。
+     Rất vui được gặp bạn —— 实测「很高兴认识你」→越南语的正确输出
+     Xin giúp đỡ tôi      —— 应用场景库 SC_A「请多关照」原有固定语句
+     ยินดีที่ได้รู้จักนะ   —— 实测「请多关照」→泰语输出，语义即「很高兴认识你」
+     ขอบคุณครับ           —— 实测「谢谢」→泰语输出（ครับ 为男用礼貌语尾，女用应作 ค่ะ）
+*/
+var PHRASE_FIX = {
+  '初次见面请多多关照': { vi:'Rất vui được gặp bạn', en:'Nice to meet you',       th:'ยินดีที่ได้รู้จักนะ' },
+  '很高兴认识你':       { vi:'Rất vui được gặp bạn', en:'Nice to meet you',       th:'ยินดีที่ได้รู้จักนะ' },
+  '请多关照':           { vi:'Xin giúp đỡ tôi',      en:'Please treat me kindly', th:'ยินดีที่ได้รู้จักนะ' },
+  '谢谢':               { vi:'Cảm ơn bạn',           en:'Thank you',              th:'ขอบคุณครับ' }
+};
+function phraseFix(text, dir) {
+  const q = (text || '').trim();
+  const hit = PHRASE_FIX[q];
+  if (!hit || dirFrom(dir) !== 'zh') return '';
+  return hit[dirTo(dir)] || '';
+}
+function pairCodes(dir) {
+  const f = dirFrom(dir), t = dirTo(dir);
+  return { bf: langOf(f).baidu, bt: langOf(t).baidu, mf: langOf(f).my, mt: langOf(t).my };
+}
+
+/* ---------- 统一翻译入口：固定译法 → 百度(优先) → MyMemory(兜底) → 本地缓存 ---------- */
+function translate(text, dir) {
+  const fixed = phraseFix(text, dir);
+  if (fixed) return Promise.resolve(fixed);
+  const key = 'tr:' + dir + ':' + text;
+  const cached = trCacheGet(key);
+  if (cached) return Promise.resolve(cached);
+  const useBaidu = (BAIDU_PROXY_URL && BAIDU_PROXY_URL.trim()) || (BAIDU_APPID && BAIDU_KEY);
+  if (!useBaidu) {
+    return mymemoryTranslate(text, dir).then(out => { trCachePut(key, out); return out; });
+  }
+  const baiduPromise = (BAIDU_PROXY_URL && BAIDU_PROXY_URL.trim())
+    ? baiduViaProxy(text, dir, BAIDU_PROXY_URL.trim())
+    : baiduTranslate(text, dir);
+  return baiduPromise
+    .then(out => { trCachePut(key, out); return out; })
+    .catch(() => mymemoryTranslate(text, dir).then(out => { trCachePut(key, out); return out; }));
+}
+
+function mymemoryTranslate(text, dir) {
+  const c = pairCodes(dir);
+  const lp = c.mf + '|' + c.mt;
+  const url = 'https://api.mymemory.translated.net/get?q=' + encodeURIComponent(text) + '&langpair=' + encodeURIComponent(lp);
+  return new Promise((resolve, reject) => {
+    const ctrl = ('AbortController' in window) ? new AbortController() : null;
+    if (ctrl) setTimeout(() => ctrl.abort(), 12000);
+    fetch(url, ctrl ? { signal: ctrl.signal } : undefined)
+      .then(r => { if (!r.ok) throw new Error('接口返回 ' + r.status); return r.json(); })
+      .then(j => {
+        const t = j && j.responseData && j.responseData.translatedText;
+        if (!t) throw new Error('无译文');
+        if (/MYMEMORY WARNING|INVALID|QUERY LENGTH/i.test(t)) throw new Error('免费额度或长度受限，请缩短句子');
+        const out = decodeEnt(t);
+        const to = dirTo(dir);
+        if ((to === 'zh' && !/[\u4e00-\u9fff]/.test(out)) ||
+            (to === 'th' && !/[\u0e00-\u0e7f]/.test(out))) {
+          throw new Error('机翻返回了非目标语言（疑似漏译），请重试或改用场景库固定语句');
+        }
+        resolve(out);
+      })
+      .catch(e => reject(e.name === 'AbortError' ? new Error('请求超时') : e));
+  });
+}
+function decodeEnt(s) {
+  const ta = document.createElement('textarea');
+  ta.innerHTML = s;
+  return ta.value;
+}
+
+function paintRes(src, out, dir, resBox) {
+  const f = dirFrom(dir), t = dirTo(dir);
+  const isToForeign = t !== 'zh';
+  const playText = isToForeign ? out : src;
+  const playLang = isToForeign ? t : f;
+  const playLabel = isToForeign ? '朗读' : '朗读' + LANGS[f].name + '原文';
+  resBox.innerHTML =
+    '<div class="r-src"></div>' +
+    '<div class="r-out" id="outTxt"></div>' +
+    '<div class="r-acts">' +
+    '<button type="button" class="btn-play" id="rPlay">' + playLabel + '</button>' +
+    '<button type="button" class="btn-copy" id="rCopy">复制结果</button>' +
+    (isToForeign ? '<button type="button" class="btn-fav" id="rFav">收藏</button>' : '') +
+    '</div>';
+  const srcEl = $('.r-src', resBox), outEl = $('#outTxt', resBox);
+  srcEl.textContent = src;
+  outEl.textContent = out;
+  if (f === 'th') { srcEl.classList.add('thtxt'); srcEl.lang = 'th'; }
+  if (t === 'th') { outEl.classList.add('thtxt', 'th'); outEl.lang = 'th'; }
+  else if (t === 'en') { outEl.classList.add('en'); }
+  $('#rPlay', resBox).onclick = () => speak(playText, playLang);
+  $('#rCopy', resBox).onclick = () => copyText(out);
+  if (isToForeign) {
+    const fb = $('#rFav', resBox);
+    fb.textContent = isFav(src) ? '已收藏' : '收藏';
+    fb.onclick = () => {
+      const on = toggleFav(src, out, '', t, t === 'en' ? out : '', t === 'th' ? out : '');
+      fb.textContent = on ? '已收藏' : '收藏';
+      toast(on ? '已加入收藏' : '已移出收藏');
+    };
+  }
+}
+/* ---------- 语音输入（优化版：可视状态 + 权限预检 + 超时兜底 + 精确报错） ---------- */
+let recog = null, listening = false, micBusy = false, micToken = 0, activeStop = null;
+
+function micSupported() {
+  return !!(window.SpeechRecognition || window.webkitSpeechRecognition);
+}
+function isIOS() {
+  return /iP(hone|ad|od)/.test(navigator.userAgent) ||
+         (navigator.platform === 'MacIntel' && navigator.maxTouchPoints > 1);
+}
+
+/* 按钮的「聆听中」可视状态 */
+function paintMicBtn(btn, on, label) {
+  if (!btn) return;
+  if (on) {
+    if (!btn.dataset.orig) btn.dataset.orig = btn.textContent;
+    btn.classList.add('mic-live');
+    btn.textContent = label || '聆听中…点击停止';
+  } else {
+    btn.classList.remove('mic-live');
+    if (btn.dataset.orig) { btn.textContent = btn.dataset.orig; delete btn.dataset.orig; }
+  }
+}
+
+/* 申请麦克风（返回 stream，供电平条使用；同时把「被拒绝/无设备」提前暴露） */
+function getUserMic() {
+  return new Promise((resolve, reject) => {
+    if (!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia) {
+      reject(Object.assign(new Error('浏览器不支持录音接口'), { name: 'NotSupported' }));
+      return;
+    }
+    navigator.mediaDevices.getUserMedia({ audio: true }).then(resolve).catch(reject);
+  });
+}
+
+/* 实时麦克风电平：说话时条子会跳，用来证明「到底有没有收到声音」 */
+let micStream = null, audioCtx = null, meterRAF = 0, meterEl = null;
+function meterStart(stream) {
+  micStream = stream;
+  // 对话模式是整屏递给对方看的界面，底部浮层会挡住内容，只用红色脉冲按钮提示即可
+  const mask = document.querySelector('#mask');
+  if (mask && mask.classList.contains('convmode')) return;
+  if (!meterEl) {
+    meterEl = document.createElement('div');
+    meterEl.id = 'micMeter';
+    meterEl.innerHTML = '<div class="lbl">麦克风电平（说话时应在跳动）</div><div class="track"><div id="micBar"></div></div>';
+    document.body.appendChild(meterEl);
+  }
+  try {
+    audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+    const src = audioCtx.createMediaStreamSource(stream);
+    const ana = audioCtx.createAnalyser();
+    ana.fftSize = 512;
+    src.connect(ana);
+    const buf = new Uint8Array(ana.fftSize);
+    const bar = meterEl.querySelector('#micBar');
+    const tick = () => {
+      ana.getByteTimeDomainData(buf);
+      let sum = 0;
+      for (let i = 0; i < buf.length; i++) { const v = (buf[i] - 128) / 128; sum += v * v; }
+      const pct = Math.min(100, Math.round(Math.sqrt(sum / buf.length) * 300));
+      bar.style.width = pct + '%';
+      bar.classList.toggle('hot', pct > 55);
+      meterRAF = requestAnimationFrame(tick);
+    };
+    tick();
+  } catch (e) { /* 不支持 Web Audio 就只保留按钮状态 */ }
+}
+function meterStop() {
+  if (meterRAF) { cancelAnimationFrame(meterRAF); meterRAF = 0; }
+  if (audioCtx) { try { audioCtx.close(); } catch (e) {} audioCtx = null; }
+  if (micStream) { micStream.getTracks().forEach(t => { try { t.stop(); } catch (e) {} }); micStream = null; }
+  if (meterEl) { meterEl.remove(); meterEl = null; }
+}
+
+function stopListening() {
+  listening = false;
+  if (recog) { try { recog.onend = null; recog.stop(); } catch (e) {} }
+  recog = null;
+  meterStop();
+}
+
+/* ---------- 越南语识别纠错：用应用自带词库做「候选校正」 ---------- */
+// 浏览器/云端识别器常把近音、带调越南语识别错。本应用自带近 500 条正确越南语（场景/百句/词库/金额），
+// 把识别结果（含多个候选）与词库比对，自动挑最贴近的一条，显著降低行业词汇误识。
+function normVi(s) {
+  return (s || '').toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')  // 去声调（识别器常丢/错调）
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
+    .trim();
+}
+let _viIndex = null;
+function ensureViIndex() {
+  if (_viIndex) return _viIndex;
+  _viIndex = [];
+  const add = r => { r = (r || '').trim(); if (r && !_viIndex.some(x => x.raw === r)) _viIndex.push({ raw: r, n: normVi(r) }); };
+  [SC_A, SC_B, SC_C, SC_D].forEach(arr => (arr || []).forEach(it => add(it[1])));
+  if (SENT4 && SENT4.items) SENT4.items.forEach(it => add(it[1]));
+  if (typeof VOCAB !== 'undefined') (VOCAB || []).forEach(g => (g.items || []).forEach(it => add(it[0])));
+  if (typeof MONEY !== 'undefined') (MONEY || []).forEach(it => add(it[2]));
+  return _viIndex;
+}
+
+// 归一化字符串相似度（0~1）：精确 > 包含 > 编辑距离
+function simVi(a, b) {
+  if (!a || !b) return 0;
+  if (a === b) return 1;
+  const A = a.split(' '), B = b.split(' ');
+  if (A.length && B.length) {
+    const sub = A.length <= B.length ? A : B, sup = A.length <= B.length ? B : A;
+    if (sub.every(t => sup.includes(t))) return 0.96;
+  }
+  const m = a.length, n = b.length;
+  if (!m || !n) return 0;
+  const dp = Array.from({ length: m + 1 }, () => new Int32Array(n + 1));
+  for (let i = 0; i <= m; i++) dp[i][0] = i;
+  for (let j = 0; j <= n; j++) dp[0][j] = j;
+  for (let i = 1; i <= m; i++) for (let j = 1; j <= n; j++) {
+    const c = a[i - 1] === b[j - 1] ? 0 : 1;
+    dp[i][j] = Math.min(dp[i - 1][j] + 1, dp[i][j - 1] + 1, dp[i - 1][j - 1] + c);
+  }
+  let s = 1 - dp[m][n] / Math.max(m, n);
+  if (Math.abs(m - n) > 3) s *= 0.7; // 长度差过大，降权
+  return s < 0 ? 0 : s;
+}
+
+// 在词库里找最贴近的文本
+function bestViMatch(text) {
+  const idx = ensureViIndex();
+  const n = normVi(text);
+  if (!n) return { match: null, score: 0 };
+  let best = { match: null, score: 0 };
+  for (const e of idx) {
+    const sc = simVi(n, e.n);
+    if (sc > best.score) best = { match: e.raw, score: sc };
+  }
+  return best;
+}
+
+// 从多个候选里挑「词库最贴近」的；返回 {text, canonical, score}
+function pickBestVi(alts) {
+  let best = { text: alts[0] || '', canonical: null, score: 0 };
+  for (const a of alts) {
+    if (!a) continue;
+    const sc = bestViMatch(a);
+    if (sc.score > best.score) best = { text: a, canonical: sc.match, score: sc.score };
+  }
+  return best;
+}
+
+
+/* ---------- V1.6.0 泰语识别纠错 ----------
+   泰文无词间空格、声调符为独立组合字符，不能套用 normVi 的 NFD 去调逻辑；
+   这里只做空白归一，相似度复用通用的编辑距离 simVi（阈值在调用处统一判断）。 */
+function normTh(s) { return (s || '').replace(/\s+/g, ' ').trim(); }
+let _thIndex = null;
+function ensureThIndex() {
+  if (_thIndex) return _thIndex;
+  _thIndex = [];
+  const add = r => { r = (r || '').trim(); if (r && !_thIndex.some(x => x.raw === r)) _thIndex.push({ raw: r, n: normTh(r) }); };
+  [SC_A, SC_B, SC_C, SC_D].forEach(arr => (arr || []).forEach(it => add(it[4])));
+  if (SENT4 && SENT4.items) SENT4.items.forEach(it => add(it[4]));
+  if (typeof VOCAB !== 'undefined') (VOCAB || []).forEach(g => (g.items || []).forEach(it => add(it[4])));
+  if (typeof MONEY !== 'undefined') (MONEY || []).forEach(it => add(it[5]));
+  return _thIndex;
+}
+function pickBestTh(alts) {
+  const idx = ensureThIndex();
+  let best = { text: alts[0] || '', canonical: null, score: 0 };
+  for (const a of alts) {
+    if (!a) continue;
+    const n = normTh(a);
+    for (const e of idx) {
+      const sc = simVi(n, e.n);
+      if (sc > best.score) best = { text: a, canonical: e.raw, score: sc };
+    }
+  }
+  return best;
+}
+
+async function startDictation(ta, onDone, lang, btn) {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+  // 再点一次 = 停止（「正在启动」与「聆听中」都算）
+  if (micBusy) {
+    const stopper = activeStop;
+    activeStop = null;
+    micBusy = false;
+    if (stopper) { try { stopper(); } catch (e) {} }
+    else { stopListening(); }
+    paintMicBtn(btn, false);
+    meterStop();
+    toast('已停止');
+    if (onDone) { try { onDone(ta.value); } catch (e) {} }
+    return;
+  }
+
+  // ① 本地文件被浏览器禁麦克风（最常见的「点了没反应」）
+  if (location.protocol === 'file:') {
+    toast('本地文件（file://）里麦克风被禁用，请用 https 网址打开');
+    showMicGuide('当前是本地文件 file://，浏览器禁止麦克风');
+    return;
+  }
+  // ② 非安全源（纯 http 局域网）也会被禁
+  if (!window.isSecureContext && location.hostname !== 'localhost') {
+    toast('当前不是 https，浏览器禁止麦克风。请改用输入法语音键');
+    showMicGuide('当前地址不是 https');
+    return;
+  }
+
+  // 【决策顺序】非 iOS 时：越南语/中文 优先走云端 Whisper（高精度，需配 WHISPER_PROXY）；
+  //             中文且配了百度 → 走百度；否则走浏览器内置识别（越南语已加本应用词库纠错）。
+  const reqLang = lang || dirToLang(state.dir);
+  if (!isIOS()) {
+    if (whisperASRAvailable()) return whisperASRDictate(ta, onDone, btn, reqLang);
+    if (reqLang === 'zh' && baiduASRAvailable()) return baiduASRDictate(ta, onDone, btn);
+  }
+
+  // 其余情况（iOS / 未配云端）→ 走浏览器内置语音识别
+  if (!SR) { showMicGuide('你的浏览器不支持内置语音识别'); return; }
+
+  const myToken = ++micToken;
+  micBusy = true;
+  const alive = () => myToken === micToken;
+  // 立即给出反馈，避免「点了没动静」
+  paintMicBtn(btn, true, '正在启动麦克风…');
+
+  const fail = msg => {
+    micBusy = false; micToken++;
+    paintMicBtn(btn, false);
+    meterStop();
+    toast(msg);
+  };
+
+  // ③ 非 iOS：先申请权限并打开电平条，把「拒绝/无设备」提前暴露。iOS Safari 必须保留用户手势，故跳过预检
+  if (!isIOS()) {
+    try {
+      const stream = await getUserMic();
+      if (!alive()) { try { stream.getTracks().forEach(t => t.stop()); } catch (e) {} return; }
+      meterStart(stream);
+    } catch (e) {
+      const n = e && e.name;
+      if (n === 'NotAllowedError' || n === 'SecurityError') { fail('麦克风权限被拒绝：点地址栏右侧锁图标→允许麦克风，再试'); return; }
+      if (n === 'NotFoundError' || n === 'DevicesNotFoundError') { fail('没有检测到麦克风设备，请接上耳麦或检查系统录音设备'); return; }
+      if (n === 'NotReadableError') { fail('麦克风被其他程序占用，关掉后重试'); return; }
+      fail('无法开启麦克风：' + (e && e.message ? e.message : '未知错误'));
+      return;
+    }
+  }
+  if (!alive()) return;
+
+  const useLang = lang || dirToLang(state.dir);
+  try {
+    recog = new SR();
+    recog.lang = LANGS[useLang] ? LANGS[useLang].tts : 'zh-CN';
+    recog.interimResults = true;
+    recog.continuous = false;
+    recog.maxAlternatives = 5; // 多候选：让纠错引擎从多个结果里挑最贴近词库的一条
+    activeStop = () => { try { recog.onend = null; recog.stop(); } catch (e) {} };
+  } catch (e) { micBusy = false; paintMicBtn(btn, false); meterStop(); showMicGuide('初始化语音识别失败'); return; }
+
+  const old = ta.value.trim();
+  let gotAny = false;
+  let gotText = false;
+  const startTimer = setTimeout(() => {
+    if (!listening && alive()) {
+      micBusy = false;
+      toast('麦克风没有启动，可能被系统拦截');
+      stopListening();
+      paintMicBtn(btn, false);
+    }
+  }, 5000);
+  let silenceTimer = null;
+
+  recog.onstart = () => {
+    if (!alive()) return;
+    listening = true;
+    clearTimeout(startTimer);
+    paintMicBtn(btn, true, '请说' + (LANGS[useLang] ? LANGS[useLang].name : '中文') + '…点击停止');
+    silenceTimer = setTimeout(() => {
+      if (!gotAny && alive()) {
+        micBusy = false;
+        toast('没听到声音，请靠近麦克风再说一次');
+        stopListening();
+        paintMicBtn(btn, false);
+      }
+    }, 12000);
+  };
+
+  recog.onresult = ev => {
+    if (!alive()) return;
+    gotAny = true;
+    clearTimeout(silenceTimer);
+
+    // 收集最终结果的多个候选（maxAlternatives 已设为 5）
+    const finals = [];
+    for (let i = 0; i < ev.results.length; i++) {
+      const rs = ev.results[i];
+      if (rs && rs.isFinal) {
+        for (let a = 0; a < rs.length; a++) {
+          if (rs[a] && typeof rs[a].transcript === 'string' && rs[a].transcript.trim()) finals.push(rs[a].transcript.trim());
+        }
+      }
+    }
+
+    // 还没有最终结果：先显示临时识别文本（实时反馈）
+    if (!finals.length) {
+      let s = '';
+      for (let i = 0; i < ev.results.length; i++) {
+        const rs = ev.results[i];
+        if (!rs) continue;
+        const alt = (rs[0] !== undefined && rs[0] !== null) ? rs[0] : rs;
+        const t = (alt && typeof alt.transcript === 'string') ? alt.transcript : '';
+        if (t) s += t;
+      }
+      s = s.replace(/\bundefined\b/gi, ' ').replace(/\bnull\b/gi, ' ').replace(/\s+/g, ' ').trim();
+      if (s) ta.value = (old ? old + ' ' : '') + s;
+      return;
+    }
+
+    // 最终结果：越南语/泰语用应用词库从多候选里挑最贴近的一条并自动校正。
+    // 只有相似度 >= 0.75 才替换，避免与词库完全无关的句子被误改成别的句子。
+    let finalText = finals[0];
+    if (useLang === 'vi' || useLang === 'th') {
+      const isTh = useLang === 'th';
+      const best = isTh ? pickBestTh(finals) : pickBestVi(finals);
+      const norm = isTh ? normTh : normVi;
+      if (best.score >= 0.75 && best.canonical) {
+        finalText = best.canonical;
+        if (best.text && norm(best.text) !== norm(best.canonical)) toast('已按词库校正：' + best.canonical);
+      } else {
+        finalText = best.text || finals[0];
+      }
+    }
+    ta.value = (old ? old + ' ' : '') + finalText;
+    gotText = true;
+  };
+
+  recog.onerror = ev => {
+    listening = false; micBusy = false;
+    clearTimeout(startTimer); clearTimeout(silenceTimer);
+    paintMicBtn(btn, false);
+    meterStop();
+    const err = ev && ev.error;
+    if (err === 'aborted') return;
+    if (err === 'not-allowed' || err === 'service-not-allowed') {
+      toast('麦克风权限被拒绝：点地址栏锁图标→允许麦克风');
+    } else if (err === 'no-speech') {
+      toast('没听清，请再说一次');
+    } else if (err === 'audio-capture') {
+      toast('没有可用的麦克风');
+    } else if (err === 'network') {
+      toast('浏览器语音服务连不上（国内 Chrome 常被墙），改用输入法语音键');
+      showMicGuide('语音识别服务器连不上');
+    } else if (err === 'language-not-supported') {
+      toast('该浏览器不支持此语言，请改用输入法语音键');
+    } else {
+      toast('识别失败（' + err + '），可改用输入法语音键');
+    }
+  };
+
+  recog.onend = () => {
+    listening = false; micBusy = false;
+    clearTimeout(startTimer); clearTimeout(silenceTimer);
+    paintMicBtn(btn, false);
+    meterStop();
+    // 有声音事件但一个字都没拿到 → 说明浏览器把音频发给了境外服务器却没回来结果
+    if (!gotText && ta.value.trim() === old) toast('没识别出文字：国内 Chrome 的语音服务常连不上境外服务器，建议配百度识别或改用输入法语音键');
+    if (onDone) { try { onDone(ta.value); } catch (e) {} }
+  };
+
+  try { recog.start(); }
+  catch (e) {
+    listening = false; micBusy = false; clearTimeout(startTimer);
+    paintMicBtn(btn, false);
+    meterStop();
+    showMicGuide('启动语音识别失败');
+  }
+}
+
+/* 语音指引：从对话模式弹出时用内嵌浮层，不能覆盖 #mask 里的会话（V1.7.0 修复） */
+function showMicGuide(reason) {
+  const m = $('#mask');
+  const inConv = m.classList.contains('convmode');
+  const why = (typeof reason === 'string' && reason)
+    ? '<p class="tip">原因：' + reason + '</p>' : '';
+  const fileTip = (location.protocol === 'file:')
+    ? '<p><b>你现在是双击本地文件打开的（file://），浏览器在本地文件里禁止麦克风。</b>请把网站部署成 https 网址后再试，或直接用输入法语音键。</p>'
+    : '';
+  const prev = inConv ? m.querySelector('.cv-guide') : null;
+  if (prev) prev.remove();
+  const host = inConv ? document.createElement('div') : m;
+  if (inConv) { host.classList.add('cv-guide'); m.appendChild(host); m.onclick = null; }
+  host.innerHTML =
+    '<div class="modal">' +
+    '<h3>语音输入怎么用最稳</h3>' +
+    why + fileTip +
+    '<p><b>最稳的做法：用手机输入法的语音键。</b>你在中文输入法点麦克风说中文，越南同事用 Gboard/越南语键盘说越南语，转成文字后再点翻译。这条路 100% 可用，不受浏览器限制。</p>' +
+    '<p>内置麦克风按钮走浏览器语音识别：<b>Edge、iOS Safari、海外网络下的 Chrome 一般可用；国内 Chrome 常连不上语音服务器</b>。若点了没反应或报「连不上服务器」，就换上面输入法的路子。</p>' +
+    '<p class="tip"><b>越南语已做词库纠错：</b>识别结果会自动和应用自带近 500 条正确越南语（场景/百句/词库/金额）比对、挑最贴近的一条，行业词汇误识大幅减少（识别框上方会提示「已按词库校正」）。</p>' +
+    '<p class="tip">若仍不够准，可在部署时配置 <b>OpenAI Whisper 云端识别</b>（在 index.html 填 WHISPER_PROXY、服务端设 OPENAI_APIKEY），越南语/中文准确度会再上一个台阶；不改则默认走上面的词库纠错方案。</p>' +
+    '<p class="tip">越南文你打不出来很正常：需要「越→中」时，直接把手机递给越南同事，让对方语音或键盘输入。</p>' +
+    '<button type="button" class="primary" id="mClose">知道了</button>' +
+    '</div>';
+  m.classList.add('show');
+  const close = () => { if (inConv) host.remove(); else m.classList.remove('show'); };
+  $('#mClose', host).onclick = close;
+  host.onclick = e => { if (e.target === host) close(); };
+}
+function baiduASRAvailable() {
+  return !!(BAIDU_ASR_PROXY && BAIDU_ASR_PROXY.trim());
+}
+
+async function baiduASRDictate(ta, onDone, btn) {
+  const myToken = ++micToken;
+  micBusy = true;
+  const alive = () => myToken === micToken;
+  paintMicBtn(btn, true, '正在录音…点击停止');
+  const fail = msg => {
+    micToken++; micBusy = false; activeStop = null;
+    paintMicBtn(btn, false); meterStop();
+    toast(msg);
+  };
+
+  let stream;
+  try {
+    stream = await getUserMic();
+    if (!alive()) { try { stream.getTracks().forEach(t => t.stop()); } catch (e) {} return; }
+    meterStart(stream);
+  } catch (e) {
+    const n = e && e.name;
+    if (n === 'NotAllowedError' || n === 'SecurityError') { fail('麦克风权限被拒绝：点地址栏右侧锁图标→允许麦克风，再试'); return; }
+    if (n === 'NotFoundError' || n === 'DevicesNotFoundError') { fail('没有检测到麦克风设备，请接上耳麦'); return; }
+    if (n === 'NotReadableError') { fail('麦克风被其他程序占用，关掉后重试'); return; }
+    fail('无法开启麦克风：' + (e && e.message ? e.message : '未知错误')); return;
+  }
+  if (!alive()) return;
+
+  let mr;
+  try { mr = new MediaRecorder(stream); }
+  catch (e) { fail('当前浏览器不支持录音，请改用输入法语音键'); return; }
+  const chunks = [];
+  mr.ondataavailable = ev => { if (ev.data && ev.data.size) chunks.push(ev.data); };
+  mr.start();
+  const stopRec = () => { try { if (mr.state !== 'inactive') mr.stop(); } catch (e) {} };
+  activeStop = stopRec;
+
+  // 最长录制 15s（足够一句话；百度短语音单次 ≤60s）
+  const maxTimer = setTimeout(stopRec, 15000);
+  // 启动保护：若 3s 仍在 inactive，说明没录上
+  const safeGuard = setTimeout(() => { if (alive() && mr.state === 'inactive') { clearTimeout(maxTimer); fail('录音没有开始'); } }, 3000);
+
+  let settled = false;
+  mr.onstop = async () => {
+    if (settled) return;
+    settled = true;
+    clearTimeout(maxTimer); clearTimeout(safeGuard);
+    if (!alive()) { try { stream.getTracks().forEach(t => t.stop()); } catch (e) {} return; }
+    paintMicBtn(btn, true, '识别中…');
+    try {
+      const blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' });
+      const text = await transcribeBaidu(blob);
+      const clean = (text || '').trim();
+      if (clean) {
+        const old = ta.value.trim();
+        ta.value = (old ? old + ' ' : '') + clean;
+        micToken++; micBusy = false; activeStop = null;
+        paintMicBtn(btn, false); meterStop();
+        if (onDone) { try { onDone(ta.value); } catch (e) {} }
+      } else {
+        fail('没识别到内容，请靠近麦克风再说一次');
+      }
+    } catch (e) {
+      fail('百度识别失败：' + (e && e.message ? e.message : '未知错误') + '，可改用输入法语音键');
+    }
+  };
+}
+
+/* 音频 blob → 16k 单声道 WAV → 调代理 → 返回识别文字 */
+async function transcribeBaidu(blob) {
+  const buf = await blob.arrayBuffer();
+  const AC = window.AudioContext || window.webkitAudioContext;
+  const ac = new AC();
+  let decoded;
+  try { decoded = await ac.decodeAudioData(buf); }
+  finally { try { ac.close(); } catch (e) {} }
+  const mono = toMono(decoded);
+  const resampled = await resampleTo(mono, 16000);
+  const wav = encodeWAV(resampled, 16000);
+  const b64 = b64FromBuffer(wav);
+  const r = await fetch(BAIDU_ASR_PROXY.trim(), {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ audio: b64, len: wav.byteLength })
+  });
+  const j = await r.json();
+  if (j && j.err) throw new Error(j.err);
+  return (j && j.text) ? j.text : '';
+}
+
+/* ---------- OpenAI Whisper 云端识别（可选·高精度）：越南语/中文都支持 ---------- */
+// 浏览器无法跨域直连 OpenAI，且密钥绝不能放前端，故走服务端代理（见 netlify/functions/whisper.js）。
+// 仅在 WHISPER_PROXY 已配置时启用；留空则本函数不会被调用。
+function whisperASRAvailable() {
+  return !!(WHISPER_PROXY && WHISPER_PROXY.trim());
+}
+
+async function whisperASRDictate(ta, onDone, btn, lang) {
+  const myToken = ++micToken;
+  micBusy = true;
+  const alive = () => myToken === micToken;
+  paintMicBtn(btn, true, '正在录音…点击停止');
+  const fail = msg => {
+    micToken++; micBusy = false; activeStop = null;
+    paintMicBtn(btn, false); meterStop();
+    toast(msg);
+  };
+  let stream;
+  try {
+    stream = await getUserMic();
+    if (!alive()) { try { stream.getTracks().forEach(t => t.stop()); } catch (e) {} return; }
+    meterStart(stream);
+  } catch (e) {
+    const n = e && e.name;
+    if (n === 'NotAllowedError' || n === 'SecurityError') { fail('麦克风权限被拒绝：点地址栏右侧锁图标→允许麦克风，再试'); return; }
+    if (n === 'NotFoundError' || n === 'DevicesNotFoundError') { fail('没有检测到麦克风设备，请接上耳麦'); return; }
+    if (n === 'NotReadableError') { fail('麦克风被其他程序占用，关掉后重试'); return; }
+    fail('无法开启麦克风：' + (e && e.message ? e.message : '未知错误')); return;
+  }
+  if (!alive()) return;
+
+  let mr;
+  try { mr = new MediaRecorder(stream); }
+  catch (e) { fail('当前浏览器不支持录音，请改用输入法语音键'); return; }
+  const chunks = [];
+  mr.ondataavailable = ev => { if (ev.data && ev.data.size) chunks.push(ev.data); };
+  mr.start();
+  const stopRec = () => { try { if (mr.state !== 'inactive') mr.stop(); } catch (e) {} };
+  activeStop = stopRec;
+  const maxTimer = setTimeout(stopRec, 15000);
+  const safeGuard = setTimeout(() => { if (alive() && mr.state === 'inactive') { clearTimeout(maxTimer); fail('录音没有开始'); } }, 3000);
+  let settled = false;
+  mr.onstop = async () => {
+    if (settled) return;
+    settled = true;
+    clearTimeout(maxTimer); clearTimeout(safeGuard);
+    if (!alive()) { try { stream.getTracks().forEach(t => t.stop()); } catch (e) {} return; }
+    paintMicBtn(btn, true, '识别中…');
+    try {
+      const blob = new Blob(chunks, { type: mr.mimeType || 'audio/webm' });
+      const text = await transcribeWhisper(blob, lang);
+      const clean = (text || '').trim();
+      if (clean) {
+        let finalText = clean;
+        if (lang === 'vi') {
+          const best = pickBestVi([clean]);
+          finalText = best.canonical || best.text;
+          if (best.canonical && best.text && normVi(best.text) !== normVi(best.canonical)) toast('已按词库校正：' + best.canonical);
+        }
+        const o = ta.value.trim();
+        ta.value = (o ? o + ' ' : '') + finalText;
+        micToken++; micBusy = false; activeStop = null;
+        paintMicBtn(btn, false); meterStop();
+        if (onDone) { try { onDone(ta.value); } catch (e) {} }
+      } else {
+        fail('没识别到内容，请靠近麦克风再说一次');
+      }
+    } catch (e) {
+      fail('云端识别失败：' + (e && e.message ? e.message : '未知错误') + '，可改用输入法语音键');
+    }
+  };
+}
+
+/* 音频 blob → 16k 单声道 WAV → 调 Whisper 代理 → 返回识别文字 */
+async function transcribeWhisper(blob, lang) {
+  const buf = await blob.arrayBuffer();
+  const AC = window.AudioContext || window.webkitAudioContext;
+  const ac = new AC();
+  let decoded;
+  try { decoded = await ac.decodeAudioData(buf); }
+  finally { try { ac.close(); } catch (e) {} }
+  const mono = toMono(decoded);
+  const resampled = await resampleTo(mono, 16000);
+  const wav = encodeWAV(resampled, 16000);
+  const b64 = b64FromBuffer(wav);
+  const r = await fetch(WHISPER_PROXY.trim(), {
+    method: 'POST',
+    headers: { 'content-type': 'application/json' },
+    body: JSON.stringify({ audio: b64, len: wav.byteLength, lang: ['vi','th','en','zh'].indexOf(lang) >= 0 ? lang : 'zh' })
+  });
+  const j = await r.json();
+  if (j && j.err) throw new Error(j.err);
+  return (j && j.text) ? j.text : '';
+}
+
+function toMono(audioBuffer) {
+  if (audioBuffer.numberOfChannels === 1) return audioBuffer;
+  const len = audioBuffer.length;
+  const mixed = new Float32Array(len);
+  for (let c = 0; c < audioBuffer.numberOfChannels; c++) {
+    const d = audioBuffer.getChannelData(c);
+    for (let i = 0; i < len; i++) mixed[i] += d[i];
+  }
+  for (let i = 0; i < len; i++) mixed[i] /= audioBuffer.numberOfChannels;
+  const AC = window.AudioContext || window.webkitAudioContext;
+  const ac = new AC();
+  const out = ac.createBuffer(1, len, audioBuffer.sampleRate);
+  out.copyToChannel(mixed, 0);
+  return out;
+}
+
+function resampleTo(audioBuffer, targetRate) {
+  const offline = new OfflineAudioContext(1, Math.max(1, Math.ceil(audioBuffer.duration * targetRate)), targetRate);
+  const src = offline.createBufferSource();
+  src.buffer = audioBuffer;
+  src.connect(offline.destination);
+  src.start(0);
+  return offline.startRendering();
+}
+
+function encodeWAV(audioBuffer, sampleRate) {
+  const data = audioBuffer.getChannelData(0);
+  const buffer = new ArrayBuffer(44 + data.length * 2);
+  const view = new DataView(buffer);
+  const ws = (off, s) => { for (let i = 0; i < s.length; i++) view.setUint8(off + i, s.charCodeAt(i)); };
+  ws(0, 'RIFF'); view.setUint32(4, 36 + data.length * 2, true); ws(8, 'WAVE');
+  ws(12, 'fmt '); view.setUint32(16, 16, true); view.setUint16(20, 1, true); view.setUint16(22, 1, true);
+  view.setUint32(24, sampleRate, true); view.setUint32(28, sampleRate * 2, true);
+  view.setUint16(32, 2, true); view.setUint16(34, 16, true);
+  ws(36, 'data'); view.setUint32(40, data.length * 2, true);
+  let off = 44;
+  for (let i = 0; i < data.length; i++) {
+    const s = Math.max(-1, Math.min(1, data[i]));
+    view.setInt16(off, s < 0 ? s * 0x8000 : s * 0x7FFF, true);
+    off += 2;
+  }
+  return buffer;
+}
+
+function b64FromBuffer(buffer) {
+  const bytes = new Uint8Array(buffer);
+  let binary = '';
+  const chunk = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunk) {
+    binary += String.fromCharCode.apply(null, bytes.subarray(i, i + chunk));
+  }
+  return btoa(binary);
+}
+
+/* ---------- V1.7.6 汇率换算（原「速查」tab；路由键 num 与 renderTab 均未改） ----------
+   汇率基准：1 CNY = rates[USD/THB/VND]。数据只来自 open.er-api.com 实时接口、上次成功缓存、
+   或用户手动输入；取不到就显示「—」，绝不写死任何汇率数字。 */
+var RATE_API = 'https://open.er-api.com/v6/latest/CNY';
+var RATE_KEY = 'vnAssistRateV1';
+var RATE_CODES = ['CNY', 'USD', 'THB', 'VND'];
+var RATE_META = {
+  CNY: { name: '人民币', color: 'var(--brand)', dec: 2 },
+  USD: { name: '美元',   color: 'var(--en)',    dec: 2 },
+  THB: { name: '泰铢',   color: 'var(--th)',    dec: 2 },
+  VND: { name: '越南盾', color: 'var(--vi)',    dec: 0 }
+};
+function rateRead() {
+  try { var o = JSON.parse(localStorage.getItem(RATE_KEY) || 'null'); return (o && o.rates) ? o : null; }
+  catch (e) { return null; }
+}
+function rateWrite(o) { try { localStorage.setItem(RATE_KEY, JSON.stringify(o)); } catch (e) {} }
+function rateValid(rs) {
+  if (!rs) return false;
+  for (var i = 0; i < RATE_CODES.length; i++) {
+    if (!(Number(rs[RATE_CODES[i]]) > 0)) return false;
+  }
+  return true;
+}
+function rateFetchLive() {
+  var ctrl = ('AbortController' in window) ? new AbortController() : null;
+  var timer = setTimeout(function () { try { if (ctrl) ctrl.abort(); } catch (e) {} }, 9000);
+  function done(v) { clearTimeout(timer); return v; }
+  return fetch(RATE_API, ctrl ? { signal: ctrl.signal } : {})
+    .then(function (r) { if (!r.ok) throw new Error('HTTP ' + r.status); return r.json(); })
+    .then(function (j) {
+      if (!j || j.result !== 'success' || !j.rates) throw new Error('返回格式异常');
+      var rs = {};
+      RATE_CODES.forEach(function (k) { var v = Number(j.rates[k]); if (v > 0) rs[k] = v; });
+      if (!rateValid(rs)) throw new Error('缺少币种汇率');
+      return { ts: j.time_last_update_utc || new Date().toISOString(), rates: rs, source: 'live' };
+    })
+    .then(done, function (e) { clearTimeout(timer); throw e; });
+}
+function rateFmt(v, code) {
+  if (v === null || v === undefined || !isFinite(v)) return '—';
+  var d = (RATE_META[code] || RATE_META.CNY).dec;
+  try { return Number(v).toLocaleString('zh-CN', { minimumFractionDigits: d, maximumFractionDigits: d }); }
+  catch (e) { return Number(v).toFixed(d); }
+}
+function rateConvert(amt, from, to, rs) {
+  if (!rateValid(rs) || !isFinite(amt)) return null;
+  return amt / Number(rs[from]) * Number(rs[to]);
+}
+function renderNumView(host) {
+  var data = rateRead(), from = 'CNY';
+  host.innerHTML =
+    '<div class="sec-title">汇率换算 · 人民币 / 美元 / 泰铢 / 越南盾</div>' +
+    '<div class="rate-src" id="rateSrc">正在读取汇率…</div>' +
+    '<div class="trow"><button type="button" class="mini" id="rateRefresh">刷新实时汇率</button>' +
+    '<button type="button" class="mini" id="rateManualBtn">手动输入汇率</button></div>' +
+    '<input class="rate-amt" id="rateAmt" type="number" inputmode="decimal" value="100" aria-label="金额">' +
+    '<div class="rate-chips" id="rateChips"></div>' +
+    '<div class="rate-grid" id="rateGrid"></div>' +
+    '<div class="rate-manual" id="rateManualBox" hidden>' +
+    '<div class="sec-title">手动输入（1 人民币 = ?）</div>' +
+    '<div class="crow"><label>美元 </label><input id="mUsd" type="number" inputmode="decimal" placeholder="查当天牌价"></div>' +
+    '<div class="crow"><label>泰铢 </label><input id="mThb" type="number" inputmode="decimal" placeholder="查当天牌价"></div>' +
+    '<div class="crow"><label>越南盾 </label><input id="mVnd" type="number" inputmode="decimal" placeholder="查当天牌价"></div>' +
+    '<div class="trow"><button type="button" class="mini" id="mSave">使用手动汇率</button></div>' +
+    '</div>' +
+    '<div class="rate-tip">汇率随时变动，此页仅供快速估算；报价、收付款请以银行或柜台当天牌价为准。' +
+    '离线时用上次成功获取的汇率并标明时间，取不到就显示「—」，不会用预置数字冒充实时汇率。' +
+    '原金额卡片已按 V1.7.6 要求取消。</div>';
+
+  var chips = $('#rateChips', host), grid = $('#rateGrid', host);
+  RATE_CODES.forEach(function (k) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.dataset.k = k; b.textContent = RATE_META[k].name + ' ' + k;
+    b.onclick = function () { from = k; paint(); };
+    chips.appendChild(b);
+    var c = document.createElement('div');
+    c.className = 'rate-cell'; c.dataset.k = k;
+    c.style.setProperty('--rc', RATE_META[k].color);
+    c.innerHTML = '<div class="rn"></div><div class="rv">—</div>' +
+                  '<button type="button" class="rate-copy">复制</button>';
+    $('.rn', c).textContent = RATE_META[k].name + ' · ' + k;
+    $('.rate-copy', c).onclick = function () {
+      if (c.dataset.v) copyText(c.dataset.v);   // 复制纯数字，方便粘到计算器/表格
+    };
+    grid.appendChild(c);
+  });
+
+  function paint() {
+    var amt = parseFloat($('#rateAmt', host).value);
+    if (!isFinite(amt)) amt = 0;
+    var rs = data && data.rates;
+    $$('.rate-chips button', host).forEach(function (b) { b.classList.toggle('on', b.dataset.k === from); });
+    $$('.rate-cell', host).forEach(function (c) {
+      var k = c.dataset.k;
+      var v = (k === from) ? amt : rateConvert(amt, from, k, rs);
+      $('.rv', c).textContent = rateFmt(v, k) + ' ' + k;
+      c.dataset.v = (v === null || v === undefined || !isFinite(v))
+        ? '' : Number(v).toFixed((RATE_META[k] || RATE_META.CNY).dec);
+      c.classList.toggle('me', k === from);
+    });
+  }
+  function paintSrc(mode) {
+    var el = $('#rateSrc', host), txt, cls = 'rate-src';
+    if (!data) {
+      txt = '尚未获取汇率 · 请联网点「刷新实时汇率」，或在下方手动输入。';
+    } else if (data.source === 'manual') {
+      txt = '手动输入汇率 · 请自行核对当天牌价'; cls += ' manual';
+    } else {
+      var t = data.ts || '';
+      try { var d = new Date(t); if (!isNaN(d.getTime())) t = d.toLocaleString('zh-CN', { timeZone: 'Asia/Shanghai', hour12: false }); } catch (e) {}
+      var label = mode === 'live' ? '实时汇率'
+        : (mode === 'stale' ? '上次获取的汇率（本次刷新失败）' : '已缓存汇率');
+      txt = label + ' · 更新于 ' + t + ' · 来源 open.er-api.com';
+      cls += ' live';
+    }
+    el.className = cls; el.textContent = txt;
+  }
+  function refresh(manual) {
+    var btn = $('#rateRefresh', host);
+    if (btn) btn.disabled = true;
+    if (manual) toast('正在获取实时汇率…');
+    return rateFetchLive().then(function (o) {
+      data = o; rateWrite(o); paintSrc('live'); paint();
+      if (manual) toast('汇率已更新');
+    }).catch(function (e) {
+      paintSrc('stale');
+      if (manual) toast('获取失败：' + (e && e.message ? e.message : '网络异常') + '。可用上次缓存或手动输入');
+    }).then(function () {
+      var b = $('#rateRefresh', host); if (b) b.disabled = false;
+    });
+  }
+  $('#rateAmt', host).oninput = paint;
+  $('#rateRefresh', host).onclick = function () { refresh(true); };
+  $('#rateManualBtn', host).onclick = function () {
+    var box = $('#rateManualBox', host);
+    box.hidden = !box.hidden;
+    if (!box.hidden && data && data.rates) {
+      $('#mUsd', host).value = data.rates.USD || '';
+      $('#mThb', host).value = data.rates.THB || '';
+      $('#mVnd', host).value = data.rates.VND || '';
+    }
+  };
+  $('#mSave', host).onclick = function () {
+    var u = parseFloat($('#mUsd', host).value),
+        t = parseFloat($('#mThb', host).value),
+        v = parseFloat($('#mVnd', host).value);
+    if (!(u > 0 && t > 0 && v > 0)) { toast('三个汇率都要填大于 0 的数字'); return; }
+    data = { ts: new Date().toISOString(), rates: { CNY: 1, USD: u, THB: t, VND: v }, source: 'manual' };
+    rateWrite(data); paintSrc(false); paint(); toast('已使用手动汇率');
+  };
+  paintSrc('cached');
+  paint();
+  var t0 = data ? Date.parse(data.ts) : NaN;
+  if (!data || (data.source === 'live' && (!isFinite(t0) || Date.now() - t0 > 12 * 3600 * 1000))) refresh(false);
+}
+
+/* ---------- V1.7.8 拍照翻译：腾讯云 OCR（精度）+ 自动识别翻译（流程） ----------
+   V1.7.7 的纯前端 Tesseract 对屏幕翻拍/小字/摩尔纹识别率有限（实测截图出「人/9呈」乱码）。
+   本版：识别优先走腾讯云通用印刷体 OCR（支持中/越/英/泰，官方 21 语种），无密钥或失败时
+   自动回退本地 Tesseract；选图后自动识别、识别完自动翻译四语种（可关），对齐同类软件交互。
+   照片只在本机压缩后发给自家 Netlify Function（密钥在服务器端），翻译仍只发识别出的文字。 */
+var PT_CDN = 'https://cdn.jsdelivr.net/npm/tesseract.js@5/dist/tesseract.min.js';
+var PT_OCR_PROXY = '/.netlify/functions/ocr';
+var PT_LANGS = [
+  { k:'zh',  ocr:'chi_sim',      name:'中文' },
+  { k:'en',  ocr:'eng',          name:'English' },
+  { k:'vi',  ocr:'vie',          name:'Tiếng Việt' },
+  { k:'th',  ocr:'tha',          name:'ไทย' },
+  { k:'mix', ocr:'chi_sim+eng',  name:'中英混排' }
+];
+var PT_CONF_LOW = 55;
+var _ptPromise = null, _ptWorker = null, _ptWorkerOcr = '', _ptFile = null, _ptUrl = null;
+var _ptBusy = false, _ptLang = 'zh', _ptEnhance = true, _ptLastConf = null, _ptEngine = '';
+var _ptAuto = true;   // 选图后自动识别 + 识别完自动翻译（参考同类软件），可关
+try { var _ptAutoSaved = localStorage.getItem('vn_ptAuto');   // 记住用户选择，重开浮层状态一致
+  if (_ptAutoSaved === '0') _ptAuto = false; else if (_ptAutoSaved === '1') _ptAuto = true;
+} catch (e) {}
+
+function ptOcrOf(k) {
+  for (var i = 0; i < PT_LANGS.length; i++) if (PT_LANGS[i].k === k) return PT_LANGS[i].ocr;
+  return 'chi_sim';
+}
+function ptNameOf(k) {
+  for (var i = 0; i < PT_LANGS.length; i++) if (PT_LANGS[i].k === k) return PT_LANGS[i].name;
+  return '中文';
+}
+function ptDefaultLang() {
+  try { var d = dirFrom(state.dir); if (LANGS[d]) return d; } catch (e) {}
+  return 'zh';
+}
+function ptLoadEngine() {
+  if (window.Tesseract) return Promise.resolve(window.Tesseract);
+  if (_ptPromise) return _ptPromise;
+  _ptPromise = new Promise(function (resolve, reject) {
+    var sc = document.createElement('script');
+    sc.src = PT_CDN; sc.async = true; sc.crossOrigin = 'anonymous';
+    sc.onload = function () { window.Tesseract ? resolve(window.Tesseract) : reject(new Error('引擎未就绪')); };
+    sc.onerror = function () { _ptPromise = null; reject(new Error('识别引擎加载失败')); };
+    document.head.appendChild(sc);
+  });
+  return _ptPromise;
+}
+function ptPrepare(file, enhance) {
+  return new Promise(function (resolve) {
+    var img = new Image(), url = URL.createObjectURL(file);
+    img.onload = function () {
+      try {
+        var w = img.naturalWidth || img.width, h = img.naturalHeight || img.height;
+        var sc2 = 2200 / Math.max(w, h);
+        if (sc2 > 2.2) sc2 = 2.2;
+        var cv = document.createElement('canvas');
+        cv.width = Math.max(1, Math.round(w * sc2));
+        cv.height = Math.max(1, Math.round(h * sc2));
+        var ctx = cv.getContext('2d');
+        ctx.imageSmoothingQuality = 'high';
+        ctx.drawImage(img, 0, 0, cv.width, cv.height);
+        if (enhance) {
+          var d = ctx.getImageData(0, 0, cv.width, cv.height), p = d.data, i, g;
+          var hist = new Uint32Array(256);
+          for (i = 0; i < p.length; i += 4) {
+            g = (p[i] * 77 + p[i + 1] * 151 + p[i + 2] * 28) >> 8;
+            p[i] = p[i + 1] = p[i + 2] = g; hist[g]++;
+          }
+          var total = cv.width * cv.height, acc = 0, lo = 0, hi = 255;
+          for (i = 0; i < 256; i++) { acc += hist[i]; if (acc >= total * 0.01) { lo = i; break; } }
+          acc = 0;
+          for (i = 255; i >= 0; i--) { acc += hist[i]; if (acc >= total * 0.01) { hi = i; break; } }
+          if (hi - lo < 24) { lo = 0; hi = 255; }
+          var scale = 255 / (hi - lo);
+          for (i = 0; i < p.length; i += 4) {
+            g = (p[i] - lo) * scale;
+            g = g < 0 ? 0 : (g > 255 ? 255 : g);
+            p[i] = p[i + 1] = p[i + 2] = g;
+          }
+          ctx.putImageData(d, 0, 0);
+        }
+        resolve(cv);
+      } catch (e) { resolve(file); }
+      finally { try { URL.revokeObjectURL(url); } catch (e) {} }
+    };
+    img.onerror = function () { try { URL.revokeObjectURL(url); } catch (e) {} resolve(file); };
+    img.src = url;
+  });
+}
+function ptWorker(T, ocr, logger) {
+  if (_ptWorker && _ptWorkerOcr === ocr) return Promise.resolve(_ptWorker);
+  var old = _ptWorker ? _ptWorker.terminate() : Promise.resolve();
+  return Promise.resolve(old).catch(function () {}).then(function () {
+    _ptWorker = null; _ptWorkerOcr = '';
+    return T.createWorker(ocr, 1, { logger: logger });
+  }).then(function (w) {
+    _ptWorker = w; _ptWorkerOcr = ocr;
+    return Promise.resolve(w.setParameters({
+      preserve_interword_spaces: '1',
+      tessedit_pageseg_mode: '6'
+    })).catch(function () {}).then(function () { return w; });
+  });
+}
+/* 腾讯云 OCR：成功返回 {text,confidence,language}；未配置密钥返回 null（回退本地） */
+function ptCloudOCR(b64) {
+  return fetch(PT_OCR_PROXY, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ imageBase64: b64, langKey: _ptLang })
+  }).then(function (r) { return r.json(); }).then(function (j) {
+    if (!j || j.engine === 'none') return null;
+    if (j.engine !== 'tencent') throw new Error(j.error_msg || '云端识别失败');
+    return { text: j.text || '', confidence: j.confidence, language: j.language };
+  });
+}
+function ptMismatch(txt, k, conf) {
+  if (!txt) return '没识别出文字。请换张更清晰、正对文字的照片，或直接在下方粘贴文字。';
+  var out = [];
+  var hasCjk = /[\u4e00-\u9fff]/.test(txt), hasThai = /[\u0e00-\u0e7f]/.test(txt);
+  var latin = (txt.match(/[A-Za-z]/g) || []).length;
+  if (k === 'zh' && !hasCjk && latin >= 4)
+    out.push('结果里没有汉字却有一堆拉丁字母，这张图可能不是中文——请改选 English 或「中英混排」再识别。');
+  else if (k === 'en' && hasCjk)
+    out.push('结果里出现汉字，这张图可能不是纯英文——请改选「中文」或「中英混排」再识别。');
+  else if (k === 'th' && !hasThai)
+    out.push('结果里没有泰文字符，可能语种选错或识别失败——请确认选了 ไทย 后重试。');
+  else if (k === 'vi' && /[\u4e00-\u9fff\u0e00-\u0e7f]/.test(txt))
+    out.push('结果里出现汉字/泰文，可能语种选错——请确认选了 Tiếng Việt 后重试。');
+  if (typeof conf === 'number' && conf < PT_CONF_LOW)
+    out.push('识别可信度仅 ' + Math.round(conf) + '%（偏低）。请正对文字、避开反光与摩尔纹重拍，或手动改字。');
+  return out.join(' ');
+}
+function ptSrcKey(text, k) {
+  if (k === 'mix' || !LANGS[k]) {
+    var d = detectLang(text);
+    if (d === 'latin') d = 'en';
+    return LANGS[d] ? d : 'zh';
+  }
+  return k;
+}
+function ptCard(title, text, key, isMt) {
+  var d = document.createElement('div');
+  d.className = 'pt-card';
+  d.style.setProperty('--rc', { zh:'var(--brand)', vi:'var(--vi)', en:'var(--en)', th:'var(--th)' }[key] || 'var(--brand)');
+  var h = document.createElement('h4'); h.textContent = title;
+  var p = document.createElement('p'); p.textContent = text;
+  if (key === 'th') p.classList.add('thtxt');
+  d.appendChild(h); d.appendChild(p);
+  var acts = document.createElement('div'); acts.className = 'pt-acts';
+  var b1 = document.createElement('button'); b1.type = 'button'; b1.textContent = '朗读';
+  b1.onclick = function () { speak(p.textContent, key); };
+  var b2 = document.createElement('button'); b2.type = 'button'; b2.textContent = '复制';
+  b2.onclick = function () { copyText(p.textContent); };
+  acts.appendChild(b1); acts.appendChild(b2);
+  if (isMt) {
+    var tag = document.createElement('span');
+    tag.className = 'pt-tag'; tag.textContent = '机翻初稿 · 关键用语请确认';
+    acts.appendChild(tag);
+  }
+  d.appendChild(acts);
+  return { el:d, p:p };
+}
+function ptZoom(src) {
+  var v = document.createElement('div'); v.className = 'pt-viewer';
+  var im = document.createElement('img'); im.src = src; im.alt = '图片放大';
+  v.appendChild(im);
+  v.onclick = function () { v.remove(); };
+  document.body.appendChild(v);
+}
+function openPhotoTrans() {
+  var old = $('#ptModal'); if (old) old.remove();
+  _ptFile = null; _ptLastConf = null; _ptEngine = ''; _ptLang = ptDefaultLang();
+  if (_ptUrl) { try { URL.revokeObjectURL(_ptUrl); } catch (e) {} _ptUrl = null; }
+  var m = document.createElement('div');
+  m.id = 'ptModal'; m.className = 'pt-modal';
+  m.innerHTML =
+    '<div class="pt-sheet" role="dialog" aria-label="拍照翻译">' +
+    '<div class="pt-head"><b>拍照翻译</b><span class="pt-step">拍照 → 选语种 → 识别 → 校对 → 翻译</span>' +
+    '<button type="button" class="pt-close" id="ptClose" aria-label="关闭">×</button></div>' +
+    '<details class="pt-help"><summary>使用说明 / 拍不清楚怎么办</summary>' +
+    '<p>对准菜单、标牌、单据上的文字，尽量正对、光线匀、别拍到屏幕摩尔纹。照片<b>只在本机压缩、上传到自家代理识别</b>（密钥在服务器端，不外泄）；翻译时仅发送识别出的文字。</p>' +
+    '<p><b>识别走腾讯云 OCR（中/越/英/泰，官方 21 语种），没配密钥或失败时自动回退本地识别。</b>' +
+    '语种要与照片里的文字一致：拍英文却选中文会出乱码。识别完务必人工改字再对外沟通。</p>' +
+    '<p>「自动识别翻译」默认开：选图即自动识别、识别完自动翻成其余三语种，和微信扫一扫翻译一致；关掉则手动点两次。</p>' +
+    '<p>腾讯云开通后（每月 1000 次免费）在 Netlify 后台设置环境变量 <code>TENCENT_OCR_SECRET_ID</code> 与 <code>TENCENT_OCR_SECRET_KEY</code>，下次自动启用云端，无需改代码。</p></details>' +
+    '<div class="pt-pick">' +
+    '<button type="button" id="ptCamBtn">拍照</button>' +
+    '<button type="button" id="ptLibBtn">从相册选</button>' +
+    '<button type="button" id="ptEnhBtn" class="on">图像增强：开</button>' +
+    '<button type="button" id="ptAutoBtn" class="on">自动识别翻译：开</button>' +
+    '<input type="file" id="ptCam" accept="image/*" capture="environment">' +
+    '<input type="file" id="ptLib" accept="image/*">' +
+    '</div>' +
+    '<div class="pt-shot" id="ptShot">' +
+    '<img class="pt-img" id="ptImg" alt="待识别图片" hidden>' +
+    '<span class="pt-badge pt-meta" id="ptMeta">尚未选择图片</span>' +
+    '<span class="pt-badge pt-zoom">点图放大</span></div>' +
+    '<div class="pt-lbl"><b>图片里是什么文字？</b><span>与翻译原文语种联动</span></div>' +
+    '<div class="pt-langs" id="ptLangs">' + PT_LANGS.map(function (o) {
+      return '<button type="button" data-k="' + o.k + '"' + (o.k === _ptLang ? ' class="on"' : '') + '>' + o.name + '</button>';
+    }).join('') + '</div>' +
+    '<div class="pt-act"><button type="button" class="primary" id="ptOcr">开始识别</button>' +
+    '<button type="button" id="ptRedo" hidden>换语种重识别</button></div>' +
+    '<div class="pt-prog"><i id="ptBar"></i></div>' +
+    '<div class="pt-status" id="ptStatus">尚未选择图片。</div>' +
+    '<div class="pt-eng" id="ptEng" style="font-size:11.5px;color:var(--sub);margin:2px 0 0;min-height:15px"></div>' +
+    '<div class="pt-warn" id="ptWarn"></div>' +
+    '<div class="pt-lbl"><b>识别文字（务必人工校对）</b><span id="ptCount">0 字</span></div>' +
+    '<textarea class="pt-text" id="ptText" placeholder="识别结果会出现在这里，也可以直接粘贴文字"></textarea>' +
+    '<div class="pt-text-acts"><button type="button" id="ptClear">清空</button>' +
+    '<button type="button" id="ptSel">全选</button></div>' +
+    '<div class="pt-act"><button type="button" class="primary" id="ptGo">翻译成其余三语种</button></div>' +
+    '<div class="pt-result" id="ptResult"></div>' +
+    '</div>';
+  document.body.appendChild(m);
+
+  function setStatus(t) { var el = $('#ptStatus', m); if (el) el.textContent = t; }
+  function setBar(n) { var el = $('#ptBar', m); if (el) el.style.width = Math.max(0, Math.min(100, n)) + '%'; }
+  function count() {
+    var el = $('#ptCount', m);
+    if (el) el.textContent = ($('#ptText', m).value || '').length + ' 字';
+  }
+  function warn(msg) {
+    var w = $('#ptWarn', m);
+    if (w) { w.textContent = msg || ''; w.classList.toggle('on', !!msg); }
+    var rb = $('#ptRedo', m); if (rb) rb.hidden = !(msg && _ptFile);
+  }
+  function close() {
+    m.remove();
+    if (_ptUrl) { try { URL.revokeObjectURL(_ptUrl); } catch (e) {} _ptUrl = null; }
+  }
+  $('#ptClose', m).onclick = close;
+  m.onclick = function (e) { if (e.target === m) close(); };
+
+  $('#ptShot', m).onclick = function () { if (_ptUrl) ptZoom(_ptUrl); };
+  $('#ptEnhBtn', m).onclick = function () {
+    _ptEnhance = !_ptEnhance;
+    this.textContent = '图像增强：' + (_ptEnhance ? '开' : '关');
+    this.classList.toggle('on', _ptEnhance);
+    setStatus(_ptEnhance ? '图像增强已开启，识别时会做灰度与对比度处理。' : '图像增强已关闭，将按原图识别。');
+  };
+  $('#ptAutoBtn', m).onclick = function () {
+    _ptAuto = !_ptAuto;
+    this.textContent = '自动识别翻译：' + (_ptAuto ? '开' : '关');
+    this.classList.toggle('on', _ptAuto);
+    try { localStorage.setItem('vn_ptAuto', _ptAuto ? '1' : '0'); } catch (e) {}
+    setStatus(_ptAuto ? '自动识别翻译已开启：选图即识别，识别完自动翻译。' : '自动识别翻译已关闭：需手动点「开始识别」和「翻译」。');
+  };
+  (function () {   // 打开时把按钮同步成真实的 _ptAuto（含用户上次的选择）
+    var b = $('#ptAutoBtn', m);
+    b.textContent = '自动识别翻译：' + (_ptAuto ? '开' : '关');
+    b.classList.toggle('on', _ptAuto);
+  })();
+
+  [].forEach.call($('#ptLangs', m).querySelectorAll('button'), function (b) {
+    b.onclick = function () {
+      _ptLang = b.getAttribute('data-k') || 'zh';
+      [].forEach.call($('#ptLangs', m).querySelectorAll('button'), function (x) {
+        x.classList.toggle('on', x === b);
+      });
+      warn('');
+      setStatus('已选「' + ptNameOf(_ptLang) + '」。点「开始识别」；若已识别过，可点「换语种重识别」。');
+    };
+  });
+
+  function pick(f) {
+    if (!f) return;
+    _ptFile = f;
+    if (_ptUrl) { try { URL.revokeObjectURL(_ptUrl); } catch (e) {} }
+    _ptUrl = URL.createObjectURL(f);
+    var im = $('#ptImg', m);
+    im.onload = function () {
+      var meta = $('#ptMeta', m);
+      if (meta) meta.textContent = (im.naturalWidth || 0) + ' × ' + (im.naturalHeight || 0);
+    };
+    im.hidden = false;
+    im.src = _ptUrl;
+    $('#ptText', m).value = ''; $('#ptResult', m).innerHTML = '';
+    count(); setBar(0); warn(''); _ptLastConf = null; _ptEngine = '';
+    setStatus(_ptAuto ? '已选图片，自动识别中（先云端，失败回退本地）…' :
+      '已选图片。请确认上面「图片里是什么文字」选对了，再点「开始识别」。');
+    if (_ptAuto) { setTimeout(runOcr, 60); }
+  }
+  $('#ptCamBtn', m).onclick = function () { $('#ptCam', m).click(); };
+  $('#ptLibBtn', m).onclick = function () { $('#ptLib', m).click(); };
+  ['ptCam', 'ptLib'].forEach(function (id) {
+    $('#' + id, m).onchange = function (e) { pick(e.target.files && e.target.files[0]); };
+  });
+  $('#ptClear', m).onclick = function () { $('#ptText', m).value = ''; count(); };
+  $('#ptSel', m).onclick = function () { var t = $('#ptText', m); if (t.select) t.select(); };
+  $('#ptText', m).oninput = count;
+
+  /* 识别结果统一处理：写文本框 + 置信度/语种告警 + 引擎标注 + 自动翻译 */
+  function onResult(txt, conf, engine) {
+    _ptLastConf = conf; _ptEngine = engine || '';
+    $('#ptText', m).value = txt;
+    count(); setBar(100);
+    var msg = ptMismatch(txt, _ptLang, conf);
+    warn(msg);
+    var engTxt = _ptEngine === 'tencent' ? '腾讯云OCR' : '本地识别';
+    var engEl = $('#ptEng', m);   // 持久标注：引擎 + 可信度，不因「正在翻译」被覆盖
+    if (engEl) engEl.textContent = '识别引擎：' + engTxt +
+      (conf === null ? '' : ' · 可信度 ' + Math.round(conf) + '%') + '（机翻初稿，关键用语请人工确认）';
+    var tail = (conf === null ? '' : ' · 可信度 ' + Math.round(conf) + '%') + ' · 引擎 ' + engTxt;
+    setStatus(msg ? '识别完成，但结果需要复核（见上方提示）。' + tail :
+      '识别完成，请核对文字后再翻译。' + tail);
+    if (_ptAuto) doTranslate();
+  }
+  /* 本地识别（Tesseract）：云端未配置/失败时的兜底 */
+  function localOcr(cv) {
+    var ocr = ptOcrOf(_ptLang);
+    setStatus('正在本地识别（' + ptNameOf(_ptLang) + '）…');
+    var statusMap = {
+      'loading tesseract core': '加载识别核心…',
+      'initializing tesseract': '初始化识别引擎…',
+      'loading language traineddata': '下载语种识别包（首次较慢）…',
+      'initializing api': '准备识别…',
+      'recognizing text': '正在识别文字…'
+    };
+    function logger(p) {
+      if (!p || !p.status) return;
+      if (p.status === 'recognizing text') setBar(Math.round((p.progress || 0) * 100));
+      setStatus(statusMap[p.status] || p.status);
+    }
+    return ptLoadEngine().then(function (T) {
+      return ptWorker(T, ocr, logger).then(function (w) { return w.recognize(cv); });
+    }).then(function (r) {
+      var data = (r && r.data) || {};
+      onResult((data.text || '').replace(/\n{3,}/g, '\n\n').trim(),
+        (typeof data.confidence === 'number') ? data.confidence : null, 'local');
+    });
+  }
+  function runOcr() {
+    if (_ptBusy) return;
+    if (!_ptFile) { toast('请先拍照或从相册选一张图片'); return; }
+    _ptBusy = true;
+    [$('#ptOcr', m), $('#ptRedo', m)].forEach(function (b) { if (b) b.disabled = true; });
+    setBar(0); warn('');
+    setStatus('正在准备图片…');
+    ptPrepare(_ptFile, _ptEnhance).then(function (cv) {
+      var b64 = '';
+      try { b64 = (cv.toDataURL ? cv.toDataURL('image/jpeg', 0.82) : '').split(',')[1] || ''; } catch (e) { b64 = ''; }
+      if (b64 && b64.length < 7 * 1024 * 1024) {
+        setStatus('正在云端识别（腾讯云 OCR）…');
+        return ptCloudOCR(b64).then(function (r) {
+          if (r) { onResult(r.text, r.confidence, 'tencent'); return null; }
+          setStatus('未配置云识别密钥，改用本地识别…');
+          return localOcr(cv);
+        }).catch(function () {
+          setStatus('云端识别失败，改用本地识别…');
+          return localOcr(cv);
+        });
+      }
+      setStatus('改用本地识别…');
+      return localOcr(cv);
+    }).catch(function (e) {
+      setStatus('识别失败：' + (e && e.message ? e.message : '未知错误') +
+        '。可检查网络后重试，或直接在下方粘贴文字翻译。');
+    }).then(function () {
+      _ptBusy = false;
+      [$('#ptOcr', m), $('#ptRedo', m)].forEach(function (b) { if (b) b.disabled = false; });
+    });
+  }
+  $('#ptOcr', m).onclick = runOcr;
+  $('#ptRedo', m).onclick = runOcr;
+
+  function doTranslate() {
+    var text = $('#ptText', m).value.trim();
+    if (!text) { toast('请先识别或粘贴文字'); return; }
+    var srcK = ptSrcKey(text, _ptLang);
+    var box = $('#ptResult', m);
+    box.innerHTML = '';
+    box.appendChild(ptCard(LANGS[srcK].name + ' · 原文（识别结果，请核对）', text, srcK, false).el);
+    setStatus('正在翻译，机翻结果请人工确认关键用语…');
+    LANG_KEYS.filter(function (k) { return k !== srcK; }).forEach(function (t) {
+      var card = ptCard(LANGS[t].name, '翻译中…', t, true);
+      box.appendChild(card.el);
+      translate(text, srcK + '2' + t).then(function (out) {
+        card.p.textContent = out || '—';
+      }).catch(function () {
+        card.p.textContent = '该语种翻译失败，请检查网络后重试。';
+      });
+    });
+    if (box.scrollIntoView) box.scrollIntoView({ behavior:'smooth', block:'nearest' });
+  }
+  $('#ptGo', m).onclick = doTranslate;
+}
+
+/* ---------- 收藏 tab ---------- */
+function renderFavView(host) {
+  const box = document.createElement('div');
+  box.className = 'listbox';
+  host.appendChild(box);
+  const h = document.createElement('div');
+  h.className = 'sec-title';
+  h.textContent = '我的收藏 · ' + state.fav.length + ' 句';
+  box.appendChild(h);
+  if (!state.fav.length) {
+    const t = document.createElement('div');
+    t.className = 'tip';
+    t.textContent = '还没有收藏。在场景卡片或翻译结果里点「收藏」，常用句会固定在这里，出差现场直接翻到这一页就能用。';
+    box.appendChild(t);
+  }
+  state.fav.forEach(it => box.appendChild(phraseCard(it[0], it[1], it[2], it[3] || 'vi', it[4], it[5])));
+  const tip = document.createElement('div');
+  tip.className = 'tip';
+  tip.textContent = '提示：收藏存在本机浏览器里。换手机或换浏览器不会带过去；清理浏览器数据会丢失。';
+  box.appendChild(tip);
+}
+
+/* ---------- 主渲染 ---------- */
+function syncGlobalInput() {
+  const g = $('#qGlobal');
+  if (g && g.value !== state.q) g.value = state.q;
+  const c = $('#qClr');
+  if (c) c.classList.toggle('on', !!state.q);
+}
+
+function onGlobalSearch() {
+  const g = $('#qGlobal');
+  const v = g ? g.value.trim() : '';
+  state.q = v;
+  const c = $('#qClr');
+  if (c) c.classList.toggle('on', !!v);
+  if (!v) {
+    if (state.tab === 'search') state.tab = 'scene';
+    renderTab();
+    return;
+  }
+  /* 在场景详情里输入 = 场景内筛选；其余情况跳全局搜索 */
+  if (state.tab === 'scene' && state.sceneOpen) { renderTab(); return; }
+  state.tab = 'search';
+  renderTab();
+}
+
+function renderTab() {
+  const main = $('#main');
+  main.innerHTML = '';
+  const view = document.createElement('div');
+  view.className = 'view';
+  main.appendChild(view);
+  if (state.tab === 'scene') renderSceneView(view);
+  else if (state.tab === 'vocab') renderVocabView(view);
+  else if (state.tab === 'search') renderSearchView(view);
+  else if (state.tab === 'trans') renderTranslateView(view);
+  else if (state.tab === 'num') renderNumView(view);
+  else renderFavView(view);
+  $$('.tabbar button').forEach(b => b.classList.toggle('on', b.dataset.tab === state.tab));
+  syncGlobalInput();
+  main.scrollTop = 0;
+}
+
+/* ---------- 字号 ---------- */
+const FS_NAME = ['标准', '大', '特大'];
+function applyFs() {
+  const m = $('#main');
+  m.classList.toggle('fs1', state.opt.fs === 1);
+  m.classList.toggle('fs2', state.opt.fs === 2);
+  const b = $('#fsBtn');
+  if (b) b.textContent = '字号 ' + FS_NAME[state.opt.fs];
+}
+
+function init() {
+  $('#verTag').textContent = 'V' + APP_VER;
+  document.title = '华越畅行 V' + APP_VER;
+  $$('.tabbar button').forEach(b => {
+    b.onclick = () => {
+      const t = b.dataset.tab;
+      if (t !== 'search') state.q = '';
+      if (t === 'scene') state.sceneOpen = false;
+      state.tab = t;
+      renderTab();
+    };
+  });
+  const g = $('#qGlobal'), c = $('#qClr');
+  if (g) {
+    let tm = null;
+    g.oninput = () => { clearTimeout(tm); tm = setTimeout(onGlobalSearch, 200); };
+    g.onkeydown = e => { if (e.key === 'Enter') { e.preventDefault(); g.blur(); onGlobalSearch(); } };
+    g.value = state.q;
+  }
+  if (c) c.onclick = () => { if (g) g.value = ''; state.q = ''; onGlobalSearch(); };
+  $('#fsBtn').onclick = () => {
+    state.opt.fs = (state.opt.fs + 1) % 3;
+    saveOpt();
+    applyFs();
+    toast('字号已切换为「' + FS_NAME[state.opt.fs] + '」，本机记住');
+  };
+  applyFs();
+  renderTab();
+}
+document.addEventListener('DOMContentLoaded', init);
+
+</script>
+<script data-page-node-id="MWn6cOG4v0fvMfcUvQftdV" data-pnid-children="zQVLQE60ixmMP3WxGGAL8j">
+/* 底部徽标安全带：Netlify 徽标渲染在隔离节点里，页面脚本读不到它，
+   上一版靠 DOM 检测会漏判。改为不依赖检测——默认给 #app 留出 46px，
+   徽标固定在这段留白里，底部导航的六个按钮始终在其上方。
+   仅在我们的演示域名与本地预览下取消，避免多余空白。 */
+(function () {
+  var h = location.hostname;
+  if (/workbuddy\.host$/i.test(h) || h === 'localhost' || h === '127.0.0.1') {
+    document.documentElement.style.setProperty('--nbres', '0px');
+  }
+})();
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('sw.js').catch(function () {});
+  });
+}
+</script>
+</body>
+</html>

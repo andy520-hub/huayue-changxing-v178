@@ -1,0 +1,19 @@
+{
+  "name": "华越畅行 · 中越沟通助手",
+  "short_name": "华越畅行",
+  "description": "中文⇄越南语/英语/泰语现场沟通助手：场景语句、词库、互译、面对面对话、朗读。",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "start_url": ".",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#F1F5F6",
+  "theme_color": "#0E3B45",
+  "categories": ["travel", "utilities", "education"],
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

@@ -1,0 +1,5 @@
+# 部署仓库忽略：本地预览页与临时产物不进 Git
+_preview-*.html
+*.zip
+node_modules/
+.DS_Store
